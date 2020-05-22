@@ -1,0 +1,47 @@
+@import "reset";
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Roboto", "微軟正黑體";
+}
+.footer a,
+.nav__list a {
+    display: block;
+}
+.footer,
+.nav,
+.nav__list {
+    display: flex;
+}
+.nav h1,
+.nav__list a,
+.footer h2,
+.footer a,
+.navbar {
+    text-decoration: none;
+    padding: 1em 1em;
+    font-size: 1rem;
+    color: #fff;
+}
+.nav__list a,
+.footer a,
+.navbar {
+    cursor: pointer;
+    &:hover,
+    &:focus {
+        background-color: #333;
+    }
+}
+.nav,
+.footer {
+    background-color: #444;
+}
+.nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footer {
+    text-align: center;
+    justify-content: center;
+}
