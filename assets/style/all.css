@@ -1,8 +1,8 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html,
 body,
 div,
@@ -91,6 +91,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -105,17 +106,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -123,7 +128,77 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", "微軟正黑體";
+}
+
+.footer a,
+.nav__list a {
+  display: block;
+}
+
+.footer,
+.nav,
+.nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav h1,
+.nav__list a,
+.footer h2,
+.footer a,
+.navbar {
+  text-decoration: none;
+  padding: 1em 1em;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.nav__list a,
+.footer a,
+.navbar {
+  cursor: pointer;
+}
+
+.nav__list a:hover, .nav__list a:focus,
+.footer a:hover,
+.footer a:focus,
+.navbar:hover,
+.navbar:focus {
+  background-color: #333;
+}
+
+.nav,
+.footer {
+  background-color: #444;
+}
+
+.nav {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/*# sourceMappingURL=all.css.map */
