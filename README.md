@@ -1,37 +1,20 @@
 # *Hexschool-JS Dungeon JS 地下城*
 ###### javascript, JSDungeon, HexSchool
 
-## Multiplication-Chart 九九乘法表 <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-001.html" target="_blank">Demo 網頁連結</a>
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover001.jpg)
+## Language
+- HTML
+- CSS/SCSS
+- JavaScript
 
-### Language
-<ul>
- <li>HTML</li>
- <li>CSS/SCSS</li>
- <li>JavaScript</li>
-</ul>
+## Multiplication-Chart 九九乘法表 - 001 <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-001.html" target="_blank">Demo 網頁連結</a>
+![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover001.jpg)
 
 ## Clock 時鐘 - 002 <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-002.html" target="_blank">Demo | 網頁連結</a>
 ![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover002.jpg)
 
-### Language
-<ul>
- <li>HTML</li>
- <li>CSS/SCSS</li>
- <li>JavaScript</li>
-</ul>
-
 ## Clock 計算機 - 003 <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-003.html" target="_blank">Demo | 網頁連結</a>
 ![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover003.jpg)
 
-### Language
-<ul>
- <li>HTML</li>
- <li>CSS/SCSS</li>
- <li>JavaScript</li>
-</ul>
-
-## 備註
 
 > 1. 指令列表
 > - `gulp` - 執行開發模式(會開啟模擬瀏覽器並監聽相關檔案)
