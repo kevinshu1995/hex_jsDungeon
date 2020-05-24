@@ -1,7 +1,7 @@
 # *Hexschool-JS Dungeon JS 地下城*
 
 ## Multiplication-Chart 九九乘法表
-<a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-001.html">Demo | 九九乘法表 網頁連結</a>
+<a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-001.html" target="_blank">Demo | 九九乘法表 網頁連結</a>
 
 ![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover001.jpg)
 
@@ -14,7 +14,7 @@
 
 # Clock 時鐘 - 002
 
-<a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-002.html">Demo | 時鐘 網頁連結</a>
+<a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-002.html" target="_blank">Demo | 時鐘 網頁連結</a>
 
 ![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover002.jpg)
 
@@ -27,7 +27,7 @@
 
 # Clock 計算機 - 003
 
-<a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-003.html">Demo | 計算機 網頁連結</a>
+<a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-003.html" target="_blank">Demo | 計算機 網頁連結</a>
 
 ![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover003.jpg)
 
