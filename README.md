@@ -2,6 +2,7 @@
 
 ## Multiplication-Chart 九九乘法表
 <a href="https://kevinshu1995.github.io/hex-js-001-multiplication-chart/">Demo | 九九乘法表 網頁連結</a>
+
 ![demo](https://i.imgur.com/wUQFjFN.jpg)
 
 ### Language
@@ -11,13 +12,9 @@
  <li>JavaScript</li>
 </ul>
 
-### Framework
-N/A
-
 # Clock 時鐘 - 002
-*Hexschool-JS Dungeon JS 地下城*
 
-<a href="https://kevinshu1995.github.io/hex-js-002-clock/">Demo | 網頁連結</a>
+<a href="https://kevinshu1995.github.io/hex-js-002-clock/">Demo | 時鐘 網頁連結</a>
 
 ![demo](https://i.imgur.com/JM12EFZ.jpg)
 
@@ -28,8 +25,19 @@ N/A
  <li>JavaScript</li>
 </ul>
 
-## Framework
-N/A
+# Clock 計算機 - 003
+
+<a href="https://kevinshu1995.github.io/hex-js-002-clock/">Demo | 計算機 網頁連結</a>
+
+![demo](https://i.imgur.com/JM12EFZ.jpg)
+
+## Language
+<ul>
+ <li>HTML</li>
+ <li>CSS/SCSS</li>
+ <li>JavaScript</li>
+</ul>
+
 
 ## 指令列表
 - `gulp` - 執行開發模式(會開啟模擬瀏覽器並監聽相關檔案)

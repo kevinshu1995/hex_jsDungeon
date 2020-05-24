@@ -1,0 +1,37 @@
+extend ./modules/layout.pug
+
+block append head
+    title JSDungeon | JS地下城 | 003 | 計算機 | Calculator
+    link(rel="stylesheet" href="assets/style/style003.css")
+
+block content
+    .wrap
+        .title.clearfix
+            h3.currSent
+            h2.currNum
+        ul.btnsWrap
+            li.btn 7
+            li.btn 8
+            li.btn 9
+            li.btn.l-bgcolor-pri ÷
+            li.btn 4
+            li.btn 5
+            li.btn 6
+            li.btn.l-bgcolor-pri ×
+            li.btn 1
+            li.btn 2
+            li.btn 3
+            li.btn.l-bgcolor-pri +
+            li.btn 0
+            li.btn 00
+            li.btn .
+            li.btn.l-bgcolor-pri −
+            li.btn.l-color-pri AC
+            li.btn.l-color-pri
+                i.fas.fa-backspace
+                span.l-fz0.clearfix delete
+            li.btn.l-btn--w2 =
+
+block footer
+    include ./modules/footer
+    script(src='assets/js/js003.js')
