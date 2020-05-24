@@ -1,7 +1,7 @@
 # *Hexschool-JS Dungeon JS 地下城*
 ###### javascript, JSDungeon, HexSchool
 
-## Multiplication-Chart 九九乘法表
+## Multiplication-Chart 九九乘法表 <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-001.html" target="_blank">Demo | 九九乘法表 網頁連結</a>
 <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-001.html" target="_blank">Demo | 九九乘法表 網頁連結</a>
 
 ![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover001.jpg)
