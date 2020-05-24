@@ -1,4 +1,5 @@
 # *Hexschool-JS Dungeon JS 地下城*
+###### javascript, JSDungeon, HexSchool
 
 ## Multiplication-Chart 九九乘法表
 <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-001.html" target="_blank">Demo | 九九乘法表 網頁連結</a>
@@ -12,26 +13,26 @@
  <li>JavaScript</li>
 </ul>
 
-# Clock 時鐘 - 002
+## Clock 時鐘 - 002
 
 <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-002.html" target="_blank">Demo | 時鐘 網頁連結</a>
 
 ![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover002.jpg)
 
-## Language
+### Language
 <ul>
  <li>HTML</li>
  <li>CSS/SCSS</li>
  <li>JavaScript</li>
 </ul>
 
-# Clock 計算機 - 003
+## Clock 計算機 - 003
 
 <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-003.html" target="_blank">Demo | 計算機 網頁連結</a>
 
 ![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover003.jpg)
 
-## Language
+### Language
 <ul>
  <li>HTML</li>
  <li>CSS/SCSS</li>
