@@ -1,17 +1,25 @@
 @charset "UTF-8";
 body {
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
+  position: relative;
+}
+
+.footer {
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
 }
 
 .wrap {
   max-width: 1110px;
   width: 100%;
-  margin: 32px auto;
+  margin: 0 auto;
+  padding: 64px 0;
   display: grid;
   grid-template-columns: repeat(3, 350px);
   grid-template-rows: repeat(3, 366px);
   gap: 40px 30px;
-  font-family: 'Roboto','微軟正黑體';
+  font-family: "Roboto", "微軟正黑體";
 }
 
 @media (max-width: 1110px) {
@@ -30,7 +38,7 @@ body {
 
 .l-card-title {
   text-align: center;
-  color: #2EB738;
+  color: #2eb738;
   position: relative;
   top: 0;
   bottom: 0;
@@ -38,12 +46,12 @@ body {
 }
 
 .l-card-title::before, .l-card-title::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: #2EB738;
+  background-color: #2eb738;
 }
 
 .l-card-title::before {
@@ -59,14 +67,14 @@ body {
 }
 
 .l-card-title h1::before, .l-card-title h1::after {
-  content: 'x';
+  content: "x";
   font-size: 24px;
   font-weight: 700;
   position: absolute;
   top: -142px;
   width: 1px;
   height: 1px;
-  background-color: #2EB738;
+  background-color: #2eb738;
 }
 
 .l-card-title h1::before {
@@ -82,13 +90,13 @@ body {
 }
 
 .l-card-title h2::before, .l-card-title h2::after {
-  content: 'x';
+  content: "x";
   font-size: 24px;
   position: absolute;
   bottom: -117px;
   width: 1px;
   height: 1px;
-  background-color: #2EB738;
+  background-color: #2eb738;
 }
 
 .l-card-title h2::before {
@@ -102,10 +110,10 @@ body {
 .l-card {
   width: 100%;
   height: 366px;
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 100px 0px 30px 0px;
-  -webkit-box-shadow: 0px 3px 10px #D8D8D8;
-          box-shadow: 0px 3px 10px #D8D8D8;
+  -webkit-box-shadow: 0px 3px 10px #d8d8d8;
+          box-shadow: 0px 3px 10px #d8d8d8;
 }
 
 .l-card .l-card__wrap {
@@ -134,8 +142,8 @@ body {
   font-size: 24px;
   line-height: 33px;
   font-weight: 300;
-  color: #2EB738;
-  letter-spacing: .3em;
+  color: #2eb738;
+  letter-spacing: 0.3em;
   display: inline-block;
   position: relative;
   margin-top: 6px;
@@ -143,13 +151,13 @@ body {
 
 .l-card .l-card__wrap .l-card__title {
   height: auto;
-  padding-left: .1em;
+  padding-left: 0.1em;
   margin-top: 0;
   margin-right: 25px;
   font-size: 128px;
   line-height: 120px;
   font-weight: 900;
-  text-shadow: 4px 3px 0px #F0F0F0;
+  text-shadow: 4px 3px 0px #f0f0f0;
 }
 
 /*# sourceMappingURL=style001.css.map */

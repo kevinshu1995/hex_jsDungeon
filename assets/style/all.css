@@ -199,6 +199,10 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 /*# sourceMappingURL=all.css.map */
