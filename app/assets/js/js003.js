@@ -7,6 +7,14 @@ let Ans = '';
 //運算式
 let cal = [];
 
+//判斷如果有按過 "=" 則為ture，進入function清除計算欄後 checkEqual 變回 false
+let checkEqual = false;
+function clearCalculation(){
+	if(!checkEqual) return
+	currSent.innerHTML = ''
+	checkEqual = false
+}
+
 
 btns.addEventListener('click', count);
 
@@ -33,6 +41,8 @@ function count(e) {
 function calculate(valNum, valStr) {
 	//判斷點擊若為數字或'.'則繼續執行
 	if (!isNaN(valNum) || valStr == '.') {
+		// 判斷是否刪除運算式
+		clearCalculation();
 		if (Ans !== '') {
 			currSent.innerHTML = '';
 			Ans = '';
@@ -107,7 +117,8 @@ function calculate(valNum, valStr) {
 
 		Ans = eval(cal.join(''));
 		currNum.innerHTML = Ans;
-		Ans = ''
-		cal = []
+		Ans = '';
+		cal = [];
+		checkEqual = true;
 	}
 }
