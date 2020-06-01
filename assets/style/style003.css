@@ -121,6 +121,10 @@ body {
   background-color: #000307;
 }
 
+.currSent {
+  height: 1rem;
+}
+
 .clearfix {
   overflow: hidden;
 }
