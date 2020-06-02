@@ -1,5 +1,9 @@
 @import "reset";
-* {
+@import "helper/helper";
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 body {

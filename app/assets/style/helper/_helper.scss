@@ -1,0 +1,48 @@
+$dark-bg: #333;
+$dark-font: #fff;
+$light-bg: #fff;
+$light-font: #333;
+
+.bg-dark{
+    background-color: $dark-bg;
+    color: $dark-font;
+}
+.bg-light{
+    background-color: $light-bg;
+    color: $light-font;
+}
+
+.d-flex{
+    display: flex;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+//長度
+.w-50{
+    width: 50%;
+}
+.w-100{
+    width: 100%;
+}
+
+// 文字處理
+.align-left{
+    text-align: left;
+}
+.align-right{
+    text-align: right;
+}
+.align-center{
+    text-align: center;
+}
+.font-style-italy{
+    font-style: italic;
+}
+.font-weight-bold{
+    font-weight: bold;
+}
