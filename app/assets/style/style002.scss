@@ -64,7 +64,7 @@ body {
         margin: auto;
         &:after,
         &:before {
-            content: "";
+            content: '';
             height: 100%;
             width: 20px;
             background-color: $color-sec;
@@ -198,7 +198,7 @@ body {
         &:after,
         &:before {
             // content: '15';
-            font-family: "Segoe UI", sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             color: $color-white;
             font-size: 8px;
             height: 8px;
@@ -223,10 +223,10 @@ body {
             transform: rotateZ(60deg);
         }
         &:after {
-            content: "01";
+            content: '01';
         }
         &:before {
-            content: "13";
+            content: '13';
         }
     }
     .hour2 {
@@ -236,18 +236,18 @@ body {
             transform: rotateZ(30deg);
         }
         &:after {
-            content: "02";
+            content: '02';
         }
         &:before {
-            content: "14";
+            content: '14';
         }
     }
     .hour3 {
         &:after {
-            content: "03";
+            content: '03';
         }
         &:before {
-            content: "15";
+            content: '15';
         }
     }
     .hour4 {
@@ -257,10 +257,10 @@ body {
             transform: rotateZ(-30deg);
         }
         &:after {
-            content: "04";
+            content: '04';
         }
         &:before {
-            content: "16";
+            content: '16';
         }
     }
     .hour5 {
@@ -270,10 +270,10 @@ body {
             transform: rotateZ(-60deg);
         }
         &:after {
-            content: "05";
+            content: '05';
         }
         &:before {
-            content: "17";
+            content: '17';
         }
     }
     .hour6 {
@@ -283,10 +283,10 @@ body {
             transform: rotateZ(-90deg);
         }
         &:after {
-            content: "06";
+            content: '06';
         }
         &:before {
-            content: "18";
+            content: '18';
         }
     }
     .hour7 {
@@ -296,10 +296,10 @@ body {
             transform: rotateZ(-120deg);
         }
         &:after {
-            content: "07";
+            content: '07';
         }
         &:before {
-            content: "19";
+            content: '19';
         }
     }
     .hour8 {
@@ -309,10 +309,10 @@ body {
             transform: rotateZ(-150deg);
         }
         &:after {
-            content: "08";
+            content: '08';
         }
         &:before {
-            content: "20";
+            content: '20';
         }
     }
     .hour9 {
@@ -322,10 +322,10 @@ body {
             transform: rotateZ(-180deg);
         }
         &:after {
-            content: "09";
+            content: '09';
         }
         &:before {
-            content: "21";
+            content: '21';
         }
     }
     .hour10 {
@@ -335,10 +335,10 @@ body {
             transform: rotateZ(-210deg);
         }
         &:after {
-            content: "10";
+            content: '10';
         }
         &:before {
-            content: "22";
+            content: '22';
         }
     }
     .hour11 {
@@ -348,10 +348,10 @@ body {
             transform: rotateZ(-240deg);
         }
         &:after {
-            content: "11";
+            content: '11';
         }
         &:before {
-            content: "23";
+            content: '23';
         }
     }
     .hour12 {
@@ -361,17 +361,17 @@ body {
             transform: rotateZ(-270deg);
         }
         &:after {
-            content: "12";
+            content: '12';
         }
         &:before {
-            content: "24";
+            content: '24';
         }
     }
 }
 
 .clock__body__hand {
     &:before {
-        content: "";
+        content: '';
         position: absolute;
         width: 4px;
         height: 4px;
@@ -394,7 +394,7 @@ body {
         right: 0;
         // transform: rotate(45deg);
         &:before {
-            content: "";
+            content: '';
             position: absolute;
             top: 40px;
             left: 0;
@@ -415,7 +415,7 @@ body {
         right: 0;
         transform: rotate(45deg);
         &:before {
-            content: "";
+            content: '';
             position: absolute;
             top: 64px;
             left: 0;
@@ -426,7 +426,7 @@ body {
             z-index: 10;
         }
         &:after {
-            content: "";
+            content: '';
             position: absolute;
             top: 68px;
             left: 0;
@@ -448,7 +448,7 @@ body {
         right: 0;
         // transform: rotate(-126deg);
         &:before {
-            content: "";
+            content: '';
             position: absolute;
             top: 14px;
             right: 0;
@@ -460,7 +460,7 @@ body {
             z-index: 10;
         }
         &:after {
-            content: "";
+            content: '';
             position: absolute;
             top: 6px;
             right: 0;

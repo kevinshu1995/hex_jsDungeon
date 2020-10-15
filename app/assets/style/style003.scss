@@ -8,109 +8,109 @@ $height-cal: 525;
 $height-title: 109;
 
 body {
-  background-color: #eee;
+    background-color: #eee;
 }
 
 ::selection {
-  background: $color-thr;
-  color: $color-white;
+    background: $color-thr;
+    color: $color-white;
 }
 ::-moz-selection {
-  background: $color-thr;
-  color: $color-white;
+    background: $color-thr;
+    color: $color-white;
 }
 
 .wrap {
-  width: 350px;
-  height: #{$height-cal}px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  border-radius: 20px;
-  box-shadow: 0px 20px 40px #00000066;
-  font-family: Roboto, sans-serif;
-  background-color: $color-bg;
-  color: $color-white;
-  .title {
-    width: 100%;
-    height: #{$height-title}px;
-    text-align: right;
-    padding: 16px;
-    h3 {
-      color: $color-pri;
-      font-size: 16px;
-      line-height: 1em;
+    width: 350px;
+    height: #{$height-cal}px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0px 20px 40px #00000066;
+    font-family: Roboto, sans-serif;
+    background-color: $color-bg;
+    color: $color-white;
+    .title {
+        width: 100%;
+        height: #{$height-title}px;
+        text-align: right;
+        padding: 16px;
+        h3 {
+            color: $color-pri;
+            font-size: 16px;
+            line-height: 1em;
+        }
+        h2 {
+            font-size: 56px;
+            line-height: 1.2em;
+        }
     }
-    h2 {
-      font-size: 56px;
-      line-height: 1.2em;
+    .btnsWrap {
+        width: 100%;
+        height: #{$height-cal - $height-title}px;
+        padding: 16px 8px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        background-color: $color-sec;
+        border-radius: 0 0 20px 20px;
     }
-  }
-  .btnsWrap {
-    width: 100%;
-    height: #{$height-cal - $height-title}px;
-    padding: 16px 8px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background-color: $color-sec;
-    border-radius: 0 0 20px 20px;
-  }
-  .btn {
-    width: 72px;
-    height: 64px;
-    line-height: 64px;
-    margin-bottom: 16px;
-    text-align: center;
-    font-size: 28px;
-    border-radius: 16px;
-    cursor: pointer;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    &:hover {
-      background-color: darken($color-sec, 5%);
+    .btn {
+        width: 72px;
+        height: 64px;
+        line-height: 64px;
+        margin-bottom: 16px;
+        text-align: center;
+        font-size: 28px;
+        border-radius: 16px;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        &:hover {
+            background-color: darken($color-sec, 5%);
+        }
+        &:active {
+            background-color: darken($color-sec, 10%);
+        }
     }
-    &:active {
-      background-color: darken($color-sec, 10%);
+    .l-btn--w2 {
+        width: 159px;
+        background: linear-gradient(90deg, $color-pri, $color-thr);
+        padding: 0 1em;
+        text-align: right;
+        &:hover {
+            background: linear-gradient(45deg, $color-pri, $color-thr);
+        }
+        &:active {
+            background: $color-pri;
+        }
     }
-  }
-  .l-btn--w2 {
-    width: 159px;
-    background: linear-gradient(90deg, $color-pri, $color-thr);
-    padding: 0 1em;
-    text-align: right;
-    &:hover {
-      background: linear-gradient(45deg, $color-pri, $color-thr);
-    }
-    &:active {
-      background: $color-pri;
-    }
-  }
 }
 
 .l-color-pri {
-  color: $color-pri;
+    color: $color-pri;
 }
 
 .l-bgcolor-pri {
-  background-color: $color-bg;
-  &:hover {
-    background-color: darken($color-bg, 10%);
-  }
+    background-color: $color-bg;
+    &:hover {
+        background-color: darken($color-bg, 10%);
+    }
 }
 
-.currSent{
-  height: 1rem;
+.currSent {
+    height: 1rem;
 }
 
 .clearfix {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .l-fz0 {
-  font-size: 0;
+    font-size: 0;
 }

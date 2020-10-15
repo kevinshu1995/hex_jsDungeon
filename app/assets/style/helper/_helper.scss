@@ -3,46 +3,92 @@ $dark-font: #fff;
 $light-bg: #fff;
 $light-font: #333;
 
-.bg-dark{
+.bg-dark {
     background-color: $dark-bg;
     color: $dark-font;
 }
-.bg-light{
+.bg-light {
     background-color: $light-bg;
     color: $light-font;
 }
 
-.d-flex{
+.d-flex {
     display: flex;
 }
-.justify-content-between{
+.justify-content-between {
     justify-content: space-between;
 }
-.flex-wrap{
+.flex-wrap {
     flex-wrap: wrap;
 }
 
 //長度
-.w-50{
+.w-50 {
     width: 50%;
 }
-.w-100{
+.w-100 {
     width: 100%;
 }
 
+//Height
+.min-vh-100 {
+    min-height: 100vh;
+}
+
 // 文字處理
-.align-left{
+.align-left {
     text-align: left;
 }
-.align-right{
+.align-right {
     text-align: right;
 }
-.align-center{
+.align-center {
     text-align: center;
 }
-.font-style-italy{
+.font-style-italy {
     font-style: italic;
 }
-.font-weight-bold{
+.font-weight-bold {
     font-weight: bold;
 }
+
+// * loop | margin, padding 只有上下左右 沒有 x,y,auto,全部
+// $max: 10;
+// $offset: 1;
+// $unit: "rem"; // Feel free to change the unit.
+// $num: 0;
+// $num-offset: 0.25;
+// @mixin list-loop($className, $styleName) {
+//     $i: 0;
+//     @while $i <= $max {
+//         #{$className + $i} {
+//             #{$styleName}: #{$num + $unit};
+//         }
+//         $i: $i + $offset;
+//         $num: $num + 0.25;
+//     }
+// }
+
+// @mixin spacing-loop($ta-space) {
+//     $names: (
+//         "padding": "p",
+//         "margin": "m",
+//     );
+//     $direction: (
+//         "t": "top",
+//         "r": "right",
+//         "b": "bottom",
+//         "l": "left",
+//     );
+//     @each $ori-name, $abbr-name in $names {
+//         @each $abbr-direction, $ori-direction in $direction {
+//             @include list-loop(
+//                 ".#{$abbr-name}#{$abbr-direction}-",
+//                 "#{$ori-name}-#{$ori-direction}"
+//             );
+//         }
+//     }
+// }
+
+// @include spacing-loop("padding");
+// @include spacing-loop("margin");

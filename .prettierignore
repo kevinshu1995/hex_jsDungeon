@@ -1,0 +1,9 @@
+# Ignore artifacts:
+.publish
+.eot
+.svg
+.woff
+.woff2
+.jpg
+.png
+.pug
