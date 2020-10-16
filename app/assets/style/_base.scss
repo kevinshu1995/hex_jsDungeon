@@ -1,61 +1,22 @@
 body {
-    position: relative;
+    @include position(relative, null, null, null, null);
     min-height: 100vh;
 }
 
-.nav_home a,
-.footer a,
-.nav__list a {
-    display: block;
-}
-
-.footer,
-.nav,
-.nav__list {
-    display: flex;
-}
-
-.nav_home a,
-.nav__list a,
-.footer h2,
-.footer a,
-.navbar {
-    text-decoration: none;
-    padding: 1em 1em;
-    font-size: 1rem;
-    color: #fff;
-}
-
-.nav_home a,
-.nav__list a,
-.footer a,
-.navbar {
-    cursor: pointer;
-    &:hover,
-    &:focus {
-        background-color: #333;
+a {
+    color: get-color(content);
+    &.text-primary {
+        color: get-color(primary);
+        &:hover {
+            color: lighten(get-color(primary), 15%);
+        }
+    }
+    &:hover {
+        color: get-color(primary);
     }
 }
 
-.nav,
-.footer {
-    background-color: #444;
-}
-
-.nav {
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-$footer-fixed: 48px;
-.footer-padding {
-    padding-top: $footer-fixed;
-}
-.footer {
-    text-align: center;
-    justify-content: center;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+.card-section {
+    padding-left: 0;
+    padding-right: 0;
 }

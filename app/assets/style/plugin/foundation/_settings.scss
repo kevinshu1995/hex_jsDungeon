@@ -69,23 +69,21 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-    primary: #ffc93c,
-    secondary: #767676,
-    success: #3adb76,
-    warning: #ffae00,
-    alert: #cc4b37,
-    pri-bg: #07689f,
-    pri-content: #a2d5f2,
-    pri-muted: #40a8c4,
-    pri-alert: #ffc93c,
+    primary: #ffad00,
+    secondary: #727d71,
+    success: #519872,
+    warning: #f63e02,
+    alert: #00a7e1,
+    bg: #0a0b0d,
+    content: #fff,
 );
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
-$body-background: get-color(pri-bg);
-$body-font-color: get-color(pri-content);
+$body-background: get-color(bg);
+$body-font-color: get-color(content);
 $body-font-family: $ct-body-font-family;
 $body-antialiased: true;
 $global-margin: 0.25rem;
@@ -203,7 +201,7 @@ $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
-$hr-border: 1px solid $medium-gray;
+$hr-border: 1px solid get-color(secondary);
 $hr-margin: rem-calc(20) auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
@@ -374,13 +372,13 @@ $callout-link-tint: 30%;
 // 14. Card
 // --------
 
-$card-background: $white;
+$card-background: transparent;
 $card-font-color: $body-font-color;
 $card-divider-background: $light-gray;
-$card-border: 1px solid $light-gray;
+$card-border: 0;
 $card-shadow: none;
 $card-border-radius: $global-radius;
-$card-padding: $global-padding;
+$card-padding: $ct-card-padding;
 $card-margin-bottom: $global-margin;
 
 // 15. Close Button
@@ -831,9 +829,9 @@ $tab-content-padding: 1rem;
 // 52. Thumbnail
 // -------------
 
-$thumbnail-border: 4px solid $white;
+$thumbnail-border: 0;
 $thumbnail-margin-bottom: $global-margin;
-$thumbnail-shadow: 0 0 0 1px rgba($black, 0.2);
+$thumbnail-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 $thumbnail-shadow-hover: 0 0 6px 1px rgba($primary-color, 0.5);
 $thumbnail-transition: box-shadow 200ms ease-out;
 $thumbnail-radius: $global-radius;

@@ -33,16 +33,19 @@ let envOptions = {
         src: [
             `${srcPath}/assets/style/**/*.scss`,
             `${srcPath}/assets/style/**/*.sass`,
+            `${nodePath}/animate.css/animate.css`,
         ],
         outputStyle: 'expanded',
         includePaths: [
             `${nodePath}/@fortawesome/fontawesome-free/scss/`,
+            `${nodePath}/foundation-sites/scss`,
             `${nodePath}/foundation-sites/scss`,
         ],
         tailwindcss: {
             includePaths: [
                 `${nodePath}/tailwindcss/base.css`,
                 `${nodePath}/tailwindcss/components.css`,
+                `${nodePath}/tailwindcss/utilities.css`,
                 `${nodePath}/tailwindcss/utilities.css`,
             ],
             outputpath: `${distPath}/assets/style/tailwindcss`,
@@ -58,6 +61,7 @@ let envOptions = {
         src: [
             `${nodePath}/jquery/dist/**/jquery.min.js`,
             `${nodePath}/foundation-sites/dist/js/foundation.min.js`,
+            `${nodePath}/popmotion/dist/popmotion.min.js`,
         ],
         concat: 'vendors.js',
         path: `${distPath}/assets/js`,

@@ -1,0 +1,17 @@
+:root {
+    --animate-duration: 0.5s;
+    --animate-delay: 0.5s;
+}
+.hover-pulse:hover {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    --animate-duration: 0.5s;
+}
+
+.index {
+    .animate__fadeInUp {
+        --animate-duration: 1s;
+    }
+}

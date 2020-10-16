@@ -33,7 +33,8 @@
 > 2. ~~不編譯 vendor 與 concat js~~
 >
 > -   1. CSS 框架 : 使用 foundation-sites ^6.6.3
-> -   2. 各別依檔案引入.js 檔
+> -   2. 各別練習頁面依檔案引入.js 檔
+> -   3. vendor.js 包含 jquery.min.js, foundation.min.js, popmotion.min.js
 
 > 3. 初始設定
 >

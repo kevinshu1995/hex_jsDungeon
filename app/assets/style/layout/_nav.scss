@@ -1,0 +1,9 @@
+.logo {
+    @include font-size(5);
+}
+
+.main__menu {
+    .top-bar-right {
+        @include font-size(1);
+    }
+}

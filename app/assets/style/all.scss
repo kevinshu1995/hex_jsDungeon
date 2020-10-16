@@ -1,6 +1,8 @@
 // * Font face
 @import 'plugin/texts-fonts/notoSerif';
 
+@import 'animate.css';
+
 // * Fontawesome
 @import 'plugin/fontawesome/import';
 
@@ -12,4 +14,11 @@
 
 @import 'helper/helper';
 
+@import 'animate';
+
 @import 'base';
+
+@import 'layout/footer';
+@import 'layout/nav';
+
+@import 'layout/index';

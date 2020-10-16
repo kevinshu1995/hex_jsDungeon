@@ -52,6 +52,32 @@ $light-font: #333;
     font-weight: bold;
 }
 
+.mark-primary {
+    color: get-color(primary);
+}
+
+//font-size
+$custom-font-size-base: 1rem;
+$font-size-range: 10;
+@mixin font-size($size) {
+    .ct-font-#{$size} {
+        font-size: $custom-font-size-base * 0.5 + $size * 0.25;
+    }
+}
+@for $i from 1 through $font-size-range {
+    @include font-size($i);
+    //.ct-font-1 = 12px / 0.75rem
+    //.ct-font-2 = 16px / 1rem
+    //.ct-font-3 = 20px / 1.25rem
+    //.ct-font-4 = 24px / 1.5rem
+    //.ct-font-5 = 28px / 1.75rem
+    //.ct-font-6 = 32px / 2rem
+    //.ct-font-7 = 36px / 2.25rem
+    //.ct-font-8 = 40px / 2.5rem
+    //.ct-font-9 = 44px / 2.75rem
+    //.ct-font-10 = 48px / 3rem
+}
+
 // * loop | margin, padding 只有上下左右 沒有 x,y,auto,全部
 // $max: 10;
 // $offset: 1;
