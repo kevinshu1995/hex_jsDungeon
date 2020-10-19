@@ -18,7 +18,12 @@
 
 @import 'base';
 
+// * Components
+@import 'components/hoverCard';
+
+// * Layout - 
 @import 'layout/footer';
 @import 'layout/nav';
 
+// * Layout - index
 @import 'layout/index';

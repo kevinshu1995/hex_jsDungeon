@@ -1,5 +1,5 @@
-let navList = document.getElementById('js-navList')
-let navBar = document.getElementById('js-navBar')
+const navList = document.getElementById('js-navList')
+const navBar = document.getElementById('js-navBar')
 
 // event
 // showNavByWidth();
@@ -26,4 +26,20 @@ function showNavByClick() {
     } else {
         navList.setAttribute('style', 'display: block; width: 100%;')
     }
+}
+
+
+// * animate
+const hover_card_enter = $('.hover--card--enter');
+$(function(){
+    hover_card_enter.on({
+        mouseleave: function () {
+            animate_hoverCard_slide($(this))
+        }
+    })
+})
+
+
+function animate_hoverCard_slide(vm){
+    vm.removeClass('hover--card--end').addClass('hover--card--end')
 }

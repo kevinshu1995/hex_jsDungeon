@@ -1,6 +1,7 @@
 body {
     @include position(relative, null, null, null, null);
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 a {

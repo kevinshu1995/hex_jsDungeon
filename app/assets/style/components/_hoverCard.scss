@@ -1,0 +1,23 @@
+.hover--card{
+    &--enter,
+    &--end{
+        @include position(relative, null, null, null, null);
+        overflow: hidden;
+    }
+    &--enter:hover::after,
+    &--end::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        opacity: 0.35;
+        background-color: get-color(bg);
+        @include position(absolute, 0, 0, null, null);
+        @include animated;
+    }
+    &--enter:hover::after{
+        @include animate__slideInUp;
+    }
+    &--end::after{
+        @include animate__slideOutDown;
+    }
+}
