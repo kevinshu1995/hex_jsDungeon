@@ -31,12 +31,13 @@
 >     <br>
 
 > 2. ~~不編譯 vendor 與 concat js~~
+> 3. 各種~~插劍~~ 插件
 >
-> -   1. CSS 框架 : 使用 foundation-sites ^6.6.3
-> -   2. 各別練習頁面依檔案引入.js 檔
-> -   3. vendor.js 包含 jquery.min.js, foundation.min.js, popmotion.min.js
+>     1. CSS 框架 : 使用 foundation-sites ^6.6.3
+>     2. 各別練習頁面依檔案引入.js 檔
+>     3. vendor.js 包含 jquery.min.js, foundation.min.js, popmotion.min.js
 
 > 3. 初始設定
 >
-> -   1. 在終端機安裝 gulp，繼續輸入指令 npm i gulp@4 -g 按 Enter 安裝，輸入 gulp -v 查詢是否有回報版本號。
-> -   2. 輸入指令 npm install 安裝插件
+>     1. 在終端機安裝 gulp，繼續輸入指令 npm i gulp@4 -g 按 Enter 安裝，輸入 gulp -v 查詢是否有回報版本號。
+>     2. 輸入指令 npm install 安裝插件
