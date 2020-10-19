@@ -6,7 +6,7 @@
 
 > Language
 >
-> -   HTML/PUG (Barf!
+> -   HTML/PUG (Bark!
 > -   CSS/SCSS
 > -   JavaScript
 
