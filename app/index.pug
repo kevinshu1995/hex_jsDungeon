@@ -5,7 +5,7 @@ block append head
 
 block content
 	//- TODO background image
-	.index
+	.index.margin-bottom-16(style="background-image: url(assets/images/index_cover.jpg);background-size:cover;background-position:bottom;background-repeat:no-repeat;")
 		section.grid-container
 			.grid-x.grid-padding-x.align-center-middle.text-center(style="min-height:70vh")
 				.cell
@@ -24,7 +24,7 @@ block content
 										a(href="mailto:kevinshu1995@gmail.com") 聯絡我
 										| 。
 							.margin-bottom-8.animate__animated.animate__fadeInUp.animate__delay-2s
-								h2.index__content.index__title.ct-font-3 使用技術
+								h2.index__title.ct-font-3 使用技術
 								ul.menu.simple.align-center.ct-font-1
 									li
 										span.label--rounded.secondary.margin-bottom-2 Gulp
@@ -60,6 +60,7 @@ block content
 								a.animate__animated.hover-pulse(href="https://github.com/kevinshu1995")
 									i.fab.fa-github.margin-right-1
 									span kevinshu1995
+	.index
 		section.grid-container
 			.grid-x.grid-margin-x.small-up-3.medium-up-4.align-center-middle
 				.cell
