@@ -20,6 +20,7 @@ body {
     background-color: $color-pri;
     box-shadow: 0 0 10px darken($color-bg, 5%);
     z-index: 1;
+    transform: translateY(-10%);
     .clock__body {
         width: 310px;
         height: 310px;

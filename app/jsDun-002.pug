@@ -1,6 +1,7 @@
 extend ./modules/layout.pug
 
 block append head
+	- var needreset = true
 	title JSDungeon | JS地下城 | 002 | 時鐘 | Clock
 	link(rel="stylesheet" href="assets/style/pageStyle/style002.css")
 
@@ -55,6 +56,7 @@ block content
 				#hourHand.hourHand
 				#minHand.minHand
 				#secHand.secondHand
+	.vh-80
 block footer
 	include ./modules/footer
 	script(src='assets/js/js002.js')

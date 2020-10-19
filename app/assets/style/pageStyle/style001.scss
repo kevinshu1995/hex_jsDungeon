@@ -1,5 +1,9 @@
 $color-pri: #2eb738;
 
+li{
+    list-style: none;
+}
+
 @mixin medium {
     @media (max-width: 1110px) {
         @content;

@@ -12,6 +12,10 @@ $light-font: #333;
     color: $light-font;
 }
 
+.bg-foundation-dark{
+    background-color: get-color(bg);
+}
+
 .d-flex {
     display: flex;
 }
@@ -33,6 +37,18 @@ $light-font: #333;
 //Height
 .min-vh-100 {
     min-height: 100vh;
+}
+$ct-vh-sizing: (
+    "min-vh": "min-height",
+    "vh": "height",
+);
+@each $class-name, $attr in $ct-vh-sizing {
+    $size: 10;
+    @for $i from 1 through $size {
+        .#{$class-name}-#{$i*10} {
+            #{$attr}: #{$i*10}vh;
+        }
+    }
 }
 
 // 文字處理

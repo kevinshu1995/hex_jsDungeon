@@ -7,6 +7,16 @@ $color-white: #ffffff;
 $height-cal: 525;
 $height-title: 109;
 
+.wrap{
+    ul,
+    ol,
+    li{
+        list-style: none!important;
+        padding-left: 0!important;
+        margin-left: 0!important;
+    }
+}
+
 body {
     background-color: #eee;
 }
@@ -34,6 +44,7 @@ body {
     font-family: Roboto, sans-serif;
     background-color: $color-bg;
     color: $color-white;
+    transform: translateY(-10%);
     .title {
         width: 100%;
         height: #{$height-title}px;
