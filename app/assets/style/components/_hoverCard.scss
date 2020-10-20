@@ -1,4 +1,46 @@
 .hover--card{
+    // Slide animate
+    $card-transition: 0.3s;
+    $card-animate-bg: white; // get-color()
+    $card-animate-text: primary; // get-color()
+    $card-img-zindex: 99;
+    $card-aniamte-zindex: 5;
+    $card-text-zindex: 9;
+    &--enter{
+        .card-section{
+            position: relative;
+            padding-left: 0!important;
+            padding-right: 0!important;
+            transition: $card-transition;
+            z-index: $card-text-zindex;
+            &.reverse{
+                @include animated;
+                @include animate__fadeIn;
+            }
+        }
+        img{
+            position: relative;
+            z-index: $card-img-zindex;
+        }
+        &:hover .card-section{
+            padding-left: 1rem!important;
+            padding-right: 1rem!important;
+            transition: $card-transition;
+            @include animated;
+            @include animate__fadeIn;
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p,
+            span,
+            div{
+                color: get-color($card-animate-text)!important;
+            }
+        }
+    }
     &--enter,
     &--end{
         @include position(relative, null, null, null, null);
@@ -9,15 +51,26 @@
         content: '';
         width: 100%;
         height: 100%;
-        opacity: 0.35;
-        background-color: get-color(bg);
+        opacity: 0.05;
+        z-index: $card-aniamte-zindex;
+        background-color: get-color($card-animate-bg);
         @include position(absolute, 0, 0, null, null);
         @include animated;
+        @include animate__duration($card-transition);
     }
     &--enter:hover::after{
         @include animate__slideInUp;
     }
     &--end::after{
         @include animate__slideOutDown;
+    }
+    // Filter
+    &--filter{
+        img{
+            filter: grayscale(80%) blur(1px);
+        }
+        &:hover img{
+            filter: grayscale(0) blur(0);
+        }
     }
 }

@@ -1,6 +1,8 @@
+$root-animate-duration: 0.5s;
+$root-animate-delay: 0.5s;
 :root {
-    --animate-duration: 0.5s;
-    --animate-delay: 0.5s;
+    --animate-duration: $root-animate-duration;
+    --animate-delay: $root-animate-delay;
 }
 
 @mixin animated {
@@ -25,6 +27,34 @@
 @mixin animate__slideOutDown {
     -webkit-animation-name: slideOutDown;
     animation-name: slideOutDown;
+}
+
+@mixin animate__fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+@mixin animate__zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+}
+
+@mixin animate__zoomOut {
+    -webkit-animation-name: zoomOut;
+    animation-name: zoomOut;
+}
+
+@mixin animate__flipInX {
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+}
+
+// Options
+@mixin animate__duration($time) {
+    -webkit-animation-duration: $time;
+    animation-duration: $time;
 }
 
 .hover-pulse:hover {
