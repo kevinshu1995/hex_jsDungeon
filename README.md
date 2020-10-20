@@ -44,12 +44,12 @@
 
 
 ###### gulp-gh-pages 可能會有的問題
-- 問題
-`[14:43:06] TypeError: Cannot read property '0' of null`
-- 解決
-```
-cd node_modules/gulp-gh-pages/
-npm install --save gift@0.10.2 // 安裝指定版本
-cd ../../ // 移動返回到根目錄
-gulp deploy // 重新執行 deploy
-```
+> - 問題
+> `[14:43:06] TypeError: Cannot read property '0' of null`
+> - 解決
+> ```
+> cd node_modules/gulp-gh-pages/
+> npm install --save gift@0.10.2 // 安裝指定版本
+> cd ../../ // 移動返回到根目錄
+> gulp deploy // 重新執行 deploy
+> ```
