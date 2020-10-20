@@ -29,7 +29,7 @@ function count(e) {
   var valStr = e.target.textContent;
   calculate(valNum, valStr); //判斷點擊刪除鍵
 
-  if (e.target.textContent == "delete" || e.target.nodeName == 'I') {
+  if (e.target.textContent == 'delete' || e.target.nodeName == 'I') {
     var ary = numStr.split('');
     ary.splice(-1, 1);
     numStr = ary.join('');
@@ -50,10 +50,10 @@ function calculate(valNum, valStr) {
 
 
     var findComma = numStr.split('').find(function (item) {
-      return item === ".";
+      return item === '.';
     }); //若vlaStr已經包含'.'且按的是'.'，則不繼續執行
 
-    if (findComma === "." && valStr === '.') return; //避免000.00的狀況發生
+    if (findComma === '.' && valStr === '.') return; //避免000.00的狀況發生
 
     if (Number(valStr) === 0 && numStr == 0 && findComma !== '.') {
       numStr = '0';
@@ -109,19 +109,19 @@ function calculate(valNum, valStr) {
 
     cal.forEach(function (item, index) {
       switch (item) {
-        case "×":
+        case '×':
           cal[index] = '*';
           break;
 
-        case "÷":
+        case '÷':
           cal[index] = '/';
           break;
 
-        case "+":
+        case '+':
           cal[index] = '+';
           break;
 
-        case "−":
+        case '−':
           cal[index] = '-';
           break;
       }

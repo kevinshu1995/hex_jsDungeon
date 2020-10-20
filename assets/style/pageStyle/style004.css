@@ -1,0 +1,35 @@
+.wrap {
+    margin: auto;
+    max-width: 535px;
+}
+
+.page-title {
+    color: #333;
+    font-size: 4.5rem;
+    border-top: 10px solid #333;
+    border-bottom: 10px solid #333;
+}
+
+.card {
+    width: 100%;
+}
+
+.card > li {
+    padding: 1rem 2.5rem;
+    border: 1px solid #333;
+    margin-bottom: -1px;
+}
+
+.card .location {
+    font-size: 2.25rem;
+}
+
+.card .date {
+    font-size: 1rem;
+}
+
+.card .time {
+    font-size: 4.5rem;
+}
+
+/*# sourceMappingURL=style004.css.map */

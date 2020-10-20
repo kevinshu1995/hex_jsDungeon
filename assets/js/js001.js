@@ -3,11 +3,14 @@
 var mainList = document.getElementById('mainList');
 var chartNum = 8;
 var strInner = '';
-updateList();
+
+window.onload = function () {
+  updateList();
+};
 
 function updateList() {
   //title
-  var strOut = "<li class=\"l-card-title\">\n    \t<h1>\u4E5D\u4E5D\u4E58\u6CD5\u8868</h1>\n    \t<h2>MULTIPLICATION CHART</h2>\n  \t</li>";
+  var strOut = "\n    <li class=\"l-card-title\">\n    \t<h1>\u4E5D\u4E5D\u4E58\u6CD5\u8868</h1>\n    \t<h2>MULTIPLICATION CHART</h2>\n    </li>\n    ";
 
   for (var i = 0; i < chartNum; i++) {
     innerList(i + 2);
@@ -15,7 +18,7 @@ function updateList() {
     strInner = '';
   }
 
-  mainList.innerHTML = strOut;
+  mainList.innerHTML = strOut || '';
 }
 
 function innerList(num) {

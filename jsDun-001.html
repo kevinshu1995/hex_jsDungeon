@@ -3,22 +3,36 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,900&amp;display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/style/all.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
     <title>JSDungeon | JS地下城 | 001 | 九九乘法表 | MULTIPLICATION CHART</title>
-    <link rel="stylesheet" href="assets/style/style001.css"/>
+    <link rel="stylesheet" href="assets/style/pageStyle/style001.css"/>
   </head>
   <body>
-    <nav class="nav">
-      <h1>JS-地下城</h1>
-      <ul class="navbar" id="js-navBar">展開</ul>
-      <ul class="nav__list" id="js-navList">
-        <li><a href="jsDun-001.html">001-九九乘法表</a></li>
-        <li><a href="jsDun-002.html">002-時鐘</a></li>
-        <li><a href="jsDun-003.html">003-計算機</a></li>
-      </ul>
-    </nav>
+    <div class="navwrap">
+      <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+        <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+      </div>
+      <div class="top-bar main__menu bg-foundation-dark" id="responsive-menu">
+        <div class="top-bar-left">
+          <ul class="menu">
+            <li class="animate__animated animate__fadeInTopLeft"><a class="font-bold logo text-primary" href="index.html">JS Dungeon</a></li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <li class="animate__animated animate__fadeInTopRight"><a href="jsDun-001.html">001-九九乘法表</a></li>
+            <li class="animate__animated animate__fadeInTopRight animate__delay-1s"><a href="jsDun-002.html">002-時鐘</a></li>
+            <li class="animate__animated animate__fadeInTopRight animate__delay-2s"><a href="jsDun-003.html">003-計算機</a></li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu animate__animated animate__fadeInTopRight">
+            <li><a target="_blank" href="https://github.com/kevinshu1995"><i class="fab fa-github"></i></a></li>
+            <li><a target="_blank" href="mailto:kevinshu1995@gmail.com"><i class="fas fa-paper-plane"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <ul class="wrap" id="mainList">
       <li class="l-card-title">
         <h1>九九乘法表</h1>
@@ -39,9 +53,16 @@
         </ul>
       </li>
     </ul>
-    <footer class="footer">
-      <h2>僅做學習用 - 設計稿來源為六角學院 | </h2><a href="https://github.com/kevinshu1995"> <i class="fab fa-github"></i> kevinshu1995</a>
+    <div class="footer-padding"></div>
+    <footer class="footer padding-vertical-12 text-center bg-foundation-dark">
+      <ul class="menu vertical align-center">
+        <li>
+          <h6 class="ct-font-1 margin-bottom-0"><span>設計稿來源為六角學院</span></h6>
+        </li>
+        <li class="ct-font-1"><a class="animate__animated hover-pulse" href="https://github.com/kevinshu1995"> <i class="fab fa-github margin-right-1"></i><span>kevinshu1995</span></a><a class="animate__animated hover-pulse" href="mailto:kevinshu1995@gmail.com"> <i class="fas fa-paper-plane margin-right-1"></i><span>Email Me</span></a></li>
+      </ul>
     </footer>
+    <script src="assets/js/vendors.js"></script>
     <script src="assets/js/all.js"></script>
     <script src="assets/js/js001.js"></script>
   </body>
