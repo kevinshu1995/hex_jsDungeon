@@ -41,3 +41,15 @@
 >
 >     1. 在終端機安裝 gulp，繼續輸入指令 npm i gulp@4 -g 按 Enter 安裝，輸入 gulp -v 查詢是否有回報版本號。
 >     2. 輸入指令 npm install 安裝插件
+
+
+###### gulp-gh-pages 可能會有的問題
+- 問題
+`[14:43:06] TypeError: Cannot read property '0' of null`
+- 解決
+```
+cd node_modules/gulp-gh-pages/
+npm install --save gift@0.10.2 // 安裝指定版本
+cd ../../ // 移動返回到根目錄
+gulp deploy // 重新執行 deploy
+```
