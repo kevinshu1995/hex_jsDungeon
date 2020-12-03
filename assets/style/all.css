@@ -21144,10 +21144,6 @@ ol.list-upper-roman {
     width: 100%;
 }
 
-.min-vh-100 {
-    min-height: 100vh;
-}
-
 .min-vh-10 {
     min-height: 10vh;
 }
@@ -21246,6 +21242,10 @@ ol.list-upper-roman {
 
 .font-weight-bold {
     font-weight: bold;
+}
+
+.text-dark {
+    color: #0a0b0d;
 }
 
 .mark-primary {
