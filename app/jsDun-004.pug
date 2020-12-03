@@ -2,43 +2,46 @@ extend ./modules/layout.pug
 
 block append head
 	- var needreset = true
+	- var nav_darkbg = true
 	title JSDungeon | JS地下城 | 004 | 時區 | world-clock
 	link(rel="stylesheet" href="assets/style/pageStyle/style004.css")
 
 block content
+	.wrap.margin-bottom-4.margin-top-4
+		h2.font-weight-bold.align-center.page-title.margin-bottom-4 WORLD CLOCK
+		ul.card.font-weight-bold.margin-left-0.margin-bottom-0
+			li.bg-dark.d-flex.justify-content-between
+				.card-left.w-50.flex-dir-column.align-center-middle
+					h3.location.w-100.margin-bottom-0 NEW YORK
+					h4.date.w-100.font-style-italy.margin-bottom-0 27 JAN. 2019
+				.card-right.w-50.align-right.flex-child-shrink
+					h6.time.margin-bottom-0 02:46
+			li.bg-light.d-flex.justify-content-between
+				.card-left.w-50.flex-dir-column.align-center-middle
+					h3.location.w-100.margin-bottom-0 LONDON
+					h4.date.w-100.font-style-italy.margin-bottom-0 27 JAN. 2019
+				.card-right.w-50.align-right.flex-child-shrink
+					h6.time.margin-bottom-0 02:46
+			li.bg-light.d-flex.justify-content-between
+				.card-left.w-50.flex-dir-column.align-center-middle
+					h3.location.w-100.margin-bottom-0 BANGKOK
+					h4.date.w-100.font-style-italy.margin-bottom-0 27 JAN. 2019
+				.card-right.w-50.align-right.flex-child-shrink
+					h6.time.margin-bottom-0 02:46
+			li.bg-light.d-flex.justify-content-between
+				.card-left.w-50.flex-dir-column.align-center-middle
+					h3.location.w-100.margin-bottom-0 TAIWAN
+					h4.date.w-100.font-style-italy.margin-bottom-0 27 JAN. 2019
+				.card-right.w-50.align-right.flex-child-shrink
+					h6.time.margin-bottom-0 02:46
+			li.bg-dark.d-flex.justify-content-between
+				.card-left.w-50.flex-dir-column.align-center-middle
+					h3.location.w-100.margin-bottom-0 SYDNEY
+					h4.date.w-100.font-style-italy.margin-bottom-0 27 JAN. 2019
+				.card-right.w-50.align-right.flex-child-shrink
+					h6.time.margin-bottom-0 02:46
 	.wrap
-		h2.font-weight-bold.align-center.page-title WORLD CLOCK
-		ul.card.font-weight-bold
-			li.bg-dark.d-flex.justify-content-between
-				.card-left.d-flex.flex-wrap.w-50.align-left.justify-content-between
-					.location.w-100 NEW YORK
-					.date.w-100.font-style-italy 27 JAN. 2019
-				.card-right.w-50.align-right
-					.time 02:46
-			li.bg-light.d-flex.justify-content-between
-				.card-left.d-flex.flex-wrap.w-50.align-left.justify-content-between
-					.location.w-100 NEW YORK
-					.date.w-100.font-style-italy 27 JAN. 2019
-				.card-right.w-50.align-right
-					.time 02:46
-			li.bg-light.d-flex.justify-content-between
-				.card-left.d-flex.flex-wrap.w-50.align-left.justify-content-between
-					.location.w-100 NEW YORK
-					.date.w-100.font-style-italy 27 JAN. 2019
-				.card-right.w-50.align-right
-					.time 02:46
-			li.bg-light.d-flex.justify-content-between
-				.card-left.d-flex.flex-wrap.w-50.align-left.justify-content-between
-					.location.w-100 NEW YORK
-					.date.w-100.font-style-italy 27 JAN. 2019
-				.card-right.w-50.align-right
-					.time 02:46
-			li.bg-dark.d-flex.justify-content-between
-				.card-left.d-flex.flex-wrap.w-50.align-left.justify-content-between
-					.location.w-100 NEW YORK
-					.date.w-100.font-style-italy 27 JAN. 2019
-				.card-right.w-50.align-right
-					.time 02:46
+		h6.text-dark 本頁面在 IE, Opera Mini, UC Browser for Android, QQ Browser, KaiOS Browser 無法正確顯示時間，請改用其他瀏覽器
 block footer
 	include ./modules/footer
 	script(src='assets/js/js004.js')

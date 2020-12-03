@@ -35,9 +35,6 @@ $light-font: #333;
 }
 
 //Height
-.min-vh-100 {
-    min-height: 100vh;
-}
 $ct-vh-sizing: (
     "min-vh": "min-height",
     "vh": "height",
@@ -68,6 +65,9 @@ $ct-vh-sizing: (
     font-weight: bold;
 }
 
+.text-dark{
+    color: get-color(bg);
+}
 .mark-primary {
     color: get-color(primary);
 }

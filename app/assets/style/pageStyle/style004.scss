@@ -1,6 +1,9 @@
+body{
+    background-color: #eee;
+}
 .wrap {
     margin: auto;
-    max-width: 535px;
+    max-width: 600px;
 }
 .page-title {
     $color: #333;
@@ -18,7 +21,7 @@
         border: 1px solid $card-border-color;
         margin-bottom: -1px;
     }
-    .location {
+    h3.location {
         font-size: $card-base-font * 2.25;
     }
     .date {
@@ -26,5 +29,9 @@
     }
     .time {
         font-size: $card-base-font * 4.5;
+        line-height: 1em;
+    }
+    h1,h2,h3,h4,h5,h6{
+        font-weight: bold;
     }
 }
