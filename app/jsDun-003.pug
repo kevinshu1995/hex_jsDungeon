@@ -13,27 +13,27 @@ block content
 			h3.currSent
 			h2.currNum
 		ul.btnsWrap
-			li.btn 7
-			li.btn 8
-			li.btn 9
-			li.btn.l-bgcolor-pri ÷
-			li.btn 4
-			li.btn 5
-			li.btn 6
-			li.btn.l-bgcolor-pri ×
-			li.btn 1
-			li.btn 2
-			li.btn 3
-			li.btn.l-bgcolor-pri +
-			li.btn 0
-			li.btn 00
-			li.btn .
-			li.btn.l-bgcolor-pri −
-			li.btn.l-color-pri AC
-			li.btn.l-color-pri
-				i.fas.fa-backspace
-				span.l-fz0.clearfix delete
-			li.btn.l-btn--w2 =
+			li.btn(data-action="7") 7
+			li.btn(data-action="8") 8
+			li.btn(data-action="9") 9
+			li.btn.l-bgcolor-pri(data-action="division") ÷
+			li.btn(data-action="4") 4
+			li.btn(data-action="5") 5
+			li.btn(data-action="6") 6
+			li.btn.l-bgcolor-pri(data-action="times") ×
+			li.btn(data-action="1") 1
+			li.btn(data-action="2") 2
+			li.btn(data-action="3") 3
+			li.btn.l-bgcolor-pri(data-action="plus") +
+			li.btn(data-action="0") 0
+			li.btn(data-action="d-0") 00
+			li.btn(data-action="point") .
+			li.btn.l-bgcolor-pri(data-action="minus") −
+			li.btn.l-color-pri(data-action="ac") AC
+			li.btn.l-color-pri(data-action="delete")
+				i.fas.fa-backspace(data-action="delete")
+				span.l-fz0.clearfix(data-action="delete") delete
+			li.btn.l-btn--w2(data-action="equal") =
 
 block footer
 	include ./modules/footer
