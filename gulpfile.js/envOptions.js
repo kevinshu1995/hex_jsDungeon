@@ -72,6 +72,9 @@ let envOptions = {
     clean: {
         src: distPath,
     },
+    jest: {
+        coverageFrom: [`${srcPath}/assets/js/js003.js`],
+    },
     browserDir: distPath,
     deploySrc: `${distPath}/**/*`,
     prettier: './prettierrc',

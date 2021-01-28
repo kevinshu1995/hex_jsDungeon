@@ -6,6 +6,7 @@ const browserSync = require('browser-sync').create()
 const { envOptions } = require('./envOptions')
 const pug = require('gulp-pug') //載入 gulp-pug
 const prettier = require('gulp-prettier')
+const jest = require('gulp-jest').default
 
 let options = minimist(process.argv.slice(2), envOptions)
 //現在開發狀態
@@ -136,6 +137,17 @@ function watch() {
     // gulp.watch(envOptions.style.src, gulp.series(sass, tailwindcss));
 }
 
+function test() {
+    process.env.NODE_ENV = 'test'
+    return gulp.src('__tests__').pipe(
+        jest({
+            collectCoverage: true,
+            collectCoverageFrom: envOptions.jest.coverageFrom,
+            automock: false,
+        })
+    )
+}
+
 exports.deploy = deploy
 
 exports.clean = clean
@@ -160,3 +172,5 @@ exports.default = gulp.series(
     vendorsJs,
     gulp.parallel(browser, watch)
 )
+
+exports.test = test
