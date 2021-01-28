@@ -25,7 +25,6 @@
         "express": "^4.17.1",
         "font-awesome": "^4.7.0",
         "foundation-sites": "^6.6.3",
-        "gsap": "^3.5.1",
         "gulp": "^4.0.2",
         "gulp-babel": "^8.0.0",
         "gulp-clean": "^0.4.0",
@@ -45,8 +44,7 @@
         "morgan": "^1.9.1",
         "node-sass": "^4.14.1",
         "popmotion": "^9.0.0",
-        "pug": "^2.0.4",
-        "tailwindcss": "^1.9.1"
+        "pug": "^2.0.4"
     },
     "devDependencies": {
         "gulp-jest": "^4.0.3",
