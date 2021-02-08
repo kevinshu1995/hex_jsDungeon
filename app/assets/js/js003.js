@@ -14,7 +14,7 @@
  *              * 舊字串無'.' => '舊字串', '.'
  *              * 舊字串有'.' => '舊字串'
  */
-export default class Calculate {
+class Calculate {
     constructor(wrap_selector) {
         this.el_btnWrap = wrap_selector
         // * eg: [{ act:'division', number: '10.2' }]
@@ -37,15 +37,12 @@ export default class Calculate {
     // 顯示在最上方的公式，不包含現在正在加值的數字
     get formula() {
         if (this.calculate_objects.length === 0) return ''
-        else
-            return this.calculate_objects
-                .map(
-                    (item) =>
-                        `${item.number.join('')} ${this.format_marks(
-                            item.act
-                        )} `
-                )
-                .join('')
+        return this.calculate_objects
+            .map(
+                (item) =>
+                    `${item.number.join('')} ${this.format_marks(item.act)} `
+            )
+            .join('')
     }
 
     get current_nums() {
@@ -98,9 +95,9 @@ export default class Calculate {
             case '0':
             case 'd-0':
                 if (result.length === 0) return ['0']
-                else if (result[0] === '0') return ['0']
-                else if (num === '0') return ['0']
-                else return [...result, '0', '0']
+                if (result[0] === '0') return ['0']
+                if (num === '0') return ['0']
+                return [...result, '0', '0']
             default:
                 if (result.length === 1) if (result[0] === '0') return [num]
                 return [...result, num]
@@ -119,14 +116,14 @@ export default class Calculate {
     get_point(original = []) {
         const point = () => original.find((item) => item === '.')
         if (original.length === 0) return ['0', '.']
-        else if (point() === undefined) return [...original, '.']
+        if (point() === undefined) return [...original, '.']
         return [...original]
     }
 
     get_new_calculate_objects(mark = '') {
         const current_nums = this.current_Numbers_array
         const new_numbers =
-            current_nums[current_nums.length - 1] == '.'
+            current_nums[current_nums.length - 1] === '.'
                 ? this.delete_last_in_ary(current_nums)
                 : current_nums
         return {
@@ -239,4 +236,4 @@ export default class Calculate {
     }
 }
 
-// const cal = new Calculate().init()
+const cal = new Calculate('.btnsWrap').init()
