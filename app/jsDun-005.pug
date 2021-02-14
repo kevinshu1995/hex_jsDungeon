@@ -1,0 +1,38 @@
+extend ./modules/layout.pug
+
+block append head
+    - var needreset = true
+    - var nav_darkbg = true
+    title JSDungeon | JS地下城 | 005 | 空氣品質指標 | AQI
+    link(rel="stylesheet" href="assets/style/pageStyle/style005.css")
+
+block content
+    .container
+        .wrap.margin-bottom-4.margin-top-4
+            h2.font-weight-bold 空氣品質指標 (AQI)
+            select#county(name="county") 
+        .wrap.margin-bottom-4.margin-top-4
+            table 
+                thead 
+                    tr
+                        th 0~50
+                        th 51~100
+                        th 101~150
+                        th 151~200
+                        th 201~300
+                        th 301~400
+                tbody 
+                    tr
+                        td 良好
+                        td 普通
+                        td 對敏感族群不健康
+                        td 對所有族群不健康
+                        td 非常不健康
+                        td 危害
+        .title
+            h3 高雄市
+            p.time 2020-01-01 00:00 更新
+        
+block footer
+    include ./modules/footer
+    script(src='assets/js/js005.js')
