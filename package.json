@@ -6,7 +6,8 @@
     "scripts": {
         "test": "jest --coverage",
         "build": "gulp build --env prod",
-        "start": "node serve.js"
+        "start": "node serve.js",
+        "build:css": "postcss app/assets/style/plugin/tailwinds/index.css -o dist/assets/style/index.css"
     },
     "engines": {
         "node": "11.7.0"
@@ -50,6 +51,9 @@
     "devDependencies": {
         "gulp-prettier": "^3.0.0",
         "jest": "^26.6.3",
-        "prettier": "2.1.2"
+        "postcss": "^8.1.0",
+        "postcss-cli": "^8.3.1",
+        "prettier": "2.1.2",
+        "tailwindcss": "^2.0.3"
     }
 }
