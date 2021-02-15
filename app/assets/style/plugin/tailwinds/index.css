@@ -1,3 +1,152 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    [data-tooltip] {
+        @apply relative;
+    }
+    [data-tooltip]:hover:before {
+        content: attr(data-tooltip);
+        @apply absolute left-0 bottom-full py-1 px-3 whitespace-nowrap rounded border border-warmGray-800 bg-warmGray-900 text-primary-400 animate-bounce shadow;
+    }
+
+    .row {
+        @apply -mx-6 flex flex-wrap;
+    }
+
+    .col {
+        @apply px-3;
+    }
+
+    .btn {
+        @apply px-4 py-3 cursor-pointer focus:outline-none whitespace-nowrap;
+    }
+    .btn-full {
+        @apply w-full inline-block;
+    }
+    .btn-sm {
+        @apply px-3 py-2;
+    }
+
+    .btn-primary {
+        @apply text-primary-400 hover:bg-primary-400 hover:text-warmGray-900 focus:bg-primary-300 focus:text-warmGray-900;
+    }
+    .btn-text-primary {
+        @apply text-primary-400 hover:text-primary-500;
+    }
+    .btn-text-primary-light {
+        @apply text-primary-400 hover:text-primary-200;
+    }
+
+    .dropdown-list {
+        @apply absolute right-0 top-0 m-3 hidden flex-col flex-nowrap justify-between space-y-2 bg-warmGray-900 text-primary-400 shadow-xl;
+    }
+
+    .card {
+        @apply block bg-transparent transition-all;
+    }
+
+    .card .card__img {
+        @apply filter-img;
+    }
+
+    .card .card__wrap {
+        @apply py-4 text-warmGray-500 transition-all;
+    }
+
+    .card .card__title {
+        @apply truncate transition-all text-white font-normal;
+    }
+
+    .card .card__content {
+        @apply truncate text-xs font-normal;
+    }
+
+    .card h5.card__content {
+        @apply truncate text-xs font-normal mb-2 pb-2 border-b border-warmGray-700;
+    }
+}
+
+@layer utilities {
+    @variants hover, group-hover {
+        .filter-none {
+            filter: none;
+        }
+        .filter-img {
+            filter: blur(1px) grayscale(80%);
+        }
+    }
+}
+
+@layer base {
+    h1 {
+        @apply font-bold text-4xl;
+    }
+    h2 {
+        @apply font-bold text-3xl;
+    }
+    h3 {
+        @apply font-bold text-2xl;
+    }
+    h4 {
+        @apply font-bold text-xl;
+    }
+    h5 {
+        @apply font-bold text-lg;
+    }
+    h6 {
+        @apply font-bold text-base;
+    }
+    a {
+        @apply text-primary-400;
+    }
+    a:hover {
+        @apply text-primary-300;
+    }
+
+    /* noto-serif-tc-regular - latin_chinese-traditional */
+    @font-face {
+        font-family: 'Noto Serif TC';
+        font-style: normal;
+        font-weight: 400;
+        src: url('../fonts/texts/noto-serif-tc-v7-latin_chinese-traditional-regular.eot'); /* IE9 Compat Modes */
+        src: local('Noto Serif TC'), local('NotoSerifTC-Regular'),
+            url('../fonts/texts/noto-serif-tc-v7-latin_chinese-traditional-regular.eot?#iefix')
+                format('embedded-opentype'),
+            /* IE6-IE8 */
+                url('../fonts/texts/noto-serif-tc-v7-latin_chinese-traditional-regular.woff2')
+                format('woff2'),
+            /* Super Modern Browsers */
+                url('../fonts/texts/noto-serif-tc-v7-latin_chinese-traditional-regular.woff')
+                format('woff'),
+            /* Modern Browsers */
+                url('../fonts/texts/noto-serif-tc-v7-latin_chinese-traditional-regular.ttf')
+                format('truetype'),
+            /* Safari, Android, iOS */
+                url('../fonts/texts/noto-serif-tc-v7-latin_chinese-traditional-regular.svg#NotoSerifTC')
+                format('svg'); /* Legacy iOS */
+    }
+    /* noto-serif-tc-900 - latin_chinese-traditional */
+    @font-face {
+        font-family: 'Noto Serif TC';
+        font-style: normal;
+        font-weight: 900;
+        src: url('../fonts/texts/noto-serif-tc-v7-latin_chinese-traditional-900.eot'); /* IE9 Compat Modes */
+        src: local('Noto Serif TC Black'), local('NotoSerifTC-Black'),
+            url('../fonts/texts/noto-serif-tc-v7-latin_chinese-traditional-900.eot?#iefix')
+                format('embedded-opentype'),
+            /* IE6-IE8 */
+                url('../fonts/texts/noto-serif-tc-v7-latin_chinese-traditional-900.woff2')
+                format('woff2'),
+            /* Super Modern Browsers */
+                url('../fonts/texts/noto-serif-tc-v7-latin_chinese-traditional-900.woff')
+                format('woff'),
+            /* Modern Browsers */
+                url('../fonts/texts/noto-serif-tc-v7-latin_chinese-traditional-900.ttf')
+                format('truetype'),
+            /* Safari, Android, iOS */
+                url('../fonts/texts/noto-serif-tc-v7-latin_chinese-traditional-900.svg#NotoSerifTC')
+                format('svg'); /* Legacy iOS */
+    }
+}

@@ -7,13 +7,13 @@ $color-white: #ffffff;
 $height-cal: 525;
 $height-title: 109;
 
-.wrap{
+.wrap {
     ul,
     ol,
-    li{
-        list-style: none!important;
-        padding-left: 0!important;
-        margin-left: 0!important;
+    li {
+        list-style: none !important;
+        padding-left: 0 !important;
+        margin-left: 0 !important;
     }
 }
 
@@ -70,7 +70,7 @@ body {
         background-color: $color-sec;
         border-radius: 0 0 20px 20px;
     }
-    .btn {
+    .btn_ {
         width: 72px;
         height: 64px;
         line-height: 64px;

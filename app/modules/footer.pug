@@ -1,16 +1,15 @@
 block footer
-	.footer-padding
-	footer.footer.padding-vertical-12.text-center(class=nav_darkbg ? 'bg-foundation-dark' : '')
-		ul.menu.vertical.align-center
-			li
-				h6.ct-font-1.margin-bottom-0
-					span 設計稿來源為六角學院
-			li.ct-font-1
-				a.animate__animated.hover-pulse(href="https://github.com/kevinshu1995") 
-					i.fab.fa-github.margin-right-1
-					span kevinshu1995
-				a.animate__animated.hover-pulse(href="mailto:kevinshu1995@gmail.com") 
-					i.fas.fa-paper-plane.margin-right-1
-					span Email Me
+	.pb-28(class= nav_darkbg ? 'bg-black' : '')
+	footer.absolute.text-white.left-0.bottom-0.w-full.py-8.text-center(class= nav_darkbg ? 'bg-black' : '')
+		h6.text-sm.mb-2 &copy; 2020-2021, Kevin Hsu - 許文修
+		ul.flex.justify-center.space-x-4.text-xs
+			li 
+				a.text-white(href="https://github.com/kevinshu1995")
+					i.fab.fa-github.mr-2
+					| kevinshu1995
+			li 
+				a.text-white(href="mailto:kevinshu1995@gmail.com")
+					i.fas.fa-paper-plane.mr-2 
+					| Email Me
 	script(src="assets/js/vendors.js")
 	script(src="assets/js/all.js")

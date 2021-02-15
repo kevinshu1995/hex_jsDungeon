@@ -41,14 +41,9 @@ let envOptions = {
             `${nodePath}/foundation-sites/scss`,
             `${nodePath}/foundation-sites/scss`,
         ],
-        tailwindcss: {
-            includePaths: [
-                `${nodePath}/tailwindcss/base.css`,
-                `${nodePath}/tailwindcss/components.css`,
-                `${nodePath}/tailwindcss/utilities.css`,
-                `${nodePath}/tailwindcss/utilities.css`,
-            ],
-            outputpath: `${distPath}/assets/style/tailwindcss`,
+        tailwindCss: {
+            inputPath: `${srcPath}/assets/style/plugin/tailwinds/index.css`,
+            outputPath: `${distPath}/assets/style/`,
         },
         path: `${distPath}/assets/style`,
     },

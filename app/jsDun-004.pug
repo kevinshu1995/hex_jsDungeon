@@ -7,41 +7,41 @@ block append head
 	link(rel="stylesheet" href="assets/style/pageStyle/style004.css")
 
 block content
-	.wrap.margin-bottom-4.margin-top-4
-		h2.font-weight-bold.align-center.page-title.margin-bottom-4 WORLD CLOCK
-		ul.card.font-weight-bold.margin-left-0.margin-bottom-0
-			li.bg-dark.d-flex.justify-content-between
-				.card-left.w-50.flex-dir-column.align-center-middle
-					h3.location.w-100.margin-bottom-0 NEW YORK
-					h4.date.w-100.font-style-italy.margin-bottom-0 27 JAN. 2019
-				.card-right.w-50.align-right.flex-child-shrink
-					h6.time.margin-bottom-0 02:46
-			li.bg-light.d-flex.justify-content-between
-				.card-left.w-50.flex-dir-column.align-center-middle
-					h3.location.w-100.margin-bottom-0 LONDON
-					h4.date.w-100.font-style-italy.margin-bottom-0 27 JAN. 2019
-				.card-right.w-50.align-right.flex-child-shrink
-					h6.time.margin-bottom-0 02:46
-			li.bg-light.d-flex.justify-content-between
-				.card-left.w-50.flex-dir-column.align-center-middle
-					h3.location.w-100.margin-bottom-0 BANGKOK
-					h4.date.w-100.font-style-italy.margin-bottom-0 27 JAN. 2019
-				.card-right.w-50.align-right.flex-child-shrink
-					h6.time.margin-bottom-0 02:46
-			li.bg-light.d-flex.justify-content-between
-				.card-left.w-50.flex-dir-column.align-center-middle
-					h3.location.w-100.margin-bottom-0 TAIWAN
-					h4.date.w-100.font-style-italy.margin-bottom-0 27 JAN. 2019
-				.card-right.w-50.align-right.flex-child-shrink
-					h6.time.margin-bottom-0 02:46
-			li.bg-dark.d-flex.justify-content-between
-				.card-left.w-50.flex-dir-column.align-center-middle
-					h3.location.w-100.margin-bottom-0 SYDNEY
-					h4.date.w-100.font-style-italy.margin-bottom-0 27 JAN. 2019
-				.card-right.w-50.align-right.flex-child-shrink
-					h6.time.margin-bottom-0 02:46
-	.wrap
-		h6.text-dark 本頁面在 IE, Opera Mini, UC Browser for Android, QQ Browser, KaiOS Browser 無法正確顯示時間，請改用其他瀏覽器
+	.wrap.my-10.mx-auto
+		h2.font-bold.text-center.page-title.mb-3 WORLD CLOCK
+		ul.card_.font-bold.ml-0.mb-0
+			li.bg-black.text-white.flex.justify-between
+				.card-left.w-50.flex.flex-col.justify-center.content-center
+					h3.location.w-full.mb-0 NEW YORK
+					h4.date.w-full.italic.mb-0 27 JAN. 2019
+				.card-right.text-right(class="w-1\/2")
+					h6.time.mb-0 02:46
+			li.bg-white.flex.justify-between
+				.card-left.w-50.flex.flex-col.justify-center.content-center
+					h3.location.w-full.mb-0 LONDON
+					h4.date.w-full.italic.mb-0 27 JAN. 2019
+				.card-right.text-right(class="w-1\/2")
+					h6.time.mb-0 02:46
+			li.bg-white.flex.justify-between
+				.card-left.w-50.flex.flex-col.justify-center.content-center
+					h3.location.w-full.mb-0 BANGKOK
+					h4.date.w-full.italic.mb-0 27 JAN. 2019
+				.card-right.text-right(class="w-1\/2")
+					h6.time.mb-0 02:46
+			li.bg-white.flex.justify-between
+				.card-left.w-50.flex.flex-col.justify-center.content-center
+					h3.location.w-full.mb-0 TAIWAN
+					h4.date.w-full.italic.mb-0 27 JAN. 2019
+				.card-right.text-right(class="w-1\/2")
+					h6.time.mb-0 02:46
+			li.bg-black.text-white.flex.justify-between
+				.card-left.w-50.flex.flex-col.justify-center.content-center
+					h3.location.w-full.mb-0 SYDNEY
+					h4.date.w-full.italic.mb-0 27 JAN. 2019
+				.card-right.text-right(class="w-1\/2")
+					h6.time.mb-0 02:46
+	.wrap.mx-auto.mb-8
+		h6.text-black.text-center 本頁面在 IE, Opera Mini, UC Browser for Android, QQ Browser, KaiOS Browser 無法正確顯示時間，請改用其他瀏覽器
 block footer
 	include ./modules/footer
 	script(src='assets/js/js004.js')

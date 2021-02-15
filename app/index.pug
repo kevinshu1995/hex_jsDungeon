@@ -1,100 +1,82 @@
 extend ./modules/layout.pug
 
 block append head
+	- var nav_darkbg = true
 	title JSDungeon | JS地下城 | Home Page
 
 block content
 	//- TODO background image
-	.index.margin-bottom-16(style="background-image: url(assets/images/index_cover.jpg);background-size:cover;background-position:bottom;background-repeat:no-repeat;")
-		section.grid-container
-			.grid-x.grid-padding-x.align-center-middle.text-center(style="min-height:70vh")
-				.cell
-					.grid-x.align-center-middle.text-center
-						.cell.margin-top-16
-							.margin-bottom-4
-								.animate__animated.animate__fadeInUp
-									h1.index__title.margin-bottom-0 JS Dungeon
-							.margin-bottom-14
-								.animate__animated.animate__fadeInUp.animate__delay-1s
-									p.margin-bottom-1
-										| 本網頁源自於六角學院的「JS地下城」課程，僅做為練習的紀錄用。
-										br
-										| 如果寫得很差...就是我太爛沒錯！
-										| 有任何建議都可以
-										a(href="mailto:kevinshu1995@gmail.com") 聯絡我
-										| 。
-							.margin-bottom-8.animate__animated.animate__fadeInUp.animate__delay-2s
-								h2.index__title.ct-font-3 使用技術
-								ul.menu.simple.align-center.ct-font-1
-									li
-										span.label--rounded.secondary.margin-bottom-2 Gulp
-									li
-										span.label--rounded.secondary.margin-bottom-2.margin-right-1 HTML
-										span.label--rounded.secondary.margin-bottom-2 PUG
-									li
-										span.label--rounded.secondary.margin-bottom-2.margin-right-1 CSS
-										span.label--rounded.secondary.margin-bottom-2 SASS
-									li
-										span.label--rounded.secondary.margin-bottom-2.margin-right-1 Javascript (練習區塊)
-										span.label--rounded.secondary.margin-bottom-2 jQuery
-				.cell.index__content
-					.grid-x.grid-padding-x.align-center-middle.text-center.animate__animated.animate__fadeInUp.animate__delay-3s
-						.cell.medium-4.margin-bottom-8
-							p 全部的設計稿皆為六角學院提供，練習的畫面都是使用原生 Javascript 撰寫，不過其他部分以 jQuery 為主，不然好麻煩。
-						.cell.medium-4.margin-bottom-8
-							p 此專案使用了 Gulp ，以 PUG、SASS 撰寫頁面， CSS 框架嘗試使用 Foundation ，只是想嘗試看看不同的框架差異，哈哈。
-				//- .cell.medium-6.large-4.margin-bottom-3
-					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit cupiditate, atque dolores, laboriosam suscipit animi delectus sequi facilis quam non sapiente eius nobis et doloremque soluta voluptate amet distinctio omnis!
-				.cell.margin-bottom-16
-					.animate__animated.animate__fadeInUp.animate__delay-4s
-						.mark-primary.margin-bottom-4
-							.avatar-Wrap.thumbnail
-								img(src="assets/images/avatar.jpg")
-							h2.ct-font-3.margin-bottom-0 Kevin Hsu
-						ul.menu.simple.align-center.ct-font-1
-							li
-								a.animate__animated.hover-pulse(href="mailto:kevinshu1995@gmail.com")
-									i.fas.fa-paper-plane.margin-right-1
-									span 聯絡我
-							li
-								a.animate__animated.hover-pulse(href="https://github.com/kevinshu1995")
-									i.fab.fa-github.margin-right-1
-									span kevinshu1995
-	.index
-		section.grid-container
-			.grid-x.grid-margin-x.small-up-3.medium-up-4.align-center-middle
-				.cell
-					a(href="jsDun-001.html")
-						.card.hover--card--enter.hover--card--filter
-							img(src="assets/images/multiplicationChart.jpg")
-							.card-section
-								h4.text-truncate.ct-font-3 九九乘法表
-								h5.text-truncate.ct-font-2.subheader Mutiplication Chart
-								p.text-truncate.ct-font-1.subheader 單純就是用 JS 計算九九乘法表。
-				.cell
-					a(href="jsDun-002.html")
-						.card.hover--card--enter.hover--card--filter
-							img(src="assets/images/clock.jpg")
-							.card-section
-								h4.text-truncate.ct-font-3 時鐘
-								h5.text-truncate.ct-font-2.subheader Clock
-								p.text-truncate.ct-font-1.subheader 除了用原生 JS 算時間之外，整個時鐘都是 css 寫的。
-				.cell
-					a(href="jsDun-003.html")
-						.card.hover--card--enter.hover--card--filter
-							img(src="assets/images/calculatar.jpg")
-							.card-section
-								h4.text-truncate.ct-font-3 計算機
-								h5.text-truncate.ct-font-2.subheader Calculatar
-								p.text-truncate.ct-font-1.subheader 使用 JS 寫計算機的功能，我是一定不會用這個來算的。
-				.cell
-					a(href="jsDun-004.html")
-						.card.hover--card--enter.hover--card--filter
-							img(src="assets/images/worldclock.png")
-							.card-section
-								h4.text-truncate.ct-font-3 世界時鐘
-								h5.text-truncate.ct-font-2.subheader World Clock
-								p.text-truncate.ct-font-1.subheader 以 Date 物件以 timezone 推算其他地區的現在時間。
-
+	.text-white.bg-black.bg-bottom.bg-cover.bg-repeat(style="background-image: url(assets/images/index_cover.jpg);")
+		section.container.text-white(style="min-height:70vh")
+			.row.pt-20.mb-20
+				.col.text-center(class="w-full")
+					h1.mb-8.text-5xl.text-primary-400 JS Dungeon
+					p
+						| 本網頁源自於六角學院的「JS地下城」課程，僅做為練習的紀錄用。
+						br
+						| 如果寫得很差...就是我太爛沒錯！有任何建議都可以
+						a(href="mailto:kevinshu1995@gmail.com" data-tooltip="點擊寄信") 聯絡我
+						| 。
+			.row.pb-20.justify-center
+				.col.text-center.mb-6(class="w-full")
+					h2.mb-5.text-xl.text-primary-400 本站使用技術或框架
+					ul.flex.justify-center.space-x-8
+						li Gulp
+						li HTML / Pug
+						li CSS / Sass / TailwindCss
+						li JavaScript
+				.col(class="md:w-4/12 w-8/12")
+					p.text-warmGray-400 全部的設計稿皆為六角學院提供，練習的畫面都是使用原生 Javascript 撰寫，不過其他部分以 jQuery 為主，不然好麻煩。
+				.col(class="md:w-4/12 w-8/12")
+					p.text-warmGray-400 此專案使用了 Gulp ，以 PUG、SASS 撰寫頁面， CSS 框架嘗試使用 Foundation ，只是想嘗試看看不同的框架差異，哈哈。
+			.row.pb-10
+				.col.mb-1(class="w-full")
+					.flex.justify-center.mb-4
+						.w-40
+							img.inline-block.rounded-full.overflow-hidden(src="assets/images/avatar.jpg")
+					h2.text-base.text-normal.text-center.text-primary-400 Kevin Hsu
+				.col(class="w-full")
+					ul.flex.justify-center.space-x-4.text-sm
+						li.ml-2
+							a.text-white(data-tooltip="點擊寄信" href="mailto:kevinshu1995@gmail.com")
+								i.fas.fa-paper-plane.mr-1
+								span 聯絡我
+						li
+							a.text-white(data-tooltip="點擊前往" href="https://github.com/kevinshu1995" target="_blank")
+								i.fab.fa-github.mr-1
+								span kevinshu1995
+	.text-white.bg-black
+		section.container
+			.row.py-10
+				//- .col(class="w-full")
+					h2.text-primary-400.font-bold.text-center.mb-5 
+				.col(class="w-3/12")
+					a.group.card(href="jsDun-001.html")
+						img.card__img(class="group-hover:filter-none" src="assets/images/multiplicationChart.jpg")
+						.card__wrap(class="group-hover:text-primary-400 group-hover:px-3")
+							h4.card__title.mb-1(class="group-hover:text-primary-400") 001 | 九九乘法表
+							h5.card__content Mutiplication Chart
+							p.card__content JS 迴圈練習。
+				.col(class="w-3/12")
+					a.group.card(href="jsDun-002.html")
+						img.card__img(class="group-hover:filter-none" src="assets/images/clock.jpg")
+						.card__wrap(class="group-hover:text-primary-400 group-hover:px-3")
+							h4.card__title.mb-1(class="group-hover:text-primary-400") 002 | 時鐘
+							h5.card__content Clock
+							p.card__content 用原生 JS 算時間控制指針，整個時鐘都是 css 寫的。
+				.col(class="w-3/12")
+					a.group.card(href="jsDun-003.html")
+						img.card__img(class="group-hover:filter-none" src="assets/images/calculatar.jpg")
+						.card__wrap(class="group-hover:text-primary-400 group-hover:px-3")
+							h4.card__title.mb-1(class="group-hover:text-primary-400") 003 | 計算機
+							h5.card__content Calculatar
+							p.card__content 使用 JS 寫計算機的功能，強烈建議不要用這個來計算 XD。
+				.col(class="w-3/12")
+					a.group.card(href="jsDun-004.html")
+						img.card__img(class="group-hover:filter-none" src="assets/images/worldclock.png")
+						.card__wrap(class="group-hover:text-primary-400 group-hover:px-3")
+							h4.card__title.mb-1(class="group-hover:text-primary-400") 004 | 世界時鐘
+							h5.card__content World Clock
+							p.card__content 以 Date 物件以 timezone 推算其他地區的現在時間。
 block footer
 	include ./modules/footer

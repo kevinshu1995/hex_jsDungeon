@@ -61,19 +61,15 @@ function sass() {
         )
 }
 
-// function tailwindcss() {
-//     const plugins = [require("tailwindcss"), autoprefixer()];
-//     const postcss = require("gulp-postcss");
+function tailwindcss() {
+    const plugins = [require('tailwindcss'), autoprefixer()]
+    const postcss = require('gulp-postcss')
 
-//     return (
-//         gulp
-//             .src(envOptions.style.tailwindcss.includePaths)
-//             // ...
-//             .pipe(postcss(plugins))
-//             // ...
-//             .pipe(gulp.dest(envOptions.style.tailwindcss.outputpath))
-//     );
-// }
+    return gulp
+        .src(envOptions.style.tailwindCss.inputPath)
+        .pipe(postcss(plugins))
+        .pipe(gulp.dest(envOptions.style.tailwindCss.outputPath))
+}
 
 function babel() {
     return (
@@ -133,7 +129,7 @@ function watch() {
     gulp.watch(envOptions.javascript.src, gulp.series(babel))
     gulp.watch(envOptions.img.src, gulp.series(copyFile))
     gulp.watch(envOptions.style.src, gulp.series(sass))
-    // gulp.watch(envOptions.style.src, gulp.series(sass, tailwindcss));
+    gulp.watch(envOptions.style.tailwindCss.inputPath, gulp.series(tailwindcss))
 }
 
 exports.deploy = deploy
@@ -145,7 +141,7 @@ exports.build = gulp.series(
     copyFile,
     layoutHTML,
     sass,
-    // tailwindcss,
+    tailwindcss,
     babel,
     vendorsJs
 )
@@ -155,7 +151,7 @@ exports.default = gulp.series(
     copyFile,
     layoutHTML,
     sass,
-    // tailwindcss,
+    tailwindcss,
     babel,
     vendorsJs,
     gulp.parallel(browser, watch)
