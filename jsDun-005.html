@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="assets/style/index.css"/>
     <link rel="stylesheet" href="assets/style/vendors.css"/>
-    <title>JSDungeon | JS地下城 | 001 | 九九乘法表 | MULTIPLICATION CHART</title>
-    <link rel="stylesheet" href="assets/style/pageStyle/style001.css"/>
+    <title>JSDungeon | JS地下城 | 005 | 空氣品質指標 | AQI</title>
+    <link rel="stylesheet" href="assets/style/pageStyle/style005.css"/>
   </head>
   <body class="relative font-body">
     <nav class="fixed z-1000 w-full block shadow-sm bg-warmGray-900">
@@ -28,26 +28,40 @@
       </div>
     </nav>
     <div class="pb-12"></div>
-    <ul class="wrap" id="mainList">
-      <li class="l-card-title">
-        <h1>九九乘法表</h1>
-        <h2>MULTIPLICATION CHART</h2>
-      </li>
-      <li class="l-card">
-        <ul class="l-card__wrap">
-          <li class="l-card__title">2</li>
-          <li>2x1=2</li>
-          <li>2x2=2</li>
-          <li>2x3=2</li>
-          <li>2x4=2</li>
-          <li>2x5=21</li>
-          <li>2x6=2</li>
-          <li>2x7=2</li>
-          <li>2x8=2</li>
-          <li>2x9=2</li>
-        </ul>
-      </li>
-    </ul>
+    <div class="container">
+      <div class="wrap margin-bottom-4 margin-top-4">
+        <h2 class="font-weight-bold">空氣品質指標 (AQI)</h2>
+        <select id="county" name="county"> </select>
+      </div>
+      <div class="wrap margin-bottom-4 margin-top-4">
+        <table>
+          <thead> 
+            <tr>
+              <th>0~50</th>
+              <th>51~100</th>
+              <th>101~150</th>
+              <th>151~200</th>
+              <th>201~300</th>
+              <th>301~400</th>
+            </tr>
+          </thead>
+          <tbody> 
+            <tr>
+              <td>良好</td>
+              <td>普通</td>
+              <td>對敏感族群不健康</td>
+              <td>對所有族群不健康</td>
+              <td>非常不健康</td>
+              <td>危害</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="title">
+        <h3>高雄市</h3>
+        <p class="time">2020-01-01 00:00 更新</p>
+      </div>
+    </div>
     <div class="pb-28 bg-black"></div>
     <footer class="absolute text-white left-0 bottom-0 w-full py-8 text-center bg-black">
       <h6 class="text-sm mb-2">&copy; 2020-2021, Kevin Hsu - 許文修</h6>
@@ -57,6 +71,6 @@
       </ul>
     </footer>
     <script src="assets/js/all.js"></script>
-    <script src="assets/js/js001.js"></script>
+    <script src="assets/js/js005.js"></script>
   </body>
 </html>

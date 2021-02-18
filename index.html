@@ -1,141 +1,111 @@
-<!DOCTYPE html>
+
 <html lang="zh-Hant-TW">
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="assets/style/all.css"/>
+    <link rel="stylesheet" href="assets/style/index.css"/>
+    <link rel="stylesheet" href="assets/style/vendors.css"/>
     <title>JSDungeon | JS地下城 | Home Page</title>
   </head>
-  <body>
-    <div class="navwrap">
-      <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="large">
-        <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
-      </div>
-      <div class="top-bar main__menu" id="responsive-menu">
-        <div class="top-bar-left">
-          <ul class="menu">
-            <li class="animate__animated animate__fadeInTopLeft"><a class="font-bold logo text-primary" href="index.html">JS Dungeon</a></li>
-          </ul>
-        </div>
-        <div class="top-bar-right">
-          <ul class="menu">
-            <li class="animate__animated animate__fadeInTopRight"><a href="jsDun-001.html">001-九九乘法表</a></li>
-            <li class="animate__animated animate__fadeInTopRight animate__delay-1s"><a href="jsDun-002.html">002-時鐘</a></li>
-            <li class="animate__animated animate__fadeInTopRight animate__delay-2s"><a href="jsDun-003.html">003-計算機</a></li>
-            <li class="animate__animated animate__fadeInTopRight animate__delay-2s"><a href="jsDun-004.html">004-世界時鐘</a></li>
-          </ul>
-        </div>
-        <div class="top-bar-right">
-          <ul class="menu animate__animated animate__fadeInTopRight">
-            <li><a target="_blank" href="https://github.com/kevinshu1995"><i class="fab fa-github"></i></a></li>
-            <li><a target="_blank" href="mailto:kevinshu1995@gmail.com"><i class="fas fa-paper-plane"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="index margin-bottom-16" style="background-image: url(assets/images/index_cover.jpg);background-size:cover;background-position:bottom;background-repeat:no-repeat;">
-      <section class="grid-container">
-        <div class="grid-x grid-padding-x align-center-middle text-center" style="min-height:70vh">
-          <div class="cell">
-            <div class="grid-x align-center-middle text-center">
-              <div class="cell margin-top-16">
-                <div class="margin-bottom-4">
-                  <div class="animate__animated animate__fadeInUp">
-                    <h1 class="index__title margin-bottom-0">JS Dungeon</h1>
-                  </div>
-                </div>
-                <div class="margin-bottom-14">
-                  <div class="animate__animated animate__fadeInUp animate__delay-1s">
-                    <p class="margin-bottom-1">本網頁源自於六角學院的「JS地下城」課程，僅做為練習的紀錄用。<br/>如果寫得很差...就是我太爛沒錯！
-                      有任何建議都可以<a href="mailto:kevinshu1995@gmail.com">聯絡我</a>。
-                    </p>
-                  </div>
-                </div>
-                <div class="margin-bottom-8 animate__animated animate__fadeInUp animate__delay-2s">
-                  <h2 class="index__title ct-font-3">使用技術</h2>
-                  <ul class="menu simple align-center ct-font-1">
-                    <li><span class="label--rounded secondary margin-bottom-2">Gulp</span></li>
-                    <li><span class="label--rounded secondary margin-bottom-2 margin-right-1">HTML</span><span class="label--rounded secondary margin-bottom-2">PUG</span></li>
-                    <li><span class="label--rounded secondary margin-bottom-2 margin-right-1">CSS</span><span class="label--rounded secondary margin-bottom-2">SASS</span></li>
-                    <li><span class="label--rounded secondary margin-bottom-2 margin-right-1">Javascript (練習區塊)</span><span class="label--rounded secondary margin-bottom-2">jQuery</span></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cell index__content">
-            <div class="grid-x grid-padding-x align-center-middle text-center animate__animated animate__fadeInUp animate__delay-3s">
-              <div class="cell medium-4 margin-bottom-8">
-                <p>全部的設計稿皆為六角學院提供，練習的畫面都是使用原生 Javascript 撰寫，不過其他部分以 jQuery 為主，不然好麻煩。</p>
-              </div>
-              <div class="cell medium-4 margin-bottom-8">
-                <p>此專案使用了 Gulp ，以 PUG、SASS 撰寫頁面， CSS 框架嘗試使用 Foundation ，只是想嘗試看看不同的框架差異，哈哈。</p>
-              </div>
-            </div>
-          </div>
-          <div class="cell margin-bottom-16">
-            <div class="animate__animated animate__fadeInUp animate__delay-4s">
-              <div class="mark-primary margin-bottom-4">
-                <div class="avatar-Wrap thumbnail"><img src="assets/images/avatar.jpg"/></div>
-                <h2 class="ct-font-3 margin-bottom-0">Kevin Hsu</h2>
-              </div>
-              <ul class="menu simple align-center ct-font-1">
-                <li><a class="animate__animated hover-pulse" href="mailto:kevinshu1995@gmail.com"><i class="fas fa-paper-plane margin-right-1"></i><span>聯絡我</span></a></li>
-                <li><a class="animate__animated hover-pulse" href="https://github.com/kevinshu1995"><i class="fab fa-github margin-right-1"></i><span>kevinshu1995</span></a></li>
+  <body class="relative font-body">
+    <nav class="fixed z-1000 w-full block shadow-sm bg-warmGray-900">
+      <div class="desktop">
+        <div class="flex flex-nowrap justify-between"><a class="font-bold btn btn-text-primary" href="/">JS Dungeon</a>
+          <div class="right flex flex-nowrap flex-end">
+            <div class="flex flex-nowrap items-center text-primary-500 mr-3 space-x-2"><a class="p-1 font-bold btn btn-text-primary-light" href="https://github.com/kevinshu1995"><i class="fab fa-github"></i></a><a class="p-1 font-bold btn btn-text-primary-light" href="mailto:kevinshu1995@gmail.com"><i class="fas fa-paper-plane"></i></a></div>
+            <button class="dropdown relative font-bold btn btn-primary border-l-2 border-warmGray-800"><span>
+                 查看目錄<i class="fas fa-angle-down ml-1"></i></span>
+              <ul class="dropdown-list text-left max-h-40 overflow-y-auto">
+                <li><a class="btn btn-sm btn-primary btn-full" href="jsDun-001.html">001-九九乘法表</a></li>
+                <li><a class="btn btn-sm btn-primary btn-full" href="jsDun-002.html">002-時鐘</a></li>
+                <li><a class="btn btn-sm btn-primary btn-full" href="jsDun-003.html">003-計算機</a></li>
+                <li><a class="btn btn-sm btn-primary btn-full" href="jsDun-004.html">004-世界時鐘</a></li>
               </ul>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="pb-12"></div>
+    <div class="text-white bg-black bg-bottom bg-cover bg-repeat" style="background-image: url(assets/images/index_cover.jpg);">
+      <section class="container text-white" style="min-height:70vh">
+        <div class="row pt-20 mb-20">
+          <div class="col text-center w-full">
+            <h1 class="mb-8 text-5xl text-primary-400">JS Dungeon</h1>
+            <p>本網頁源自於六角學院的「JS地下城」課程，僅做為練習的紀錄用。<br/>如果寫得很差...就是我太爛沒錯！有任何建議都可以<a href="mailto:kevinshu1995@gmail.com" data-tooltip="點擊寄信">聯絡我</a>。</p>
+          </div>
+        </div>
+        <div class="row pb-20 justify-center">
+          <div class="col text-center mb-6 w-full">
+            <h2 class="mb-5 text-xl text-primary-400">本站使用技術或框架</h2>
+            <ul class="flex justify-center flex-col sm:flex-row space-y-4 sm:space-y-0 space-x-0 sm:space-x-8">
+              <li>Gulp</li>
+              <li>HTML / Pug</li>
+              <li>CSS / Sass / TailwindCss</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="col md:w-4/12 w-8/12">
+            <p class="text-warmGray-400">全部的設計稿皆為六角學院提供，練習的畫面都是使用原生 Javascript 撰寫，不過其他部分以 jQuery 為主，不然好麻煩。</p>
+          </div>
+          <div class="col md:w-4/12 w-8/12">
+            <p class="text-warmGray-400">此專案使用了 Gulp ，以 PUG、SASS 撰寫頁面， CSS 框架嘗試使用 Foundation ，只是想嘗試看看不同的框架差異，哈哈。</p>
+          </div>
+        </div>
+        <div class="row pb-10">
+          <div class="col mb-1 w-full">
+            <div class="flex justify-center mb-4">
+              <div class="w-40"><img class="inline-block rounded-full overflow-hidden" src="assets/images/avatar.jpg"/></div>
             </div>
+            <h2 class="text-base text-normal text-center text-primary-400">Kevin Hsu</h2>
+          </div>
+          <div class="col w-full">
+            <ul class="flex justify-center space-x-4 text-sm">
+              <li class="ml-2"><a class="text-white" data-tooltip="點擊寄信" href="mailto:kevinshu1995@gmail.com"><i class="fas fa-paper-plane mr-1"></i><span>聯絡我</span></a></li>
+              <li><a class="text-white" data-tooltip="點擊前往" href="https://github.com/kevinshu1995" target="_blank"><i class="fab fa-github mr-1"></i><span>kevinshu1995</span></a></li>
+            </ul>
           </div>
         </div>
       </section>
     </div>
-    <div class="index">
-      <section class="grid-container">
-        <div class="grid-x grid-margin-x small-up-3 medium-up-4 align-center-middle">
-          <div class="cell"><a href="jsDun-001.html">
-              <div class="card hover--card--enter hover--card--filter"><img src="assets/images/multiplicationChart.jpg"/>
-                <div class="card-section">
-                  <h4 class="text-truncate ct-font-3">九九乘法表</h4>
-                  <h5 class="text-truncate ct-font-2 subheader">Mutiplication Chart</h5>
-                  <p class="text-truncate ct-font-1 subheader">單純就是用 JS 計算九九乘法表。</p>
-                </div>
+    <div class="text-white bg-black">
+      <section class="container">
+        <div class="row py-10">
+          <div class="col lg:w-3/12 sm:w-6/12 w-12/12"><a class="group card" href="jsDun-001.html"><img class="card__img group-hover:filter-none" src="assets/images/multiplicationChart.jpg"/>
+              <div class="card__wrap group-hover:text-primary-400 group-hover:px-3">
+                <h4 class="card__title mb-1 group-hover:text-primary-400">001 | 九九乘法表</h4>
+                <h5 class="card__content">Mutiplication Chart</h5>
+                <p class="card__content">JS 迴圈練習。</p>
               </div></a></div>
-          <div class="cell"><a href="jsDun-002.html">
-              <div class="card hover--card--enter hover--card--filter"><img src="assets/images/clock.jpg"/>
-                <div class="card-section">
-                  <h4 class="text-truncate ct-font-3">時鐘</h4>
-                  <h5 class="text-truncate ct-font-2 subheader">Clock</h5>
-                  <p class="text-truncate ct-font-1 subheader">除了用原生 JS 算時間之外，整個時鐘都是 css 寫的。</p>
-                </div>
+          <div class="col lg:w-3/12 sm:w-6/12 w-12/12"><a class="group card" href="jsDun-002.html"><img class="card__img group-hover:filter-none" src="assets/images/clock.jpg"/>
+              <div class="card__wrap group-hover:text-primary-400 group-hover:px-3">
+                <h4 class="card__title mb-1 group-hover:text-primary-400">002 | 時鐘</h4>
+                <h5 class="card__content">Clock</h5>
+                <p class="card__content">用原生 JS 算時間控制指針，整個時鐘都是 css 寫的。</p>
               </div></a></div>
-          <div class="cell"><a href="jsDun-003.html">
-              <div class="card hover--card--enter hover--card--filter"><img src="assets/images/calculatar.jpg"/>
-                <div class="card-section">
-                  <h4 class="text-truncate ct-font-3">計算機</h4>
-                  <h5 class="text-truncate ct-font-2 subheader">Calculatar</h5>
-                  <p class="text-truncate ct-font-1 subheader">使用 JS 寫計算機的功能，我是一定不會用這個來算的。</p>
-                </div>
+          <div class="col lg:w-3/12 sm:w-6/12 w-12/12"><a class="group card" href="jsDun-003.html"><img class="card__img group-hover:filter-none" src="assets/images/calculatar.jpg"/>
+              <div class="card__wrap group-hover:text-primary-400 group-hover:px-3">
+                <h4 class="card__title mb-1 group-hover:text-primary-400">003 | 計算機</h4>
+                <h5 class="card__content">Calculatar</h5>
+                <p class="card__content">使用 JS 寫計算機的功能，強烈建議不要用這個來計算 XD。</p>
               </div></a></div>
-          <div class="cell"><a href="jsDun-004.html">
-              <div class="card hover--card--enter hover--card--filter"><img src="assets/images/worldclock.png"/>
-                <div class="card-section">
-                  <h4 class="text-truncate ct-font-3">世界時鐘</h4>
-                  <h5 class="text-truncate ct-font-2 subheader">World Clock</h5>
-                  <p class="text-truncate ct-font-1 subheader">以 Date 物件以 timezone 推算其他地區的現在時間。</p>
-                </div>
+          <div class="col lg:w-3/12 sm:w-6/12 w-12/12"><a class="group card" href="jsDun-004.html"><img class="card__img group-hover:filter-none" src="assets/images/worldclock.png"/>
+              <div class="card__wrap group-hover:text-primary-400 group-hover:px-3">
+                <h4 class="card__title mb-1 group-hover:text-primary-400">004 | 世界時鐘</h4>
+                <h5 class="card__content">World Clock</h5>
+                <p class="card__content">以 Date 物件以 timezone 推算其他地區的現在時間。</p>
               </div></a></div>
         </div>
       </section>
     </div>
-    <div class="footer-padding"></div>
-    <footer class="footer padding-vertical-12 text-center">
-      <ul class="menu vertical align-center">
-        <li>
-          <h6 class="ct-font-1 margin-bottom-0"><span>設計稿來源為六角學院</span></h6>
-        </li>
-        <li class="ct-font-1"><a class="animate__animated hover-pulse" href="https://github.com/kevinshu1995"> <i class="fab fa-github margin-right-1"></i><span>kevinshu1995</span></a><a class="animate__animated hover-pulse" href="mailto:kevinshu1995@gmail.com"> <i class="fas fa-paper-plane margin-right-1"></i><span>Email Me</span></a></li>
+    <div class="pb-28 bg-black"></div>
+    <footer class="absolute text-white left-0 bottom-0 w-full py-8 text-center bg-black">
+      <h6 class="text-sm mb-2">&copy; 2020-2021, Kevin Hsu - 許文修</h6>
+      <ul class="flex justify-center space-x-4 text-xs">
+        <li> <a class="text-white" href="https://github.com/kevinshu1995"><i class="fab fa-github mr-2"></i>kevinshu1995</a></li>
+        <li> <a class="text-white" href="mailto:kevinshu1995@gmail.com"><i class="fas fa-paper-plane mr-2"> </i>Email Me</a></li>
       </ul>
     </footer>
-    <script src="assets/js/vendors.js"></script>
     <script src="assets/js/all.js"></script>
   </body>
 </html>

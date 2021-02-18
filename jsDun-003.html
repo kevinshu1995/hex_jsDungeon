@@ -1,77 +1,69 @@
-<!DOCTYPE html>
+
 <html lang="zh-Hant-TW">
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="assets/style/all.css"/>
+    <link rel="stylesheet" href="assets/style/index.css"/>
+    <link rel="stylesheet" href="assets/style/vendors.css"/>
     <title>JSDungeon | JS地下城 | 003 | 計算機 | Calculator</title>
     <link rel="stylesheet" href="assets/style/pageStyle/style003.css"/>
   </head>
-  <body>
-    <div class="navwrap">
-      <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="large">
-        <button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
-      </div>
-      <div class="top-bar main__menu bg-foundation-dark" id="responsive-menu">
-        <div class="top-bar-left">
-          <ul class="menu">
-            <li class="animate__animated animate__fadeInTopLeft"><a class="font-bold logo text-primary" href="index.html">JS Dungeon</a></li>
-          </ul>
-        </div>
-        <div class="top-bar-right">
-          <ul class="menu">
-            <li class="animate__animated animate__fadeInTopRight"><a href="jsDun-001.html">001-九九乘法表</a></li>
-            <li class="animate__animated animate__fadeInTopRight animate__delay-1s"><a href="jsDun-002.html">002-時鐘</a></li>
-            <li class="animate__animated animate__fadeInTopRight animate__delay-2s"><a href="jsDun-003.html">003-計算機</a></li>
-            <li class="animate__animated animate__fadeInTopRight animate__delay-2s"><a href="jsDun-004.html">004-世界時鐘</a></li>
-          </ul>
-        </div>
-        <div class="top-bar-right">
-          <ul class="menu animate__animated animate__fadeInTopRight">
-            <li><a target="_blank" href="https://github.com/kevinshu1995"><i class="fab fa-github"></i></a></li>
-            <li><a target="_blank" href="mailto:kevinshu1995@gmail.com"><i class="fas fa-paper-plane"></i></a></li>
-          </ul>
+  <body class="relative font-body">
+    <nav class="fixed z-1000 w-full block shadow-sm bg-warmGray-900">
+      <div class="desktop">
+        <div class="flex flex-nowrap justify-between"><a class="font-bold btn btn-text-primary" href="/">JS Dungeon</a>
+          <div class="right flex flex-nowrap flex-end">
+            <div class="flex flex-nowrap items-center text-primary-500 mr-3 space-x-2"><a class="p-1 font-bold btn btn-text-primary-light" href="https://github.com/kevinshu1995"><i class="fab fa-github"></i></a><a class="p-1 font-bold btn btn-text-primary-light" href="mailto:kevinshu1995@gmail.com"><i class="fas fa-paper-plane"></i></a></div>
+            <button class="dropdown relative font-bold btn btn-primary border-l-2 border-warmGray-800"><span>
+                 查看目錄<i class="fas fa-angle-down ml-1"></i></span>
+              <ul class="dropdown-list text-left max-h-40 overflow-y-auto">
+                <li><a class="btn btn-sm btn-primary btn-full" href="jsDun-001.html">001-九九乘法表</a></li>
+                <li><a class="btn btn-sm btn-primary btn-full" href="jsDun-002.html">002-時鐘</a></li>
+                <li><a class="btn btn-sm btn-primary btn-full" href="jsDun-003.html">003-計算機</a></li>
+                <li><a class="btn btn-sm btn-primary btn-full" href="jsDun-004.html">004-世界時鐘</a></li>
+              </ul>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="fix-height vh-100"></div>
+    </nav>
+    <div class="pb-12"></div>
+    <div class="fix-height" style="min-height: 100vh"></div>
     <div class="wrap">
       <div class="title clearfix">
-        <h3 class="currSent"></h3>
-        <h2 class="currNum"></h2>
+        <h3 id="current_formula"></h3>
+        <h2 id="current_answer"></h2>
       </div>
       <ul class="btnsWrap">
-        <li class="btn">7</li>
-        <li class="btn">8</li>
-        <li class="btn">9</li>
-        <li class="btn l-bgcolor-pri">÷</li>
-        <li class="btn">4</li>
-        <li class="btn">5</li>
-        <li class="btn">6</li>
-        <li class="btn l-bgcolor-pri">×</li>
-        <li class="btn">1</li>
-        <li class="btn">2</li>
-        <li class="btn">3</li>
-        <li class="btn l-bgcolor-pri">+</li>
-        <li class="btn">0</li>
-        <li class="btn">00</li>
-        <li class="btn">.</li>
-        <li class="btn l-bgcolor-pri">−</li>
-        <li class="btn l-color-pri">AC</li>
-        <li class="btn l-color-pri"><i class="fas fa-backspace"></i><span class="l-fz0 clearfix">delete</span></li>
-        <li class="btn l-btn--w2">=</li>
+        <li class="btn_" data-action="7">7</li>
+        <li class="btn_" data-action="8">8</li>
+        <li class="btn_" data-action="9">9</li>
+        <li class="btn_ l-bgcolor-pri" data-action="division">÷</li>
+        <li class="btn_" data-action="4">4</li>
+        <li class="btn_" data-action="5">5</li>
+        <li class="btn_" data-action="6">6</li>
+        <li class="btn_ l-bgcolor-pri" data-action="times">×</li>
+        <li class="btn_" data-action="1">1</li>
+        <li class="btn_" data-action="2">2</li>
+        <li class="btn_" data-action="3">3</li>
+        <li class="btn_ l-bgcolor-pri" data-action="plus">+</li>
+        <li class="btn_" data-action="0">0</li>
+        <li class="btn_" data-action="d-0">00</li>
+        <li class="btn_" data-action="point">.</li>
+        <li class="btn_ l-bgcolor-pri" data-action="minus">−</li>
+        <li class="btn_ l-color-pri" data-action="ac">AC</li>
+        <li class="btn_ l-color-pri" data-action="delete"><i class="fas fa-backspace" data-action="delete"></i><span class="l-fz0 clearfix" data-action="delete">delete</span></li>
+        <li class="btn_ l-btn--w2" data-action="equal">=</li>
       </ul>
     </div>
-    <div class="footer-padding"></div>
-    <footer class="footer padding-vertical-12 text-center bg-foundation-dark">
-      <ul class="menu vertical align-center">
-        <li>
-          <h6 class="ct-font-1 margin-bottom-0"><span>設計稿來源為六角學院</span></h6>
-        </li>
-        <li class="ct-font-1"><a class="animate__animated hover-pulse" href="https://github.com/kevinshu1995"> <i class="fab fa-github margin-right-1"></i><span>kevinshu1995</span></a><a class="animate__animated hover-pulse" href="mailto:kevinshu1995@gmail.com"> <i class="fas fa-paper-plane margin-right-1"></i><span>Email Me</span></a></li>
+    <div class="pb-28 bg-black"></div>
+    <footer class="absolute text-white left-0 bottom-0 w-full py-8 text-center bg-black">
+      <h6 class="text-sm mb-2">&copy; 2020-2021, Kevin Hsu - 許文修</h6>
+      <ul class="flex justify-center space-x-4 text-xs">
+        <li> <a class="text-white" href="https://github.com/kevinshu1995"><i class="fab fa-github mr-2"></i>kevinshu1995</a></li>
+        <li> <a class="text-white" href="mailto:kevinshu1995@gmail.com"><i class="fas fa-paper-plane mr-2"> </i>Email Me</a></li>
       </ul>
     </footer>
-    <script src="assets/js/vendors.js"></script>
     <script src="assets/js/all.js"></script>
     <script src="assets/js/js003.js"></script>
   </body>
