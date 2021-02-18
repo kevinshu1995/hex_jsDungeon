@@ -6,10 +6,18 @@ const browserSync = require('browser-sync').create()
 const { envOptions } = require('./envOptions')
 const pug = require('gulp-pug') //載入 gulp-pug
 const prettier = require('gulp-prettier')
+const postcss = require('gulp-postcss')
+const purgecss = require('gulp-purgecss')
 
 let options = minimist(process.argv.slice(2), envOptions)
 //現在開發狀態
 console.log(`Current mode：${options.env}`)
+
+function set_prod_node_env() {
+    gulp.task('set-dev-node-env', function () {
+        return (process.env.NODE_ENV = 'development')
+    })
+}
 
 function copyFile() {
     return gulp
@@ -61,13 +69,26 @@ function sass() {
         )
 }
 
-function tailwindcss() {
-    const plugins = [require('tailwindcss'), autoprefixer()]
-    const postcss = require('gulp-postcss')
+const postcss_plugins = [require('tailwindcss'), autoprefixer()]
 
+function tailwindcss_purge() {
     return gulp
         .src(envOptions.style.tailwindCss.inputPath)
-        .pipe(postcss(plugins))
+        .pipe(postcss(postcss_plugins))
+        .pipe(
+            purgecss({
+                content: ['./app/**/*.pug', './app/**/*.js'],
+                defaultExtractor: (content) =>
+                    content.match(/[\w-/:]+(?<!:)/g) || [],
+            })
+        )
+        .pipe(gulp.dest(envOptions.style.tailwindCss.outputPath))
+}
+
+function tailwindcss() {
+    return gulp
+        .src(envOptions.style.tailwindCss.inputPath)
+        .pipe(postcss(postcss_plugins))
         .pipe(gulp.dest(envOptions.style.tailwindCss.outputPath))
 }
 
@@ -132,7 +153,16 @@ function watch() {
     gulp.watch(envOptions.style.tailwindCss.inputPath, gulp.series(tailwindcss))
 }
 
-exports.deploy = deploy
+exports.deploy = gulp.series(
+    clean,
+    copyFile,
+    layoutHTML,
+    sass,
+    tailwindcss_purge,
+    babel,
+    // vendorsJs,
+    deploy
+)
 
 exports.clean = clean
 
@@ -141,9 +171,9 @@ exports.build = gulp.series(
     copyFile,
     layoutHTML,
     sass,
-    tailwindcss,
-    babel,
-    vendorsJs
+    tailwindcss_purge,
+    babel
+    // vendorsJs
 )
 
 exports.default = gulp.series(
@@ -153,6 +183,6 @@ exports.default = gulp.series(
     sass,
     tailwindcss,
     babel,
-    vendorsJs,
+    // vendorsJs,
     gulp.parallel(browser, watch)
 )

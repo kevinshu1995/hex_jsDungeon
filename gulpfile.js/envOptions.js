@@ -53,11 +53,7 @@ let envOptions = {
         path: `${distPath}/assets/js`,
     },
     vendors: {
-        src: [
-            `${nodePath}/jquery/dist/**/jquery.min.js`,
-            `${nodePath}/foundation-sites/dist/js/foundation.min.js`,
-            `${nodePath}/popmotion/dist/popmotion.min.js`,
-        ],
+        src: [],
         concat: 'vendors.js',
         path: `${distPath}/assets/js`,
     },
