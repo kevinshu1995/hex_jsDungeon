@@ -20,7 +20,7 @@ block content
 			.row.pb-20.justify-center
 				.col.text-center.mb-6(class="w-full")
 					h2.mb-5.text-xl.text-primary-400 本站使用技術或框架
-					ul.flex.justify-center.space-x-8
+					ul.flex.justify-center(class="flex-col sm:flex-row space-y-4 sm:space-y-0 space-x-0 sm:space-x-8")
 						li Gulp
 						li HTML / Pug
 						li CSS / Sass / TailwindCss
@@ -50,28 +50,28 @@ block content
 			.row.py-10
 				//- .col(class="w-full")
 					h2.text-primary-400.font-bold.text-center.mb-5 
-				.col(class="w-3/12")
+				.col(class="lg:w-3/12 sm:w-6/12 w-12/12")
 					a.group.card(href="jsDun-001.html")
 						img.card__img(class="group-hover:filter-none" src="assets/images/multiplicationChart.jpg")
 						.card__wrap(class="group-hover:text-primary-400 group-hover:px-3")
 							h4.card__title.mb-1(class="group-hover:text-primary-400") 001 | 九九乘法表
 							h5.card__content Mutiplication Chart
 							p.card__content JS 迴圈練習。
-				.col(class="w-3/12")
+				.col(class="lg:w-3/12 sm:w-6/12 w-12/12")
 					a.group.card(href="jsDun-002.html")
 						img.card__img(class="group-hover:filter-none" src="assets/images/clock.jpg")
 						.card__wrap(class="group-hover:text-primary-400 group-hover:px-3")
 							h4.card__title.mb-1(class="group-hover:text-primary-400") 002 | 時鐘
 							h5.card__content Clock
 							p.card__content 用原生 JS 算時間控制指針，整個時鐘都是 css 寫的。
-				.col(class="w-3/12")
+				.col(class="lg:w-3/12 sm:w-6/12 w-12/12")
 					a.group.card(href="jsDun-003.html")
 						img.card__img(class="group-hover:filter-none" src="assets/images/calculatar.jpg")
 						.card__wrap(class="group-hover:text-primary-400 group-hover:px-3")
 							h4.card__title.mb-1(class="group-hover:text-primary-400") 003 | 計算機
 							h5.card__content Calculatar
 							p.card__content 使用 JS 寫計算機的功能，強烈建議不要用這個來計算 XD。
-				.col(class="w-3/12")
+				.col(class="lg:w-3/12 sm:w-6/12 w-12/12")
 					a.group.card(href="jsDun-004.html")
 						img.card__img(class="group-hover:filter-none" src="assets/images/worldclock.png")
 						.card__wrap(class="group-hover:text-primary-400 group-hover:px-3")
