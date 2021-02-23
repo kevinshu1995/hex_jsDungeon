@@ -2,6 +2,7 @@ const gulp = require('gulp')
 const $ = require('gulp-load-plugins')({ lazy: false })
 const autoprefixer = require('autoprefixer')
 const minimist = require('minimist')
+const gulpif = require('gulp-if')
 const browserSync = require('browser-sync').create()
 const { envOptions } = require('./envOptions')
 const pug = require('gulp-pug') //載入 gulp-pug
@@ -12,12 +13,6 @@ const purgecss = require('gulp-purgecss')
 let options = minimist(process.argv.slice(2), envOptions)
 //現在開發狀態
 console.log(`Current mode：${options.env}`)
-
-function set_prod_node_env() {
-    gulp.task('set-dev-node-env', function () {
-        return (process.env.NODE_ENV = 'development')
-    })
-}
 
 function copyFile() {
     return gulp
@@ -69,27 +64,28 @@ function sass() {
         )
 }
 
-const postcss_plugins = [require('tailwindcss'), autoprefixer()]
+// function tailwindcss_purge() {
+//     return gulp
+//         .src(envOptions.style.tailwindCss.inputPath)
+//         .pipe(postcss(postcss_plugins))
+//         .pipe()
+//         .pipe(gulp.dest(envOptions.style.tailwindCss.outputPath))
+// }
 
-function tailwindcss_purge() {
-    return gulp
-        .src(envOptions.style.tailwindCss.inputPath)
-        .pipe(postcss(postcss_plugins))
-        .pipe(
-            purgecss({
-                content: ['./app/**/*.pug', './app/**/*.js'],
-                defaultExtractor: (content) =>
-                    content.match(/[\w-/:]+(?<!:)/g) || [],
-            })
-        )
-        .pipe(gulp.dest(envOptions.style.tailwindCss.outputPath))
+const postcss_plugins = [require('tailwindcss'), autoprefixer()]
+const purge_options = {
+    content: ['./app/**/*.pug', './app/**/*.js'],
+    defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
 }
 
 function tailwindcss() {
-    return gulp
-        .src(envOptions.style.tailwindCss.inputPath)
-        .pipe(postcss(postcss_plugins))
-        .pipe(gulp.dest(envOptions.style.tailwindCss.outputPath))
+    return (
+        gulp
+            .src(envOptions.style.tailwindCss.inputPath)
+            .pipe(postcss(postcss_plugins))
+            // .pipe(gulpif(options.env === 'prod', purgecss(purge_options)))
+            .pipe(gulp.dest(envOptions.style.tailwindCss.outputPath))
+    )
 }
 
 function babel() {
@@ -158,7 +154,7 @@ exports.deploy = gulp.series(
     copyFile,
     layoutHTML,
     sass,
-    tailwindcss_purge,
+    tailwindcss,
     babel,
     // vendorsJs,
     deploy
@@ -171,7 +167,7 @@ exports.build = gulp.series(
     copyFile,
     layoutHTML,
     sass,
-    tailwindcss_purge,
+    tailwindcss,
     babel
     // vendorsJs
 )
