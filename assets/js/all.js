@@ -31,9 +31,9 @@ function Dropdown() {
     if (this.el_dropdowns.length <= 0 || this.el_dropdownsList <= 0) return;
     this.el_dropdowns.forEach(function (el_dropdown) {
       el_dropdown.addEventListener('click', function (e) {
-        ;
+        var child = _toConsumableArray(this.children);
 
-        _toConsumableArray(this.children).find(function (child) {
+        child.find(function (child) {
           return child.classList.contains('dropdown-list');
         }).classList.toggle('block');
       });

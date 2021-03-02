@@ -1,53 +1,53 @@
 body {
-    background-color: #293b29;
+  background-color: #293b29;
 }
 
 .clock-bg {
-    width: 350px;
-    height: 350px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    border-radius: 80px;
-    background-color: #3d5a45;
-    -webkit-box-shadow: 0 0 10px #1f2c1f;
-            box-shadow: 0 0 10px #1f2c1f;
-    z-index: 1;
-    -webkit-transform: translateY(-10%);
-        -ms-transform: translateY(-10%);
-            transform: translateY(-10%);
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 80px;
+  background-color: #3d5a45;
+  -webkit-box-shadow: 0 0 10px #1f2c1f;
+          box-shadow: 0 0 10px #1f2c1f;
+  z-index: 1;
+  -webkit-transform: translateY(-10%);
+      -ms-transform: translateY(-10%);
+          transform: translateY(-10%);
 }
 
 .clock-bg .clock__body {
-    width: 310px;
-    height: 310px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    border-radius: 50%;
-    background-color: #293b29;
-    border: 3px solid #1f2c1f;
-    z-index: 2;
+  width: 310px;
+  height: 310px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+  background-color: #293b29;
+  border: 3px solid #1f2c1f;
+  z-index: 2;
 }
 
 .clock__body__deco,
 .clock__body__decoTxt,
 .clock__body__hand {
-    z-index: 3;
-    width: 260px;
-    height: 260px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
+  z-index: 3;
+  width: 260px;
+  height: 260px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
 }
 
 .clock__body__deco .hour0,
@@ -57,16 +57,15 @@ body {
 .clock__body__deco .hour120,
 .clock__body__deco .hour150,
 .clock__body__deco .min {
-    width: 100%;
-    height: 1px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 
-.clock__body__deco .hour0:after,
-.clock__body__deco .hour0:before,
+.clock__body__deco .hour0:after, .clock__body__deco .hour0:before,
 .clock__body__deco .hour30:after,
 .clock__body__deco .hour30:before,
 .clock__body__deco .hour60:after,
@@ -79,12 +78,12 @@ body {
 .clock__body__deco .hour150:before,
 .clock__body__deco .min:after,
 .clock__body__deco .min:before {
-    content: '';
-    height: 100%;
-    width: 20px;
-    background-color: #ff7600;
-    position: absolute;
-    top: 0;
+  content: '';
+  height: 100%;
+  width: 20px;
+  background-color: #ff7600;
+  position: absolute;
+  top: 0;
 }
 
 .clock__body__deco .hour0:after,
@@ -94,7 +93,7 @@ body {
 .clock__body__deco .hour120:after,
 .clock__body__deco .hour150:after,
 .clock__body__deco .min:after {
-    left: 0;
+  left: 0;
 }
 
 .clock__body__deco .hour0::before,
@@ -104,590 +103,576 @@ body {
 .clock__body__deco .hour120::before,
 .clock__body__deco .hour150::before,
 .clock__body__deco .min::before {
-    right: 0;
+  right: 0;
 }
 
 .clock__body__deco .min:after,
 .clock__body__deco .min:before {
-    width: 2px;
-    height: 2px;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    background-color: #ffffff;
-    border-radius: 50%;
+  width: 2px;
+  height: 2px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 50%;
 }
 
 .clock__body__deco .min:after {
-    -webkit-transform: translateX(50%);
-        -ms-transform: translateX(50%);
-            transform: translateX(50%);
-    left: auto;
-    right: 10px;
+  -webkit-transform: translateX(50%);
+      -ms-transform: translateX(50%);
+          transform: translateX(50%);
+  left: auto;
+  right: 10px;
 }
 
 .clock__body__deco .min:before {
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
-    right: auto;
-    left: 10px;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  right: auto;
+  left: 10px;
 }
 
 .clock__body__deco .hour0 {
-    -webkit-transform: rotateZ(90deg);
-        -ms-transform: rotate(90deg);
-            transform: rotateZ(90deg);
+  -webkit-transform: rotateZ(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotateZ(90deg);
 }
 
 .clock__body__deco .hour30 {
-    -webkit-transform: rotateZ(60deg);
-        -ms-transform: rotate(60deg);
-            transform: rotateZ(60deg);
+  -webkit-transform: rotateZ(60deg);
+      -ms-transform: rotate(60deg);
+          transform: rotateZ(60deg);
 }
 
 .clock__body__deco .hour60 {
-    -webkit-transform: rotateZ(30deg);
-        -ms-transform: rotate(30deg);
-            transform: rotateZ(30deg);
+  -webkit-transform: rotateZ(30deg);
+      -ms-transform: rotate(30deg);
+          transform: rotateZ(30deg);
 }
 
 .clock__body__deco .hour120 {
-    -webkit-transform: rotateZ(-30deg);
-        -ms-transform: rotate(-30deg);
-            transform: rotateZ(-30deg);
+  -webkit-transform: rotateZ(-30deg);
+      -ms-transform: rotate(-30deg);
+          transform: rotateZ(-30deg);
 }
 
 .clock__body__deco .hour150 {
-    -webkit-transform: rotateZ(-60deg);
-        -ms-transform: rotate(-60deg);
-            transform: rotateZ(-60deg);
+  -webkit-transform: rotateZ(-60deg);
+      -ms-transform: rotate(-60deg);
+          transform: rotateZ(-60deg);
 }
 
 .clock__body__deco .min1 {
-    -webkit-transform: rotateZ(-84deg);
-        -ms-transform: rotate(-84deg);
-            transform: rotateZ(-84deg);
+  -webkit-transform: rotateZ(-84deg);
+      -ms-transform: rotate(-84deg);
+          transform: rotateZ(-84deg);
 }
 
 .clock__body__deco .min2 {
-    -webkit-transform: rotateZ(-78deg);
-        -ms-transform: rotate(-78deg);
-            transform: rotateZ(-78deg);
+  -webkit-transform: rotateZ(-78deg);
+      -ms-transform: rotate(-78deg);
+          transform: rotateZ(-78deg);
 }
 
 .clock__body__deco .min3 {
-    -webkit-transform: rotateZ(-72deg);
-        -ms-transform: rotate(-72deg);
-            transform: rotateZ(-72deg);
+  -webkit-transform: rotateZ(-72deg);
+      -ms-transform: rotate(-72deg);
+          transform: rotateZ(-72deg);
 }
 
 .clock__body__deco .min4 {
-    -webkit-transform: rotateZ(-66deg);
-        -ms-transform: rotate(-66deg);
-            transform: rotateZ(-66deg);
+  -webkit-transform: rotateZ(-66deg);
+      -ms-transform: rotate(-66deg);
+          transform: rotateZ(-66deg);
 }
 
 .clock__body__deco .min6 {
-    -webkit-transform: rotateZ(-54deg);
-        -ms-transform: rotate(-54deg);
-            transform: rotateZ(-54deg);
+  -webkit-transform: rotateZ(-54deg);
+      -ms-transform: rotate(-54deg);
+          transform: rotateZ(-54deg);
 }
 
 .clock__body__deco .min7 {
-    -webkit-transform: rotateZ(-48deg);
-        -ms-transform: rotate(-48deg);
-            transform: rotateZ(-48deg);
+  -webkit-transform: rotateZ(-48deg);
+      -ms-transform: rotate(-48deg);
+          transform: rotateZ(-48deg);
 }
 
 .clock__body__deco .min8 {
-    -webkit-transform: rotateZ(-42deg);
-        -ms-transform: rotate(-42deg);
-            transform: rotateZ(-42deg);
+  -webkit-transform: rotateZ(-42deg);
+      -ms-transform: rotate(-42deg);
+          transform: rotateZ(-42deg);
 }
 
 .clock__body__deco .min9 {
-    -webkit-transform: rotateZ(-36deg);
-        -ms-transform: rotate(-36deg);
-            transform: rotateZ(-36deg);
+  -webkit-transform: rotateZ(-36deg);
+      -ms-transform: rotate(-36deg);
+          transform: rotateZ(-36deg);
 }
 
 .clock__body__deco .min11 {
-    -webkit-transform: rotateZ(-24deg);
-        -ms-transform: rotate(-24deg);
-            transform: rotateZ(-24deg);
+  -webkit-transform: rotateZ(-24deg);
+      -ms-transform: rotate(-24deg);
+          transform: rotateZ(-24deg);
 }
 
 .clock__body__deco .min12 {
-    -webkit-transform: rotateZ(-18deg);
-        -ms-transform: rotate(-18deg);
-            transform: rotateZ(-18deg);
+  -webkit-transform: rotateZ(-18deg);
+      -ms-transform: rotate(-18deg);
+          transform: rotateZ(-18deg);
 }
 
 .clock__body__deco .min13 {
-    -webkit-transform: rotateZ(-12deg);
-        -ms-transform: rotate(-12deg);
-            transform: rotateZ(-12deg);
+  -webkit-transform: rotateZ(-12deg);
+      -ms-transform: rotate(-12deg);
+          transform: rotateZ(-12deg);
 }
 
 .clock__body__deco .min14 {
-    -webkit-transform: rotateZ(-6deg);
-        -ms-transform: rotate(-6deg);
-            transform: rotateZ(-6deg);
+  -webkit-transform: rotateZ(-6deg);
+      -ms-transform: rotate(-6deg);
+          transform: rotateZ(-6deg);
 }
 
 .clock__body__deco .min16 {
-    -webkit-transform: rotateZ(6deg);
-        -ms-transform: rotate(6deg);
-            transform: rotateZ(6deg);
+  -webkit-transform: rotateZ(6deg);
+      -ms-transform: rotate(6deg);
+          transform: rotateZ(6deg);
 }
 
 .clock__body__deco .min17 {
-    -webkit-transform: rotateZ(12deg);
-        -ms-transform: rotate(12deg);
-            transform: rotateZ(12deg);
+  -webkit-transform: rotateZ(12deg);
+      -ms-transform: rotate(12deg);
+          transform: rotateZ(12deg);
 }
 
 .clock__body__deco .min18 {
-    -webkit-transform: rotateZ(18deg);
-        -ms-transform: rotate(18deg);
-            transform: rotateZ(18deg);
+  -webkit-transform: rotateZ(18deg);
+      -ms-transform: rotate(18deg);
+          transform: rotateZ(18deg);
 }
 
 .clock__body__deco .min19 {
-    -webkit-transform: rotateZ(24deg);
-        -ms-transform: rotate(24deg);
-            transform: rotateZ(24deg);
+  -webkit-transform: rotateZ(24deg);
+      -ms-transform: rotate(24deg);
+          transform: rotateZ(24deg);
 }
 
 .clock__body__deco .min21 {
-    -webkit-transform: rotateZ(36deg);
-        -ms-transform: rotate(36deg);
-            transform: rotateZ(36deg);
+  -webkit-transform: rotateZ(36deg);
+      -ms-transform: rotate(36deg);
+          transform: rotateZ(36deg);
 }
 
 .clock__body__deco .min22 {
-    -webkit-transform: rotateZ(42deg);
-        -ms-transform: rotate(42deg);
-            transform: rotateZ(42deg);
+  -webkit-transform: rotateZ(42deg);
+      -ms-transform: rotate(42deg);
+          transform: rotateZ(42deg);
 }
 
 .clock__body__deco .min23 {
-    -webkit-transform: rotateZ(48deg);
-        -ms-transform: rotate(48deg);
-            transform: rotateZ(48deg);
+  -webkit-transform: rotateZ(48deg);
+      -ms-transform: rotate(48deg);
+          transform: rotateZ(48deg);
 }
 
 .clock__body__deco .min24 {
-    -webkit-transform: rotateZ(54deg);
-        -ms-transform: rotate(54deg);
-            transform: rotateZ(54deg);
+  -webkit-transform: rotateZ(54deg);
+      -ms-transform: rotate(54deg);
+          transform: rotateZ(54deg);
 }
 
 .clock__body__deco .min26 {
-    -webkit-transform: rotateZ(66deg);
-        -ms-transform: rotate(66deg);
-            transform: rotateZ(66deg);
+  -webkit-transform: rotateZ(66deg);
+      -ms-transform: rotate(66deg);
+          transform: rotateZ(66deg);
 }
 
 .clock__body__deco .min27 {
-    -webkit-transform: rotateZ(72deg);
-        -ms-transform: rotate(72deg);
-            transform: rotateZ(72deg);
+  -webkit-transform: rotateZ(72deg);
+      -ms-transform: rotate(72deg);
+          transform: rotateZ(72deg);
 }
 
 .clock__body__deco .min28 {
-    -webkit-transform: rotateZ(78deg);
-        -ms-transform: rotate(78deg);
-            transform: rotateZ(78deg);
+  -webkit-transform: rotateZ(78deg);
+      -ms-transform: rotate(78deg);
+          transform: rotateZ(78deg);
 }
 
 .clock__body__deco .min29 {
-    -webkit-transform: rotateZ(84deg);
-        -ms-transform: rotate(84deg);
-            transform: rotateZ(84deg);
+  -webkit-transform: rotateZ(84deg);
+      -ms-transform: rotate(84deg);
+          transform: rotateZ(84deg);
 }
 
 .clock__body__decoTxt .hourTxt {
-    width: 100%;
-    height: 1px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 
-.clock__body__decoTxt .hourTxt:after,
-.clock__body__decoTxt .hourTxt:before {
-    font-family: 'Segoe UI', sans-serif;
-    color: #ffffff;
-    font-size: 8px;
-    height: 8px;
-    width: 8px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    text-align: center;
+.clock__body__decoTxt .hourTxt:after, .clock__body__decoTxt .hourTxt:before {
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+  font-size: 8px;
+  height: 8px;
+  width: 8px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
 }
 
 .clock__body__decoTxt .hourTxt:after {
-    right: 28px;
+  right: 28px;
 }
 
 .clock__body__decoTxt .hourTxt::before {
-    right: -15px;
+  right: -15px;
 }
 
 .clock__body__decoTxt .hour1 {
-    -webkit-transform: rotateZ(-60deg);
-        -ms-transform: rotate(-60deg);
-            transform: rotateZ(-60deg);
+  -webkit-transform: rotateZ(-60deg);
+      -ms-transform: rotate(-60deg);
+          transform: rotateZ(-60deg);
 }
 
-.clock__body__decoTxt .hour1:after,
-.clock__body__decoTxt .hour1:before {
-    -webkit-transform: rotateZ(60deg);
-        -ms-transform: rotate(60deg);
-            transform: rotateZ(60deg);
+.clock__body__decoTxt .hour1:after, .clock__body__decoTxt .hour1:before {
+  -webkit-transform: rotateZ(60deg);
+      -ms-transform: rotate(60deg);
+          transform: rotateZ(60deg);
 }
 
 .clock__body__decoTxt .hour1:after {
-    content: '01';
+  content: '01';
 }
 
 .clock__body__decoTxt .hour1:before {
-    content: '13';
+  content: '13';
 }
 
 .clock__body__decoTxt .hour2 {
-    -webkit-transform: rotateZ(-30deg);
-        -ms-transform: rotate(-30deg);
-            transform: rotateZ(-30deg);
+  -webkit-transform: rotateZ(-30deg);
+      -ms-transform: rotate(-30deg);
+          transform: rotateZ(-30deg);
 }
 
-.clock__body__decoTxt .hour2:after,
-.clock__body__decoTxt .hour2:before {
-    -webkit-transform: rotateZ(30deg);
-        -ms-transform: rotate(30deg);
-            transform: rotateZ(30deg);
+.clock__body__decoTxt .hour2:after, .clock__body__decoTxt .hour2:before {
+  -webkit-transform: rotateZ(30deg);
+      -ms-transform: rotate(30deg);
+          transform: rotateZ(30deg);
 }
 
 .clock__body__decoTxt .hour2:after {
-    content: '02';
+  content: '02';
 }
 
 .clock__body__decoTxt .hour2:before {
-    content: '14';
+  content: '14';
 }
 
 .clock__body__decoTxt .hour3:after {
-    content: '03';
+  content: '03';
 }
 
 .clock__body__decoTxt .hour3:before {
-    content: '15';
+  content: '15';
 }
 
 .clock__body__decoTxt .hour4 {
-    -webkit-transform: rotateZ(30deg);
-        -ms-transform: rotate(30deg);
-            transform: rotateZ(30deg);
+  -webkit-transform: rotateZ(30deg);
+      -ms-transform: rotate(30deg);
+          transform: rotateZ(30deg);
 }
 
-.clock__body__decoTxt .hour4:after,
-.clock__body__decoTxt .hour4:before {
-    -webkit-transform: rotateZ(-30deg);
-        -ms-transform: rotate(-30deg);
-            transform: rotateZ(-30deg);
+.clock__body__decoTxt .hour4:after, .clock__body__decoTxt .hour4:before {
+  -webkit-transform: rotateZ(-30deg);
+      -ms-transform: rotate(-30deg);
+          transform: rotateZ(-30deg);
 }
 
 .clock__body__decoTxt .hour4:after {
-    content: '04';
+  content: '04';
 }
 
 .clock__body__decoTxt .hour4:before {
-    content: '16';
+  content: '16';
 }
 
 .clock__body__decoTxt .hour5 {
-    -webkit-transform: rotateZ(60deg);
-        -ms-transform: rotate(60deg);
-            transform: rotateZ(60deg);
+  -webkit-transform: rotateZ(60deg);
+      -ms-transform: rotate(60deg);
+          transform: rotateZ(60deg);
 }
 
-.clock__body__decoTxt .hour5:after,
-.clock__body__decoTxt .hour5:before {
-    -webkit-transform: rotateZ(-60deg);
-        -ms-transform: rotate(-60deg);
-            transform: rotateZ(-60deg);
+.clock__body__decoTxt .hour5:after, .clock__body__decoTxt .hour5:before {
+  -webkit-transform: rotateZ(-60deg);
+      -ms-transform: rotate(-60deg);
+          transform: rotateZ(-60deg);
 }
 
 .clock__body__decoTxt .hour5:after {
-    content: '05';
+  content: '05';
 }
 
 .clock__body__decoTxt .hour5:before {
-    content: '17';
+  content: '17';
 }
 
 .clock__body__decoTxt .hour6 {
-    -webkit-transform: rotateZ(90deg);
-        -ms-transform: rotate(90deg);
-            transform: rotateZ(90deg);
+  -webkit-transform: rotateZ(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotateZ(90deg);
 }
 
-.clock__body__decoTxt .hour6:after,
-.clock__body__decoTxt .hour6:before {
-    -webkit-transform: rotateZ(-90deg);
-        -ms-transform: rotate(-90deg);
-            transform: rotateZ(-90deg);
+.clock__body__decoTxt .hour6:after, .clock__body__decoTxt .hour6:before {
+  -webkit-transform: rotateZ(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotateZ(-90deg);
 }
 
 .clock__body__decoTxt .hour6:after {
-    content: '06';
+  content: '06';
 }
 
 .clock__body__decoTxt .hour6:before {
-    content: '18';
+  content: '18';
 }
 
 .clock__body__decoTxt .hour7 {
-    -webkit-transform: rotateZ(120deg);
-        -ms-transform: rotate(120deg);
-            transform: rotateZ(120deg);
+  -webkit-transform: rotateZ(120deg);
+      -ms-transform: rotate(120deg);
+          transform: rotateZ(120deg);
 }
 
-.clock__body__decoTxt .hour7:after,
-.clock__body__decoTxt .hour7:before {
-    -webkit-transform: rotateZ(-120deg);
-        -ms-transform: rotate(-120deg);
-            transform: rotateZ(-120deg);
+.clock__body__decoTxt .hour7:after, .clock__body__decoTxt .hour7:before {
+  -webkit-transform: rotateZ(-120deg);
+      -ms-transform: rotate(-120deg);
+          transform: rotateZ(-120deg);
 }
 
 .clock__body__decoTxt .hour7:after {
-    content: '07';
+  content: '07';
 }
 
 .clock__body__decoTxt .hour7:before {
-    content: '19';
+  content: '19';
 }
 
 .clock__body__decoTxt .hour8 {
-    -webkit-transform: rotateZ(150deg);
-        -ms-transform: rotate(150deg);
-            transform: rotateZ(150deg);
+  -webkit-transform: rotateZ(150deg);
+      -ms-transform: rotate(150deg);
+          transform: rotateZ(150deg);
 }
 
-.clock__body__decoTxt .hour8:after,
-.clock__body__decoTxt .hour8:before {
-    -webkit-transform: rotateZ(-150deg);
-        -ms-transform: rotate(-150deg);
-            transform: rotateZ(-150deg);
+.clock__body__decoTxt .hour8:after, .clock__body__decoTxt .hour8:before {
+  -webkit-transform: rotateZ(-150deg);
+      -ms-transform: rotate(-150deg);
+          transform: rotateZ(-150deg);
 }
 
 .clock__body__decoTxt .hour8:after {
-    content: '08';
+  content: '08';
 }
 
 .clock__body__decoTxt .hour8:before {
-    content: '20';
+  content: '20';
 }
 
 .clock__body__decoTxt .hour9 {
-    -webkit-transform: rotateZ(180deg);
-        -ms-transform: rotate(180deg);
-            transform: rotateZ(180deg);
+  -webkit-transform: rotateZ(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotateZ(180deg);
 }
 
-.clock__body__decoTxt .hour9:after,
-.clock__body__decoTxt .hour9:before {
-    -webkit-transform: rotateZ(-180deg);
-        -ms-transform: rotate(-180deg);
-            transform: rotateZ(-180deg);
+.clock__body__decoTxt .hour9:after, .clock__body__decoTxt .hour9:before {
+  -webkit-transform: rotateZ(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotateZ(-180deg);
 }
 
 .clock__body__decoTxt .hour9:after {
-    content: '09';
+  content: '09';
 }
 
 .clock__body__decoTxt .hour9:before {
-    content: '21';
+  content: '21';
 }
 
 .clock__body__decoTxt .hour10 {
-    -webkit-transform: rotateZ(210deg);
-        -ms-transform: rotate(210deg);
-            transform: rotateZ(210deg);
+  -webkit-transform: rotateZ(210deg);
+      -ms-transform: rotate(210deg);
+          transform: rotateZ(210deg);
 }
 
-.clock__body__decoTxt .hour10:after,
-.clock__body__decoTxt .hour10:before {
-    -webkit-transform: rotateZ(-210deg);
-        -ms-transform: rotate(-210deg);
-            transform: rotateZ(-210deg);
+.clock__body__decoTxt .hour10:after, .clock__body__decoTxt .hour10:before {
+  -webkit-transform: rotateZ(-210deg);
+      -ms-transform: rotate(-210deg);
+          transform: rotateZ(-210deg);
 }
 
 .clock__body__decoTxt .hour10:after {
-    content: '10';
+  content: '10';
 }
 
 .clock__body__decoTxt .hour10:before {
-    content: '22';
+  content: '22';
 }
 
 .clock__body__decoTxt .hour11 {
-    -webkit-transform: rotateZ(240deg);
-        -ms-transform: rotate(240deg);
-            transform: rotateZ(240deg);
+  -webkit-transform: rotateZ(240deg);
+      -ms-transform: rotate(240deg);
+          transform: rotateZ(240deg);
 }
 
-.clock__body__decoTxt .hour11:after,
-.clock__body__decoTxt .hour11:before {
-    -webkit-transform: rotateZ(-240deg);
-        -ms-transform: rotate(-240deg);
-            transform: rotateZ(-240deg);
+.clock__body__decoTxt .hour11:after, .clock__body__decoTxt .hour11:before {
+  -webkit-transform: rotateZ(-240deg);
+      -ms-transform: rotate(-240deg);
+          transform: rotateZ(-240deg);
 }
 
 .clock__body__decoTxt .hour11:after {
-    content: '11';
+  content: '11';
 }
 
 .clock__body__decoTxt .hour11:before {
-    content: '23';
+  content: '23';
 }
 
 .clock__body__decoTxt .hour12 {
-    -webkit-transform: rotateZ(270deg);
-        -ms-transform: rotate(270deg);
-            transform: rotateZ(270deg);
+  -webkit-transform: rotateZ(270deg);
+      -ms-transform: rotate(270deg);
+          transform: rotateZ(270deg);
 }
 
-.clock__body__decoTxt .hour12:after,
-.clock__body__decoTxt .hour12:before {
-    -webkit-transform: rotateZ(-270deg);
-        -ms-transform: rotate(-270deg);
-            transform: rotateZ(-270deg);
+.clock__body__decoTxt .hour12:after, .clock__body__decoTxt .hour12:before {
+  -webkit-transform: rotateZ(-270deg);
+      -ms-transform: rotate(-270deg);
+          transform: rotateZ(-270deg);
 }
 
 .clock__body__decoTxt .hour12:after {
-    content: '12';
+  content: '12';
 }
 
 .clock__body__decoTxt .hour12:before {
-    content: '24';
+  content: '24';
 }
 
 .clock__body__hand:before {
-    content: '';
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    border-radius: 50%;
-    background-color: #ffffff;
-    z-index: 20;
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+  background-color: #ffffff;
+  z-index: 20;
 }
 
 .clock__body__hand .minHand {
-    width: 8px;
-    height: 260px;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+  width: 8px;
+  height: 260px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .clock__body__hand .minHand:before {
-    content: '';
-    position: absolute;
-    top: 40px;
-    left: 0;
-    height: 96px;
-    width: 8px;
-    border-radius: 4px;
-    background-color: #ff7600;
-    z-index: 10;
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  height: 96px;
+  width: 8px;
+  border-radius: 4px;
+  background-color: #ff7600;
+  z-index: 10;
 }
 
 .clock__body__hand .hourHand {
-    width: 8px;
-    height: 260px;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
+  width: 8px;
+  height: 260px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .clock__body__hand .hourHand:before {
-    content: '';
-    position: absolute;
-    top: 64px;
-    left: 0;
-    height: 72px;
-    width: 8px;
-    border-radius: 0 0 4px 4px;
-    background-color: #ffffff;
-    z-index: 10;
+  content: '';
+  position: absolute;
+  top: 64px;
+  left: 0;
+  height: 72px;
+  width: 8px;
+  border-radius: 0 0 4px 4px;
+  background-color: #ffffff;
+  z-index: 10;
 }
 
 .clock__body__hand .hourHand:after {
-    content: '';
-    position: absolute;
-    top: 68px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    height: 24px;
-    width: 2px;
-    background-color: #293b29;
-    z-index: 10;
+  content: '';
+  position: absolute;
+  top: 68px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 24px;
+  width: 2px;
+  background-color: #293b29;
+  z-index: 10;
 }
 
 .clock__body__hand .secondHand {
-    width: 8px;
-    height: 260px;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+  width: 8px;
+  height: 260px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .clock__body__hand .secondHand:before {
-    content: '';
-    position: absolute;
-    top: 14px;
-    right: 0;
-    left: 0;
-    margin: auto;
-    height: 116px;
-    width: 1px;
-    background-color: #a0e605;
-    z-index: 10;
+  content: '';
+  position: absolute;
+  top: 14px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  height: 116px;
+  width: 1px;
+  background-color: #a0e605;
+  z-index: 10;
 }
 
 .clock__body__hand .secondHand:after {
-    content: '';
-    position: absolute;
-    top: 6px;
-    right: 0;
-    left: 0;
-    margin: auto;
-    height: 6px;
-    width: 6px;
-    border-radius: 6px;
-    border: 1px solid #a0e605;
-    z-index: 10;
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  height: 6px;
+  width: 6px;
+  border-radius: 6px;
+  border: 1px solid #a0e605;
+  z-index: 10;
 }
-
-/*# sourceMappingURL=style002.css.map */

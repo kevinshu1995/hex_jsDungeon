@@ -6,10 +6,10 @@ function getTime() {
   var timeText = document.querySelectorAll('.time');
   var timezone = {
     'NEW YORK': 'America/New_York',
-    LONDON: 'Europe/London',
-    BANGKOK: 'Asia/Bangkok',
-    TAIWAN: 'Asia/Taipei',
-    SYDNEY: 'Australia/Sydney'
+    'LONDON': 'Europe/London',
+    'BANGKOK': 'Asia/Bangkok',
+    'TAIWAN': 'Asia/Taipei',
+    'SYDNEY': 'Australia/Sydney'
   };
   location.forEach(function (item, index) {
     timeText[index].textContent = currentTime(timezone[item.textContent]).time;
@@ -41,6 +41,6 @@ function currentTime(timeZone) {
   };
 }
 
-window.onload = getTime();
+getTime();
 window.setInterval('getTime();', 1000);
 //# sourceMappingURL=js004.js.map

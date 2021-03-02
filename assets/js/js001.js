@@ -3,10 +3,7 @@
 var mainList = document.getElementById('mainList');
 var chartNum = 8;
 var strInner = '';
-
-window.onload = function () {
-  updateList();
-};
+updateList();
 
 function updateList() {
   //title
