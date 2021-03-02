@@ -41,5 +41,5 @@ function currentTime(timeZone){
     }
 }
 
-window.onload = getTime()
+getTime()
 window.setInterval('getTime();', 1000)

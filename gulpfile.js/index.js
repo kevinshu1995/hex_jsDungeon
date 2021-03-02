@@ -2,13 +2,10 @@ const gulp = require('gulp')
 const $ = require('gulp-load-plugins')({ lazy: false })
 const autoprefixer = require('autoprefixer')
 const minimist = require('minimist')
-const gulpif = require('gulp-if')
 const browserSync = require('browser-sync').create()
 const { envOptions } = require('./envOptions')
 const pug = require('gulp-pug') //載入 gulp-pug
-const prettier = require('gulp-prettier')
-const postcss = require('gulp-postcss')
-const purgecss = require('gulp-purgecss')
+const cleanCSS = require('gulp-clean-css');
 
 let options = minimist(process.argv.slice(2), envOptions)
 //現在開發狀態
@@ -46,16 +43,16 @@ function sass() {
     const plugins = [autoprefixer()]
     return gulp
         .src(envOptions.style.src)
-        .pipe($.sourcemaps.init())
+        .pipe($.if(options.env === 'development', $.sourcemaps.init()))
         .pipe(
             $.sass({
                 outputStyle: envOptions.style.outputStyle,
                 includePaths: envOptions.style.includePaths,
             }).on('error', $.sass.logError)
         )
-        .pipe(prettier(envOptions.prettier))
         .pipe($.postcss(plugins))
-        .pipe($.sourcemaps.write('.'))
+        .pipe($.if(options.env === 'production', cleanCSS()))
+        .pipe($.if(options.env === 'development', $.sourcemaps.write('.')))
         .pipe(gulp.dest(envOptions.style.path))
         .pipe(
             browserSync.reload({
@@ -72,18 +69,21 @@ function sass() {
 //         .pipe(gulp.dest(envOptions.style.tailwindCss.outputPath))
 // }
 
-const postcss_plugins = [require('tailwindcss'), autoprefixer()]
-const purge_options = {
-    content: ['./app/**/*.pug', './app/**/*.js'],
-    defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-}
 
 function tailwindcss() {
+    const postcss_plugins = [require('tailwindcss'), autoprefixer()]
+    const purge_options = {
+        content: ['./dist/**/*.html', './app/**/*.js'],
+        defaultExtractor: (content) => content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [],
+    }
     return (
         gulp
             .src(envOptions.style.tailwindCss.inputPath)
-            .pipe(postcss(postcss_plugins))
-            // .pipe(gulpif(options.env === 'prod', purgecss(purge_options)))
+            .pipe($.if(options.env === 'development', $.sourcemaps.init()))
+            .pipe($.postcss(postcss_plugins))
+            .pipe($.if(options.env === 'production', $.purgecss(purge_options)))
+            .pipe($.if(options.env === 'production', cleanCSS()))
+            .pipe($.if(options.env === 'development', $.sourcemaps.write('.')))
             .pipe(gulp.dest(envOptions.style.tailwindCss.outputPath))
     )
 }
@@ -92,7 +92,6 @@ function babel() {
     return (
         gulp
             .src(envOptions.javascript.src)
-            .pipe(prettier(envOptions.prettier))
             .pipe($.sourcemaps.init())
             .pipe(
                 $.babel({

@@ -6,8 +6,9 @@
     "scripts": {
         "test": "jest --coverage",
         "deploy": "gulp deploy --env prod",
-        "prod": "gulp build --env prod",
-        "build": "gulp build --env dev",
+        "prod": "gulp build --env production",
+        "build": "gulp build --env development",
+        "dev": "gulp build --env development",
         "start": "node serve.js",
         "build:css": "postcss app/assets/style/plugin/tailwinds/index.css -o dist/assets/style/index.css"
     },
@@ -32,6 +33,7 @@
         "gulp": "^4.0.2",
         "gulp-babel": "^8.0.0",
         "gulp-clean": "^0.4.0",
+        "gulp-clean-css": "^4.3.0",
         "gulp-concat": "^2.6.1",
         "gulp-front-matter": "^1.3.0",
         "gulp-gh-pages": "^0.5.4",
@@ -49,7 +51,8 @@
         "morgan": "^1.9.1",
         "node-sass": "^4.14.1",
         "popmotion": "^9.1.0",
-        "pug": "^2.0.4"
+        "pug": "^2.0.4",
+        "webpack-stream": "^6.1.2"
     },
     "devDependencies": {
         "gulp-prettier": "^3.0.0",
@@ -57,6 +60,8 @@
         "postcss": "^8.2.6",
         "postcss-cli": "^8.3.1",
         "prettier": "2.1.2",
-        "tailwindcss": "^2.0.3"
+        "tailwindcss": "^2.0.3",
+        "webpack": "^5.24.2",
+        "webpack-cli": "^4.5.0"
     }
 }

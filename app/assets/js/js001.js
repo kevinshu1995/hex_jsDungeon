@@ -1,9 +1,9 @@
 let mainList = document.getElementById('mainList')
 let chartNum = 8
 let strInner = ''
-window.onload = function () {
-    updateList()
-}
+
+updateList()
+
 
 function updateList() {
     //title
