@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "jest --coverage",
-        "deploy": "gulp deploy --env prod",
+        "deploy": "gulp deploy --env production",
         "prod": "gulp build --env production",
         "build": "gulp build --env development",
         "dev": "gulp build --env development",
