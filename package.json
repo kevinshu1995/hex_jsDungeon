@@ -9,8 +9,8 @@
         "prod": "gulp build --env production",
         "build": "gulp build --env development",
         "dev": "gulp build --env development",
-        "start": "node serve.js",
-        "build:css": "postcss app/assets/style/plugin/tailwinds/index.css -o dist/assets/style/index.css"
+        "watch": "gulp --env development",
+        "start": "node serve.js"
     },
     "engines": {
         "node": "11.7.0"
