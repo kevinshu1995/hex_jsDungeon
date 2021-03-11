@@ -42,7 +42,8 @@ let envOptions = {
             `${nodePath}/foundation-sites/scss`,
         ],
         tailwindCss: {
-            inputPath: `${srcPath}/assets/style/plugin/tailwinds/index.css`,
+            watch: `${srcPath}/assets/style/tailwindCss/`,
+            inputPath: `${srcPath}/assets/style/tailwindCss/index.css`,
             outputPath: `${distPath}/assets/style/`,
         },
         path: `${distPath}/assets/style`,

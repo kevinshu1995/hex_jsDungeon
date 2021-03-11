@@ -5,7 +5,7 @@ const minimist = require('minimist')
 const browserSync = require('browser-sync').create()
 const { envOptions } = require('./envOptions')
 const pug = require('gulp-pug') //載入 gulp-pug
-const cleanCSS = require('gulp-clean-css');
+const cleanCSS = require('gulp-clean-css')
 
 let options = minimist(process.argv.slice(2), envOptions)
 //現在開發狀態
@@ -61,31 +61,26 @@ function sass() {
         )
 }
 
-// function tailwindcss_purge() {
-//     return gulp
-//         .src(envOptions.style.tailwindCss.inputPath)
-//         .pipe(postcss(postcss_plugins))
-//         .pipe()
-//         .pipe(gulp.dest(envOptions.style.tailwindCss.outputPath))
-// }
-
-
 function tailwindcss() {
-    const postcss_plugins = [require('tailwindcss'), autoprefixer()]
+    const postcss_plugins = [
+        require('postcss-import'),
+        require('postcss-nested'),
+        require('tailwindcss'),
+        autoprefixer(),
+    ]
     const purge_options = {
         content: ['./dist/**/*.html', './app/**/*.js'],
-        defaultExtractor: (content) => content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [],
+        defaultExtractor: (content) =>
+            content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [],
     }
-    return (
-        gulp
-            .src(envOptions.style.tailwindCss.inputPath)
-            .pipe($.if(options.env === 'development', $.sourcemaps.init()))
-            .pipe($.postcss(postcss_plugins))
-            .pipe($.if(options.env === 'production', $.purgecss(purge_options)))
-            .pipe($.if(options.env === 'production', cleanCSS()))
-            .pipe($.if(options.env === 'development', $.sourcemaps.write('.')))
-            .pipe(gulp.dest(envOptions.style.tailwindCss.outputPath))
-    )
+    return gulp
+        .src(envOptions.style.tailwindCss.inputPath)
+        .pipe($.if(options.env === 'development', $.sourcemaps.init()))
+        .pipe($.postcss(postcss_plugins))
+        .pipe($.if(options.env === 'production', $.purgecss(purge_options)))
+        .pipe($.if(options.env === 'production', cleanCSS()))
+        .pipe($.if(options.env === 'development', $.sourcemaps.write('.')))
+        .pipe(gulp.dest(envOptions.style.tailwindCss.outputPath))
 }
 
 function babel() {
@@ -145,7 +140,7 @@ function watch() {
     gulp.watch(envOptions.javascript.src, gulp.series(babel))
     gulp.watch(envOptions.img.src, gulp.series(copyFile))
     gulp.watch(envOptions.style.src, gulp.series(sass))
-    gulp.watch(envOptions.style.tailwindCss.inputPath, gulp.series(tailwindcss))
+    gulp.watch(envOptions.style.tailwindCss.watch, gulp.series(tailwindcss))
 }
 
 exports.deploy = gulp.series(
