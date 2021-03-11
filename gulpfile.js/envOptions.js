@@ -49,7 +49,14 @@ let envOptions = {
         path: `${distPath}/assets/style`,
     },
     javascript: {
-        entry: [`${srcPath}/assets/js/all.js`],
+        entry: {
+            all: `${srcPath}/assets/js/all.js`,
+            js001: `${srcPath}/assets/js/js001.js`,
+            js002: `${srcPath}/assets/js/js002.js`,
+            js003: `${srcPath}/assets/js/js003.js`,
+            js004: `${srcPath}/assets/js/js004.js`,
+            js005: `${srcPath}/assets/js/js005.js`,
+        },
         src: [`${srcPath}/assets/js/**/*.js`],
         concat: 'all.js',
         path: `${distPath}/assets/js`,

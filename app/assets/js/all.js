@@ -1,8 +1,6 @@
 const dropdown = new Dropdown()
 
-window.onload = () => {
-    dropdown.init()
-}
+dropdown.init()
 
 function Dropdown(option = {}) {
     this.el_dropdowns = document.querySelectorAll('.dropdown')

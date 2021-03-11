@@ -1,4 +1,4 @@
-window.setInterval('getTime();', 500)
+window.setInterval(getTime, 500)
 
 function getTime() {
     let time = new Date()

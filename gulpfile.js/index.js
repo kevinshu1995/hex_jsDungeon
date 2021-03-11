@@ -6,6 +6,7 @@ const browserSync = require('browser-sync').create()
 const { envOptions } = require('./envOptions')
 const pug = require('gulp-pug') //載入 gulp-pug
 const cleanCSS = require('gulp-clean-css')
+const webpackStream = require('webpack-stream')
 
 let options = minimist(process.argv.slice(2), envOptions)
 //現在開發狀態
@@ -84,24 +85,45 @@ function tailwindcss() {
 }
 
 function babel() {
-    return (
-        gulp
-            .src(envOptions.javascript.src)
-            .pipe($.sourcemaps.init())
-            .pipe(
-                $.babel({
-                    presets: ['@babel/env'],
-                })
+    const webpack_config_prod = {
+        mode: 'production',
+        // TODO minify
+        optimization: {
+            minimize: true,
+        },
+        entry: envOptions.javascript.entry,
+        output: {
+            filename: '[name].js',
+        },
+    }
+    const webpack_config_dev = {
+        mode: 'development',
+        devtool: 'inline-source-map',
+        entry: envOptions.javascript.entry,
+        output: {
+            filename: '[name].js',
+        },
+    }
+    return gulp
+        .src(envOptions.javascript.src)
+        .pipe(
+            $.if(
+                options.env === 'development',
+                webpackStream(webpack_config_dev),
+                webpackStream(webpack_config_prod)
             )
-            // .pipe($.concat(envOptions.javascript.concat))
-            .pipe($.sourcemaps.write('.'))
-            .pipe(gulp.dest(envOptions.javascript.path))
-            .pipe(
-                browserSync.reload({
-                    stream: true,
-                })
-            )
-    )
+        )
+        .pipe(
+            $.babel({
+                presets: ['@babel/env'],
+            })
+        )
+        .pipe(gulp.dest(envOptions.javascript.path))
+        .pipe(
+            browserSync.reload({
+                stream: true,
+            })
+        )
 }
 
 function vendorsJs() {
