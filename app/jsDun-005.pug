@@ -1,38 +1,102 @@
 extend ./modules/layout.pug
 
 block append head
-    - var needreset = true
-    - var nav_darkbg = true
-    title JSDungeon | JS地下城 | 005 | 空氣品質指標 | AQI
-    link(rel="stylesheet" href="assets/style/pageStyle/style005.css")
+	- var needreset = true
+	- var nav_darkbg = true
+	title JSDungeon | JS地下城 | 005 | 空氣品質指標 | AQI
+	link(rel="stylesheet" href="assets/style/pageStyle/style005.css")
 
 block content
-    .container
-        .wrap.margin-bottom-4.margin-top-4
-            h2.font-weight-bold 空氣品質指標 (AQI)
-            select#county(name="county") 
-        .wrap.margin-bottom-4.margin-top-4
-            table
-                thead 
-                    tr
-                        th 0~50
-                        th 51~100
-                        th 101~150
-                        th 151~200
-                        th 201~300
-                        th 301~400
-                tbody 
-                    tr
-                        td 良好
-                        td 普通
-                        td 對敏感族群不健康
-                        td 對所有族群不健康
-                        td 非常不健康
-                        td 危害
-        .title
-            h3 高雄市
-            p.time 2020-01-01 00:00 更新
-        
+	section.jsDun-005
+		.container.py-10
+			.row
+				.col.w-full
+					.row 
+						.col(class="w-full md:w-1/3 mb-4 md:mb-0")
+							.h-full.flex.flex-col.justify-between
+								h2.mb-2 空氣品質指標 (AQI)
+								select#county.border-2.px-2.py-2.font-bold.w-full(name="county") 
+									option 請選擇地區
+						.col(class="w-full md:w-2/3")
+							.overflow-auto
+								table.text-center.w-full
+									thead 
+										tr
+											th.border-2.px-4.py-2.bg-level-1 0~50
+											th.border-2.px-4.py-2.bg-level-2 51~100
+											th.border-2.px-4.py-2.bg-level-3 101~150
+											th.border-2.px-4.py-2.bg-level-4 151~200
+											th.border-2.px-4.py-2.bg-level-5 201~300
+											th.border-2.px-4.py-2.bg-level-6 301~400
+									tbody 
+										tr
+											td.border-2.bg-white 良好
+											td.border-2.bg-white 普通
+											td.border-2.bg-white 
+												| 對敏感族群
+												br
+												| 不健康
+											td.border-2.bg-white
+												| 對所有族群
+												br
+												| 不健康
+											td.border-2.bg-white 非常不健康
+											td.border-2.bg-white 危害
+				.col.w-full.py-8
+					.flex.items-center
+						h3#county 高雄市
+						.border-b-2.flex-grow.mx-4.relative.top-1.transform(class="-translate-y-1/2")
+						p.time 
+							span#updateTime 2020-01-01 00:00 
+							span 更新
+			.row
+				.col.mb-4(class="w-full lg:w-1/3")
+					#selectedCounty.targetCounty
+						.countyWrap
+							h4.countyWrap__county 前金
+							p.countyWrap__value 156
+						.flex-grow
+							ul.detailsWrap
+								li.detail
+									h5.detail__title
+										span.detail__title-zh 臭氧
+										span.detail__title-en O3 (ppb)
+									p#value_O3.detail__value 82
+								li.detail
+									h5.detail__title
+										span.detail__title-zh 懸浮微粒
+										span.detail__title-en PM10 (μg/m³)
+									p#value_PM10.detail__value 82
+								li.detail
+									h5.detail__title
+										span.detail__title-zh 細懸浮微粒
+										span.detail__title-en PM2.5 (μg/m³)
+									p#value_PM25.detail__value 82
+								li.detail
+									h5.detail__title
+										span.detail__title-zh 一氧化碳
+										span.detail__title-en CO (ppm)
+									p#value_CO.detail__value 82
+								li.detail
+									h5.detail__title
+										span.detail__title-zh 二氧化硫
+										span.detail__title-en SO2 (ppb)
+									p#value_SO2.detail__value 82
+								li.detail
+									h5.detail__title
+										span.detail__title-zh 二氧化氮
+										span.detail__title-en NO2 (ppb)
+									p#value_NO2.detail__value 82
+				.col.mb-4.overflow-y-auto(class="w-full lg:w-2/3" style="max-height:410px")
+					.row
+						.col.mb-4(class="w-full sm:w-1/2")
+							.countyWrap.border-2
+								h4.countyWrap__county 前金
+								p.countyWrap__value 156
+						.col.mb-4(class="w-full sm:w-1/2")
+							.countyWrap.border-2
+								h4.countyWrap__county 前金
+								p.countyWrap__value 156
 block footer
-    include ./modules/footer
-    script(src='assets/js/js005.js')
+	include ./modules/footer
+	script(src='assets/js/js005.js')

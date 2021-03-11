@@ -1,0 +1,56 @@
+@tailwind components;
+
+@layer components {
+    .jsDun-005 {
+        background-color: #f0f0f0;
+        .bg-level-1 {
+            background-color: #95f084;
+        }
+        .bg-level-2 {
+            background-color: #ffe695;
+        }
+        .bg-level-3 {
+            background-color: #ffaf6a;
+        }
+        .bg-level-4 {
+            background-color: #ff5757;
+        }
+        .bg-level-5 {
+            background-color: #9777ff;
+        }
+        .bg-level-6 {
+            background-color: #ad1774;
+        }
+        .targetCounty {
+            @apply border-2 flex flex-col;
+            .detailsWrap {
+                @apply px-8 py-3 divide-y divide-warmGray-600 bg-white;
+                .detail {
+                    @apply flex flex-wrap items-end py-3;
+                }
+                .detail__title {
+                    @apply flex-grow;
+                }
+                .detail__title-zh {
+                    @apply inline-block mr-1;
+                }
+                .detail__title-en {
+                    @apply inline-block font-normal text-sm;
+                }
+                .detail__value {
+                    @apply text-right font-bold text-xl;
+                }
+            }
+        }
+        .countyWrap {
+            @apply flex text-center border-b-2 bg-white;
+
+            &__county {
+                @apply py-5 w-1/2 border-r-2;
+            }
+            &__value {
+                @apply py-5 w-1/2 text-xl font-bold;
+            }
+        }
+    }
+}

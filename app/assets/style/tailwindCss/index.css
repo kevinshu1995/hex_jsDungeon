@@ -1,0 +1,16 @@
+@import './base.css';
+/* @import './components/exportComponents.css';
+@import './page/exportPage.css'; */
+@import './components.css';
+@tailwind utilities;
+
+@layer utilities {
+    @variants hover, group-hover {
+        .filter-none {
+            filter: none;
+        }
+        .filter-img {
+            filter: blur(1px) grayscale(80%);
+        }
+    }
+}

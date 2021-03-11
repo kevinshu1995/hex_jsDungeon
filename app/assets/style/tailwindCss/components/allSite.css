@@ -1,0 +1,69 @@
+@tailwind components;
+@layer components {
+    [data-tooltip] {
+        @apply relative;
+    }
+    [data-tooltip]:hover:before {
+        content: attr(data-tooltip);
+        @apply absolute left-0 bottom-full py-1 px-3 whitespace-nowrap rounded border border-warmGray-800 bg-warmGray-900 text-primary-400 animate-bounce shadow;
+    }
+
+    .row {
+        @apply -mx-4 flex flex-wrap;
+    }
+
+    .col {
+        @apply px-4;
+    }
+
+    .btn {
+        @apply px-4 py-3 cursor-pointer focus:outline-none whitespace-nowrap;
+    }
+    .btn-full {
+        @apply w-full inline-block;
+    }
+    .btn-sm {
+        @apply px-3 py-2;
+    }
+
+    .btn-primary {
+        @apply text-primary-400 hover:bg-primary-400 hover:text-warmGray-900 focus:bg-primary-300 focus:text-warmGray-900;
+    }
+    .btn-text-primary {
+        @apply text-primary-400 hover:text-primary-500;
+    }
+    .btn-text-primary-light {
+        @apply text-primary-400 hover:text-primary-200;
+    }
+
+    .dropdown-list {
+        @apply absolute right-0 top-0 m-3 hidden flex-col flex-nowrap justify-between space-y-2 bg-warmGray-900 text-primary-400 shadow-xl;
+    }
+    .dropdown-list.dropdown-show {
+        @apply block;
+    }
+
+    .card {
+        @apply block bg-transparent transition-all;
+    }
+
+    .card .card__img {
+        @apply filter-img;
+    }
+
+    .card .card__wrap {
+        @apply py-4 text-warmGray-500 transition-all;
+    }
+
+    .card .card__title {
+        @apply truncate transition-all text-white font-normal;
+    }
+
+    .card .card__content {
+        @apply truncate text-xs font-normal;
+    }
+
+    .card h5.card__content {
+        @apply truncate text-xs font-normal mb-2 pb-2 border-b border-warmGray-700;
+    }
+}

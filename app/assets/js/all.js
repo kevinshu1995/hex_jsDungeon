@@ -17,8 +17,9 @@ function Dropdown(option = {}) {
         this.el_dropdowns.forEach((el_dropdown) => {
             el_dropdown.addEventListener('click', function (e) {
                 const child = [...this.children]
-                child.find((child) => child.classList.contains('dropdown-list'))
-                    .classList.toggle('block')
+                child
+                    .find((child) => child.classList.contains('dropdown-list'))
+                    .classList.toggle('dropdown-show')
             })
         })
     }
