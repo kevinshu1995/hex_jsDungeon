@@ -1,21 +1,22 @@
 # _Hexschool-JS Dungeon JS 地下城_
 
-## 最近改版了一下~ 使用 TailwindCss，真的很好用，會回不去。
+## 小改版~
+
+最近改版了一下~ 使用 TailwindCss，真的很好用，會回不去。
+歡迎指教
 
 ###### javascript, JSDungeon, HexSchool
 
-> 歡迎指教
+## 使用語言或技術
 
-> 使用語言或技術
->
-> -   HTML/PUG (Bark!
-> -   CSS/SCSS/TailwindCss
-> -   Pure JavaScript
-> -   Gulp
+-   HTML/PUG (Bark!
+-   CSS/SCSS/TailwindCss
+-   Pure JavaScript
+-   Gulp
 
 ## Multiplication-Chart 九九乘法表 - 001 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-001.html" target="_blank">Demo 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/001-MultiplicationChart.jpg)
+![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/001-multiplicationChart.jpg)
 
 ## Clock 時鐘 - 002 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-002.html" target="_blank">Demo | 網頁連結</a>
 
