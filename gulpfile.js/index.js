@@ -115,7 +115,7 @@ function babel() {
         )
         .pipe(
             $.babel({
-                presets: ['@babel/env'],
+                plugins: ['@babel/transform-runtime'],
             })
         )
         .pipe(gulp.dest(envOptions.javascript.path))
