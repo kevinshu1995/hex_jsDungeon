@@ -42,8 +42,8 @@
     return n.d(e, "a", e), e;
   }, n.o = function (t, e) {
     return Object.prototype.hasOwnProperty.call(t, e);
-  }, n.p = "", n(n.s = 1);
-}([, function (t, e) {
+  }, n.p = "", n(n.s = 0);
+}([function (t, e) {
   let n = document.getElementById("mainList"),
       r = "";
 

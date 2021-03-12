@@ -42,9 +42,9 @@
     return n.d(t, "a", t), t;
   }, n.o = function (e, t) {
     return Object.prototype.hasOwnProperty.call(e, t);
-  }, n.p = "", n(n.s = 4);
+  }, n.p = "", n(n.s = 3);
 }({
-  4: function (e, t) {
+  3: function (e, t) {
     function n() {
       let e = document.querySelectorAll(".location"),
           t = document.querySelectorAll(".date"),

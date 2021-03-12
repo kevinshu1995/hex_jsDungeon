@@ -42,25 +42,23 @@
     return n.d(t, "a", t), t;
   }, n.o = function (e, t) {
     return Object.prototype.hasOwnProperty.call(e, t);
-  }, n.p = "", n(n.s = 2);
-}({
-  2: function (e, t) {
-    window.setInterval(function () {
-      let e = new Date(),
-          t = e.getHours(),
-          n = e.getMinutes(),
-          r = e.getSeconds();
-      !function (e, t, n) {
-        let r = document.getElementById("secHand"),
-            o = document.getElementById("minHand"),
-            u = document.getElementById("hourHand"),
-            l = 6 * n;
-        r.style.transform = `rotate( ${l}deg)`;
-        let f = 6 * t + n / 10;
-        o.style.transform = `rotate( ${f}deg)`, e > 12 && (e -= 12);
-        let i = 30 * e + .5 * t;
-        u.style.transform = `rotate( ${i}deg)`;
-      }(t, n, r);
-    }, 500);
-  }
-});
+  }, n.p = "", n(n.s = 1);
+}([, function (e, t) {
+  window.setInterval(function () {
+    let e = new Date(),
+        t = e.getHours(),
+        n = e.getMinutes(),
+        r = e.getSeconds();
+    !function (e, t, n) {
+      let r = document.getElementById("secHand"),
+          o = document.getElementById("minHand"),
+          u = document.getElementById("hourHand"),
+          l = 6 * n;
+      r.style.transform = `rotate( ${l}deg)`;
+      let f = 6 * t + n / 10;
+      o.style.transform = `rotate( ${f}deg)`, e > 12 && (e -= 12);
+      let i = 30 * e + .5 * t;
+      u.style.transform = `rotate( ${i}deg)`;
+    }(t, n, r);
+  }, 500);
+}]);

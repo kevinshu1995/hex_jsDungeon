@@ -42,9 +42,9 @@
     return r.d(t, "a", t), t;
   }, r.o = function (e, t) {
     return Object.prototype.hasOwnProperty.call(e, t);
-  }, r.p = "", r(r.s = 3);
+  }, r.p = "", r(r.s = 2);
 }({
-  3: function (e, t) {
+  2: function (e, t) {
     new class {
       constructor(e) {
         this.el_btnWrap = e, this.calculate_objects = [], this.current_Numbers_array = [], this.answer = null, this.is_done_calculating = !1;

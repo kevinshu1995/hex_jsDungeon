@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="assets/style/index.css"/>
     <link rel="stylesheet" href="assets/style/vendors.css"/>
+    <link rel="stylesheet" href="assets/style/index.css"/>
     <title>JSDungeon | JS地下城 | Home Page</title>
   </head>
   <body class="relative font-body">
@@ -16,10 +16,11 @@
             <button class="dropdown relative font-bold btn btn-primary border-l-2 border-warmGray-800"><span>
                  查看目錄<i class="fas fa-angle-down ml-1"></i></span>
               <ul class="dropdown-list text-left max-h-60 overflow-y-auto">
-                <li><a class="btn btn-sm btn-primary btn-full" href="jsDun-001.html">001-九九乘法表</a></li>
-                <li><a class="btn btn-sm btn-primary btn-full" href="jsDun-002.html">002-時鐘</a></li>
-                <li><a class="btn btn-sm btn-primary btn-full" href="jsDun-003.html">003-計算機</a></li>
-                <li><a class="btn btn-sm btn-primary btn-full" href="jsDun-004.html">004-世界時鐘</a></li>
+                <li> <a class="btn btn-sm btn-primary btn-full" href="jsDun-001.html"> 001-九九乘法表</a></li>
+                <li> <a class="btn btn-sm btn-primary btn-full" href="jsDun-002.html"> 002-時鐘</a></li>
+                <li> <a class="btn btn-sm btn-primary btn-full" href="jsDun-003.html"> 003-計算機</a></li>
+                <li> <a class="btn btn-sm btn-primary btn-full" href="jsDun-004.html"> 004-世界時鐘</a></li>
+                <li> <a class="btn btn-sm btn-primary btn-full" href="jsDun-005.html"> 005-全台空氣指標儀表板</a></li>
               </ul>
             </button>
           </div>
@@ -70,31 +71,69 @@
     </div>
     <div class="text-white bg-black">
       <section class="container">
-        <div class="row py-10">
-          <div class="col lg:w-3/12 sm:w-6/12 w-12/12"><a class="group card" href="jsDun-001.html"><img class="card__img group-hover:filter-none" src="assets/images/multiplicationChart.jpg"/>
-              <div class="card__wrap group-hover:text-primary-400 group-hover:px-3">
-                <h4 class="card__title mb-1 group-hover:text-primary-400">001 | 九九乘法表</h4>
-                <h5 class="card__content">Mutiplication Chart</h5>
-                <p class="card__content">JS 迴圈練習。</p>
-              </div></a></div>
-          <div class="col lg:w-3/12 sm:w-6/12 w-12/12"><a class="group card" href="jsDun-002.html"><img class="card__img group-hover:filter-none" src="assets/images/clock.jpg"/>
-              <div class="card__wrap group-hover:text-primary-400 group-hover:px-3">
-                <h4 class="card__title mb-1 group-hover:text-primary-400">002 | 時鐘</h4>
-                <h5 class="card__content">Clock</h5>
-                <p class="card__content">用原生 JS 算時間控制指針，整個時鐘都是 css 寫的。</p>
-              </div></a></div>
-          <div class="col lg:w-3/12 sm:w-6/12 w-12/12"><a class="group card" href="jsDun-003.html"><img class="card__img group-hover:filter-none" src="assets/images/calculatar.jpg"/>
-              <div class="card__wrap group-hover:text-primary-400 group-hover:px-3">
-                <h4 class="card__title mb-1 group-hover:text-primary-400">003 | 計算機</h4>
-                <h5 class="card__content">Calculatar</h5>
-                <p class="card__content">使用 JS 寫計算機的功能，強烈建議不要用這個來計算 XD。</p>
-              </div></a></div>
-          <div class="col lg:w-3/12 sm:w-6/12 w-12/12"><a class="group card" href="jsDun-004.html"><img class="card__img group-hover:filter-none" src="assets/images/worldclock.png"/>
-              <div class="card__wrap group-hover:text-primary-400 group-hover:px-3">
-                <h4 class="card__title mb-1 group-hover:text-primary-400">004 | 世界時鐘</h4>
-                <h5 class="card__content">World Clock</h5>
-                <p class="card__content">以 Date 物件以 timezone 推算其他地區的現在時間。</p>
-              </div></a></div>
+        <div class="row py-20">
+          <div class="col mb-12 text-center w-full">
+            <div class="w-full flex space-x-8 mb-3">
+              <div class="relative bottom-4 border-b-2 border-primary-400 flex-grow order-1"></div>
+              <div class="relative bottom-4 border-b-2 border-primary-400 flex-grow order-3"></div>
+              <h2 class="text-primary-400 font-bold text-center order-2">JS 地下城</h2>
+            </div>
+            <p>用原生 JS 寫的各種小東西。</p>
+          </div>
+          <div class="col w-full">
+            <div class="swiper-container">
+              <div class="swiper-wrapper"> 
+                <div class="swiper-slide"><a class="group card" href="jsDun-001.html">
+                    <div class="card__img"><img class="swiper-lazy group-hover:filter-none" data-src="assets/images/dungeon/001-multiplicationChart.jpg"/>
+                      <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                    </div>
+                    <div class="card__wrap group-hover:text-primary-400 group-hover:px-3">
+                      <h4 class="card__title mb-1 group-hover:text-primary-400"> 001 | 九九乘法表</h4>
+                      <h5 class="card__content">Multiplication Chart</h5>
+                      <p class="card__content">JS 迴圈練習。</p>
+                    </div></a></div>
+                <div class="swiper-slide"><a class="group card" href="jsDun-002.html">
+                    <div class="card__img"><img class="swiper-lazy group-hover:filter-none" data-src="assets/images/dungeon/002-clock.jpg"/>
+                      <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                    </div>
+                    <div class="card__wrap group-hover:text-primary-400 group-hover:px-3">
+                      <h4 class="card__title mb-1 group-hover:text-primary-400"> 002 | 時鐘</h4>
+                      <h5 class="card__content">Clock</h5>
+                      <p class="card__content">用原生 JS 算時間控制指針，整個時鐘都是 css 寫的。</p>
+                    </div></a></div>
+                <div class="swiper-slide"><a class="group card" href="jsDun-003.html">
+                    <div class="card__img"><img class="swiper-lazy group-hover:filter-none" data-src="assets/images/dungeon/003-calculator.jpg"/>
+                      <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                    </div>
+                    <div class="card__wrap group-hover:text-primary-400 group-hover:px-3">
+                      <h4 class="card__title mb-1 group-hover:text-primary-400"> 003 | 計算機</h4>
+                      <h5 class="card__content">Calculator</h5>
+                      <p class="card__content">使用 JS 寫計算機的功能，強烈建議不要用這個來計算 XD。</p>
+                    </div></a></div>
+                <div class="swiper-slide"><a class="group card" href="jsDun-004.html">
+                    <div class="card__img"><img class="swiper-lazy group-hover:filter-none" data-src="assets/images/dungeon/004-worldClock.png"/>
+                      <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                    </div>
+                    <div class="card__wrap group-hover:text-primary-400 group-hover:px-3">
+                      <h4 class="card__title mb-1 group-hover:text-primary-400"> 004 | 世界時鐘</h4>
+                      <h5 class="card__content">World Clock</h5>
+                      <p class="card__content">以 Date 物件以 timezone 推算其他地區的現在時間。</p>
+                    </div></a></div>
+                <div class="swiper-slide"><a class="group card" href="jsDun-005.html">
+                    <div class="card__img"><img class="swiper-lazy group-hover:filter-none" data-src="assets/images/dungeon/005-aqi.jpg"/>
+                      <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                    </div>
+                    <div class="card__wrap group-hover:text-primary-400 group-hover:px-3">
+                      <h4 class="card__title mb-1 group-hover:text-primary-400"> 005 | 全台空氣指標儀表板</h4>
+                      <h5 class="card__content">AQI</h5>
+                      <p class="card__content">串接環保署的公開 API 資料，可執行簡單的互動。</p>
+                    </div></a></div>
+              </div>
+            </div>
+            <div class="py-4 relative"> 
+              <div class="swiper-pagination left-1/2 transform -translate-x-1/2"></div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
