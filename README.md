@@ -1,14 +1,17 @@
 # _Hexschool-JS Dungeon JS 地下城_
 
+## 最近改版了一下~ 使用 TailwindCss，真的很好用，會回不去。
+
 ###### javascript, JSDungeon, HexSchool
 
 > 歡迎指教
 
-> Language
+> 使用語言或技術
 >
 > -   HTML/PUG (Bark!
-> -   CSS/SCSS
-> -   JavaScript
+> -   CSS/SCSS/TailwindCss
+> -   Pure JavaScript
+> -   Gulp
 
 ## Multiplication-Chart 九九乘法表 - 001 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-001.html" target="_blank">Demo 網頁連結</a>
 
@@ -22,31 +25,26 @@
 
 ![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover003.jpg)
 
-> 1. 指令列表
->
-> -   `gulp` - 執行開發模式(會開啟模擬瀏覽器並監聽相關檔案)
-> -   `gulp build` - 執行編譯模式(不會開啟瀏覽器)
-> -   `gulp clean` - 清除 dist 資料夾
-> -   `gulp deploy` - 將 dist 資料夾部署至 GitHub Pages
->     <br>
+## World Clock 世界時鐘 - 004 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-004.html" target="_blank">Demo | 網頁連結</a>
 
-> 2. ~~不編譯 vendor 與 concat js~~
-> 3. 各種~~插劍~~ 插件
->
->     1. CSS 框架 : 使用 foundation-sites ^6.6.3
->     2. 各別練習頁面依檔案引入.js 檔
->     3. vendor.js 包含 jquery.min.js, foundation.min.js, popmotion.min.js
+![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover004.jpg)
 
-> 3. 初始設定
->
->     1. 在終端機安裝 gulp，繼續輸入指令 npm i gulp@4 -g 按 Enter 安裝，輸入 gulp -v 查詢是否有回報版本號。
->     2. 輸入指令 npm install 安裝插件
+## AQI 全台空氣指標儀表板 - 005 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-005.html" target="_blank">Demo | 網頁連結</a>
 
+![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover005.jpg)
+
+## 部落格 Blog
+
+每一個頁面都有寫一篇文章簡單解釋我的思考方向與實作方式，歡迎來看看
+
+![部落格 - Blog](https://kevinshu1995.github.io/blog)
 
 ###### gulp-gh-pages 可能會有的問題
-> - 問題
-> `[14:43:06] TypeError: Cannot read property '0' of null`
-> - 解決
+
+> -   問題
+>     `[14:43:06] TypeError: Cannot read property '0' of null`
+> -   解決
+>
 > ```
 > cd node_modules/gulp-gh-pages/
 > npm install --save gift@0.10.2 // 安裝指定版本
