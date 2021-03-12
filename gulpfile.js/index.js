@@ -26,6 +26,14 @@ function copyFile() {
 function layoutHTML() {
     return gulp
         .src(envOptions.html.pugSrc)
+        .pipe(
+            $.data(function () {
+                let pages = require('./../page.config.json')
+                return {
+                    pages: pages,
+                }
+            })
+        )
         .pipe($.plumber())
         .pipe(
             pug({

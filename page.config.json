@@ -1,0 +1,55 @@
+{
+    "personal" : {
+        "avatar": "avatar.jpg",
+        "email": "mailto:kevinshu1995@gmail.com",
+        "website": "https://kevinshu1995.github.io",
+        "github": "https://github.com/kevinshu1995"
+    },
+    "jsDungeon" : {
+        "shareParam": {
+            "imagePrefix": "assets/images/dungeon"
+        },
+        "details" :[
+            {
+                "id": "001",
+                "title_zh": "九九乘法表",
+                "title_en": "Multiplication Chart",
+                "href": "jsDun-001.html",
+                "describe": "JS 迴圈練習。",
+                "image": "/001-multiplicationChart.jpg"
+            },
+            {
+                "id": "002",
+                "title_zh": "時鐘",
+                "title_en": "Clock",
+                "href": "jsDun-002.html",
+                "describe": "用原生 JS 算時間控制指針，整個時鐘都是 css 寫的。",
+                "image": "/002-clock.jpg"
+            },
+            {
+                "id": "003",
+                "title_zh": "計算機",
+                "title_en": "Calculator",
+                "href": "jsDun-003.html",
+                "describe": "使用 JS 寫計算機的功能，強烈建議不要用這個來計算 XD。",
+                "image": "/003-calculator.jpg"
+            },
+            {
+                "id": "004",
+                "title_zh": "世界時鐘",
+                "title_en": "World Clock",
+                "href": "jsDun-004.html",
+                "describe": "以 Date 物件以 timezone 推算其他地區的現在時間。",
+                "image": "/004-worldClock.png"
+            },
+            {
+                "id": "005",
+                "title_zh": "全台空氣指標儀表板",
+                "title_en": "AQI",
+                "href": "jsDun-005.html",
+                "describe": "串接環保署的公開 API 資料，可執行簡單的互動。",
+                "image": "/005-aqi.jpg"
+            }
+        ]
+    }
+}

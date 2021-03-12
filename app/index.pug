@@ -33,50 +33,38 @@ block content
 				.col.mb-1(class="w-full")
 					.flex.justify-center.mb-4
 						.w-40
-							img.inline-block.rounded-full.overflow-hidden(src="assets/images/avatar.jpg")
+							img.inline-block.rounded-full.overflow-hidden(src=`assets/images/${pages.personal.avatar}`)
 					h2.text-base.text-normal.text-center.text-primary-400 Kevin Hsu
 				.col(class="w-full")
 					ul.flex.justify-center.space-x-4.text-sm
 						li.ml-2
-							a.text-white(data-tooltip="點擊寄信" href="mailto:kevinshu1995@gmail.com")
+							a.text-white(data-tooltip="點擊寄信" href=pages.personal.email)
 								i.fas.fa-paper-plane.mr-1
 								span 聯絡我
 						li
-							a.text-white(data-tooltip="點擊前往" href="https://github.com/kevinshu1995" target="_blank")
+							a.text-white(data-tooltip="點擊前往" href=pages.personal.github target="_blank")
 								i.fab.fa-github.mr-1
 								span kevinshu1995
 	.text-white.bg-black
 		section.container
 			.row.py-10
-				//- .col(class="w-full")
-					h2.text-primary-400.font-bold.text-center.mb-5 
-				.col(class="lg:w-3/12 sm:w-6/12 w-12/12")
-					a.group.card(href="jsDun-001.html")
-						img.card__img(class="group-hover:filter-none" src="assets/images/multiplicationChart.jpg")
-						.card__wrap(class="group-hover:text-primary-400 group-hover:px-3")
-							h4.card__title.mb-1(class="group-hover:text-primary-400") 001 | 九九乘法表
-							h5.card__content Mutiplication Chart
-							p.card__content JS 迴圈練習。
-				.col(class="lg:w-3/12 sm:w-6/12 w-12/12")
-					a.group.card(href="jsDun-002.html")
-						img.card__img(class="group-hover:filter-none" src="assets/images/clock.jpg")
-						.card__wrap(class="group-hover:text-primary-400 group-hover:px-3")
-							h4.card__title.mb-1(class="group-hover:text-primary-400") 002 | 時鐘
-							h5.card__content Clock
-							p.card__content 用原生 JS 算時間控制指針，整個時鐘都是 css 寫的。
-				.col(class="lg:w-3/12 sm:w-6/12 w-12/12")
-					a.group.card(href="jsDun-003.html")
-						img.card__img(class="group-hover:filter-none" src="assets/images/calculatar.jpg")
-						.card__wrap(class="group-hover:text-primary-400 group-hover:px-3")
-							h4.card__title.mb-1(class="group-hover:text-primary-400") 003 | 計算機
-							h5.card__content Calculatar
-							p.card__content 使用 JS 寫計算機的功能，強烈建議不要用這個來計算 XD。
-				.col(class="lg:w-3/12 sm:w-6/12 w-12/12")
-					a.group.card(href="jsDun-004.html")
-						img.card__img(class="group-hover:filter-none" src="assets/images/worldclock.png")
-						.card__wrap(class="group-hover:text-primary-400 group-hover:px-3")
-							h4.card__title.mb-1(class="group-hover:text-primary-400") 004 | 世界時鐘
-							h5.card__content World Clock
-							p.card__content 以 Date 物件以 timezone 推算其他地區的現在時間。
+				.col.mb-5.text-center(class="w-full")
+					.w-full.flex.space-x-8.mb-3
+						.relative.bottom-4.border-b-2.border-primary-400.flex-grow.order-1
+						.relative.bottom-4.border-b-2.border-primary-400.flex-grow.order-3
+						h2.text-primary-400.font-bold.text-center.order-2
+							| JS 地下城
+					p 用原生 JS 寫的各種小東西。
+				- var pageData = pages.jsDungeon
+				each page in pageData.details
+					- var imgSrc = `${pageData.shareParam.imagePrefix}${page.image}`
+					.col(class="lg:w-3/12 sm:w-6/12 w-12/12")
+						a.group.card(href=page.href)
+							img.card__img(class="group-hover:filter-none" src=imgSrc )
+							.card__wrap(class="group-hover:text-primary-400 group-hover:px-3")
+								h4.card__title.mb-1(class="group-hover:text-primary-400") 
+									| #{page.id} | #{page.title_zh}
+								h5.card__content #{page.title_en}
+								p.card__content #{page.describe}
 block footer
 	include ./modules/footer

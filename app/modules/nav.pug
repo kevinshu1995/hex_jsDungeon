@@ -6,24 +6,18 @@ block nav
 					| JS Dungeon
 				.right.flex.flex-nowrap.flex-end
 					.flex.flex-nowrap.items-center.text-primary-500.mr-3.space-x-2
-						a.p-1.font-bold.btn.btn-text-primary-light(href="https://github.com/kevinshu1995")
+						a.p-1.font-bold.btn.btn-text-primary-light(href=pages.personal.github)
 							i.fab.fa-github
-						a.p-1.font-bold.btn.btn-text-primary-light(href="mailto:kevinshu1995@gmail.com")
+						a.p-1.font-bold.btn.btn-text-primary-light(href=pages.personal.email)
 							i.fas.fa-paper-plane
 					button.dropdown.relative.font-bold.btn.btn-primary.border-l-2.border-warmGray-800
 						span 
 							| 查看目錄
 							i.fas.fa-angle-down.ml-1
 						ul.dropdown-list.text-left.max-h-60.overflow-y-auto
-							li
-								a.btn.btn-sm.btn-primary.btn-full(href="jsDun-001.html") 001-九九乘法表
-							li
-								a.btn.btn-sm.btn-primary.btn-full(
-									href="jsDun-002.html") 002-時鐘
-							li
-								a.btn.btn-sm.btn-primary.btn-full(
-									href="jsDun-003.html") 003-計算機
-							li
-								a.btn.btn-sm.btn-primary.btn-full(
-									href="jsDun-004.html") 004-世界時鐘
+							- var pageData = pages.jsDungeon
+							each page in pageData.details
+								li 
+									a.btn.btn-sm.btn-primary.btn-full(href=page.href) 
+										| #{page.id}-#{page.title_zh}
 	.pb-12
