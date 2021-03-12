@@ -1,11 +1,17 @@
 # _Hexschool-JS Dungeon JS 地下城_
 
+###### javascript, JSDungeon, HexSchool
+
 ## 小改版~
 
 最近改版了一下~ 使用 TailwindCss，真的很好用，會回不去。
-歡迎指教
+歡迎指教，寫得很差請務必告訴我 QQ。
 
-###### javascript, JSDungeon, HexSchool
+## 部落格 Blog
+
+每一個頁面都有寫一篇文章簡單解釋我的思考方向與實作方式，歡迎來看看
+
+<a href="https://kevinshu1995.github.io/blog" target="_blank">部落格 - Blog</a>
 
 ## 使用語言或技術
 
@@ -16,29 +22,23 @@
 
 ## Multiplication-Chart 九九乘法表 - 001 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-001.html" target="_blank">Demo 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/001-multiplicationChart.jpg)
+![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/001-multiplicationChart.jpg | width=300)
 
 ## Clock 時鐘 - 002 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-002.html" target="_blank">Demo | 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/002-clock.jpg)
+![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/002-clock.jpg | width=300)
 
 ## Calculator 計算機 - 003 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-003.html" target="_blank">Demo | 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/003-calculator.jpg)
+![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/003-calculator.jpg | width=300)
 
 ## World Clock 世界時鐘 - 004 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-004.html" target="_blank">Demo | 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/004-worldClock.png)
+![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/004-worldClock.png | width=300)
 
 ## AQI 全台空氣指標儀表板 - 005 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-005.html" target="_blank">Demo | 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/005-aqi.jpg)
-
-## 部落格 Blog
-
-每一個頁面都有寫一篇文章簡單解釋我的思考方向與實作方式，歡迎來看看
-
-<a href="https://kevinshu1995.github.io/blog" target="_blank">部落格 - Blog</a>
+![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/005-aqi.jpg | width=300)
 
 ###### gulp-gh-pages 可能會有的問題
 
