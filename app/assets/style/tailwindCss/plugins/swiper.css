@@ -1,0 +1,14 @@
+@tailwind components;
+@layer components {
+    .swiper-container {
+    }
+    .swiper-pagination {
+        @apply space-x-2;
+        .swiper-pagination-bullet {
+            @apply bg-warmGray-400 transition-all duration-300;
+        }
+        .swiper-pagination-bullet-active {
+            @apply bg-primary-400 w-8 rounded-2xl;
+        }
+    }
+}

@@ -2,4 +2,7 @@
 @import './components/exportComponents.css';
 
 /* ./page */
-@import './page/exportPage.css';
+@import './pages/exportPage.css';
+
+/* ./plugins */
+@import './plugins/exportPlugin.css';

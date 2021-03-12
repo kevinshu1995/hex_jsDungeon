@@ -1,3 +1,30 @@
+import SwiperCore, { Pagination, Autoplay, Lazy } from 'swiper/core'
+SwiperCore.use([Pagination, Autoplay, Lazy])
+
+const swiper = new SwiperCore('.swiper-container', {
+    lazy: true,
+    autoplay: {
+        stopOnLastSlide: true,
+    },
+    breakpoints: {
+        slidesPerView: 1,
+        320: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+        },
+    },
+    pagination: {
+        el: '.swiper-pagination',
+    },
+})
 const dropdown = new Dropdown()
 
 dropdown.init()

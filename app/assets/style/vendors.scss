@@ -1,1 +1,5 @@
+// * 盡量透過 tailwinds 來寫插件的客製化，這裡不要寫
 @import './plugin/fontawesome/import';
+/* purgecss start ignore */
+@import './plugin/swiper/import';
+/* purgecss end ignore */

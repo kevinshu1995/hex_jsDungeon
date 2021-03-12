@@ -47,24 +47,31 @@ block content
 								span kevinshu1995
 	.text-white.bg-black
 		section.container
-			.row.py-10
-				.col.mb-5.text-center(class="w-full")
+			.row.py-20
+				.col.mb-12.text-center(class="w-full")
 					.w-full.flex.space-x-8.mb-3
 						.relative.bottom-4.border-b-2.border-primary-400.flex-grow.order-1
 						.relative.bottom-4.border-b-2.border-primary-400.flex-grow.order-3
 						h2.text-primary-400.font-bold.text-center.order-2
 							| JS 地下城
 					p 用原生 JS 寫的各種小東西。
-				- var pageData = pages.jsDungeon
-				each page in pageData.details
-					- var imgSrc = `${pageData.shareParam.imagePrefix}${page.image}`
-					.col(class="lg:w-3/12 sm:w-6/12 w-12/12")
-						a.group.card(href=page.href)
-							img.card__img(class="group-hover:filter-none" src=imgSrc )
-							.card__wrap(class="group-hover:text-primary-400 group-hover:px-3")
-								h4.card__title.mb-1(class="group-hover:text-primary-400") 
-									| #{page.id} | #{page.title_zh}
-								h5.card__content #{page.title_en}
-								p.card__content #{page.describe}
+				.col.w-full
+					.swiper-container
+						.swiper-wrapper 
+							- var pageData = pages.jsDungeon
+							each page in pageData.details
+								- var imgSrc = `${pageData.shareParam.imagePrefix}${page.image}`
+								.swiper-slide
+									a.group.card(href=page.href)
+										.card__img
+											img(class="swiper-lazy group-hover:filter-none" data-src=imgSrc )
+											.swiper-lazy-preloader.swiper-lazy-preloader-white
+										.card__wrap(class="group-hover:text-primary-400 group-hover:px-3")
+											h4.card__title.mb-1(class="group-hover:text-primary-400") 
+												| #{page.id} | #{page.title_zh}
+											h5.card__content #{page.title_en}
+											p.card__content #{page.describe}
+					.py-4.relative 
+						.swiper-pagination(class="left-1/2 transform -translate-x-1/2")
 block footer
 	include ./modules/footer

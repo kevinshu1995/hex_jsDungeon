@@ -38,8 +38,7 @@ let envOptions = {
         outputStyle: 'expanded',
         includePaths: [
             `${nodePath}/@fortawesome/fontawesome-free/scss/`,
-            `${nodePath}/foundation-sites/scss`,
-            `${nodePath}/foundation-sites/scss`,
+            `${nodePath}/swiper/`,
         ],
         tailwindCss: {
             watch: `${srcPath}/assets/style/tailwindCss/`,

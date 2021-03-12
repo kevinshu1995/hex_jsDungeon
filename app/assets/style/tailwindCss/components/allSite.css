@@ -44,26 +44,24 @@
     }
 
     .card {
-        @apply block bg-transparent transition-all;
-    }
-
-    .card .card__img {
-        @apply filter-img;
-    }
-
-    .card .card__wrap {
-        @apply py-4 text-warmGray-500 transition-all;
-    }
-
-    .card .card__title {
-        @apply truncate transition-all text-white font-normal;
-    }
-
-    .card .card__content {
-        @apply truncate text-xs font-normal;
-    }
-
-    .card h5.card__content {
-        @apply truncate text-xs font-normal mb-2 pb-2 border-b border-warmGray-700;
+        @apply flex flex-col h-full bg-transparent transition-all;
+        &__img {
+            @apply flex items-end flex-grow relative overflow-hidden;
+            img {
+                @apply filter-img;
+            }
+        }
+        &__wrap {
+            @apply py-4 text-warmGray-500 transition-all;
+        }
+        &__title {
+            @apply truncate transition-all text-white font-normal;
+        }
+        &__content {
+            @apply truncate text-xs font-normal;
+        }
+        h5.card__content {
+            @apply truncate text-xs font-normal mb-2 pb-2 border-b border-warmGray-700;
+        }
     }
 }
