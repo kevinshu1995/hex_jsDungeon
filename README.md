@@ -22,23 +22,23 @@
 
 ## Multiplication-Chart 九九乘法表 - 001 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-001.html" target="_blank">Demo 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/001-multiplicationChart.jpg | width=300)
+<img alt="demo image" src="https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/001-multiplicationChart.jpg" width="200px">
 
 ## Clock 時鐘 - 002 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-002.html" target="_blank">Demo | 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/002-clock.jpg | width=300)
+<img alt="demo image" src="https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/002-clock.jpg" width="200px">
 
 ## Calculator 計算機 - 003 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-003.html" target="_blank">Demo | 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/003-calculator.jpg | width=300)
+<img alt="demo image" src="https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/003-calculator.jpg" width="200px">
 
 ## World Clock 世界時鐘 - 004 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-004.html" target="_blank">Demo | 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/004-worldClock.png | width=300)
+<img alt="demo image" src="https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/004-worldClock.png" width="200px">
 
 ## AQI 全台空氣指標儀表板 - 005 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-005.html" target="_blank">Demo | 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/005-aqi.jpg | width=300)
+<img alt="demo image" src="https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/005-aqi.jpg" width="200px">
 
 ###### gulp-gh-pages 可能會有的問題
 
