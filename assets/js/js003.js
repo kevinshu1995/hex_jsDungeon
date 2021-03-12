@@ -1,295 +1,209 @@
-"use strict";
+!function (e) {
+  var t = {};
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-/**
- *  * 變數
- *      * 算式
- *          * 新數字 (進到算式之前先存為字串，判斷小數點)
- *          * 新動作 (加減乘除、=、AC)
- *  * 判斷點誰 => 做甚麼是
- *      * 數字            => 先存為字串
- *      * 'AC'           => 全部刪除
- *      * '加減乘除'      => (當前結果) 與 (新數字，此時存為number) 計算
- *      * '='            => (當前結果) 輸出
- *      * '.'            => 判斷小數點是否位置正確
- *          * 當前無值 => '0', '.'
- *          * 當前有值 =>
- *              * 舊字串無'.' => '舊字串', '.'
- *              * 舊字串有'.' => '舊字串'
- */
-var Calculate = /*#__PURE__*/function () {
-  function Calculate(wrap_selector) {
-    _classCallCheck(this, Calculate);
-
-    this.el_btnWrap = wrap_selector; // * eg: [{ act:'division', number: '10.2' }]
-
-    this.calculate_objects = []; // * eg: ['1','2','.','2']
-
-    this.current_Numbers_array = [];
-    this.answer = null;
-    this.is_done_calculating = false;
+  function r(n) {
+    if (t[n]) return t[n].exports;
+    var a = t[n] = {
+      i: n,
+      l: !1,
+      exports: {}
+    };
+    return e[n].call(a.exports, a, a.exports, r), a.l = !0, a.exports;
   }
 
-  _createClass(Calculate, [{
-    key: "init",
-    value: function init() {
-      var vm = this;
-      if (document.querySelector(vm.el_btnWrap)) document.querySelector(vm.el_btnWrap).addEventListener('click', vm.count.bind(vm));
-    } // return Array
-    // 顯示在最上方的公式，不包含現在正在加值的數字
-
-  }, {
-    key: "formula",
-    get: function get() {
-      var _this = this;
-
-      if (this.calculate_objects.length === 0) return '';
-      return this.calculate_objects.map(function (item) {
-        return "".concat(item.number.join(''), " ").concat(_this.format_marks(item.act), " ");
-      }).join('');
-    }
-  }, {
-    key: "current_nums",
-    get: function get() {
-      return this.current_Numbers_array.join('');
-    }
-  }, {
-    key: "get_answer",
-    get: function get() {
-      return this.answer;
-    }
-  }, {
-    key: "update_elements",
-    value: function update_elements() {
-      this.update_formula_element();
-      this.update_answer_element();
-    }
-  }, {
-    key: "update_formula_element",
-    value: function update_formula_element() {
-      var el_formula = document.getElementById('current_formula');
-      el_formula.textContent = this.formula;
-    }
-  }, {
-    key: "update_answer_element",
-    value: function update_answer_element() {
-      var el_answer = document.getElementById('current_answer');
-      if (this.current_nums === '' && this.get_answer === null) el_answer.textContent = '';else el_answer.textContent = this.current_nums === '' ? this.get_answer : this.current_nums;
-    }
-  }, {
-    key: "format_marks",
-    value: function format_marks(key) {
-      var mark = {
-        division: '÷',
-        times: '×',
-        plus: '+',
-        minus: '-',
-        equal: '='
-      };
-      return mark[key];
-    }
-    /**
-     *  * 若傳入 0 || d-0 則判斷是否直接在 current_Numbers_array push 0 || 00
-     *  * 若非，則取代 current_Numbers_array 第一個 0，或是 push 新數字
-     *  @param {String} num
-     *  @return {Array}
-     */
-
-  }, {
-    key: "get_number",
-    value: function get_number() {
-      var num = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-
-      var result = _toConsumableArray(this.current_Numbers_array);
-
-      switch (num) {
-        case '0':
-        case 'd-0':
-          if (result.length === 0) return ['0'];
-          if (result[0] === '0') return ['0'];
-          if (num === '0') return ['0'];
-          return [].concat(_toConsumableArray(result), ['0', '0']);
-
-        default:
-          if (result.length === 1) if (result[0] === '0') return [num];
-          return [].concat(_toConsumableArray(result), [num]);
+  r.m = e, r.c = t, r.d = function (e, t, n) {
+    r.o(e, t) || Object.defineProperty(e, t, {
+      enumerable: !0,
+      get: n
+    });
+  }, r.r = function (e) {
+    "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+      value: "Module"
+    }), Object.defineProperty(e, "__esModule", {
+      value: !0
+    });
+  }, r.t = function (e, t) {
+    if (1 & t && (e = r(e)), 8 & t) return e;
+    if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+    var n = Object.create(null);
+    if (r.r(n), Object.defineProperty(n, "default", {
+      enumerable: !0,
+      value: e
+    }), 2 & t && "string" != typeof e) for (var a in e) r.d(n, a, function (t) {
+      return e[t];
+    }.bind(null, a));
+    return n;
+  }, r.n = function (e) {
+    var t = e && e.__esModule ? function () {
+      return e.default;
+    } : function () {
+      return e;
+    };
+    return r.d(t, "a", t), t;
+  }, r.o = function (e, t) {
+    return Object.prototype.hasOwnProperty.call(e, t);
+  }, r.p = "", r(r.s = 3);
+}({
+  3: function (e, t) {
+    new class {
+      constructor(e) {
+        this.el_btnWrap = e, this.calculate_objects = [], this.current_Numbers_array = [], this.answer = null, this.is_done_calculating = !1;
       }
-    }
-    /**
-     *  * 判斷 original = [] 是否有小數點
-     *      * 1. 長度為 0               => return 0.
-     *      * 2. 長度不為0 && 沒有"."    => push "."
-     *      * 3. 都不是就直接回傳原值
-     *
-     *  @param  {array} original
-     *  @return {array}
-     */
 
-  }, {
-    key: "get_point",
-    value: function get_point() {
-      var original = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-
-      var point = function point() {
-        return original.find(function (item) {
-          return item === '.';
-        });
-      };
-
-      if (original.length === 0) return ['0', '.'];
-      if (point() === undefined) return [].concat(_toConsumableArray(original), ['.']);
-      return _toConsumableArray(original);
-    }
-  }, {
-    key: "get_new_calculate_objects",
-    value: function get_new_calculate_objects() {
-      var mark = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-      var current_nums = this.current_Numbers_array;
-      var new_numbers = current_nums[current_nums.length - 1] === '.' ? this.delete_last_in_ary(current_nums) : current_nums;
-      return {
-        act: mark,
-        number: new_numbers
-      };
-    }
-  }, {
-    key: "before_adding_number_to_current_num",
-    value: function before_adding_number_to_current_num() {
-      var vm = this;
-      vm.detect_equal_and_delete();
-      vm.is_done_calculating = false;
-    } // * 若回傳目前輸入值的物件裡的數字陣列長度不為 0，則加入儲存計算公式的物件
-    // * 並且清除目前輸入值的陣列 (this.current_Numbers_array)
-
-  }, {
-    key: "set_formula_and_clear_current_num",
-    value: function set_formula_and_clear_current_num() {
-      var mark = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-      var vm = this;
-      if (vm.get_new_calculate_objects(mark)['number'].length !== 0) vm.calculate_objects = [].concat(_toConsumableArray(vm.calculate_objects), [vm.get_new_calculate_objects(mark)]);
-      vm.current_Numbers_array = [];
-    }
-  }, {
-    key: "detect_equal_and_delete",
-    value: function detect_equal_and_delete() {
-      if (this.is_done_calculating) {
-        this.current_Numbers_array = [];
-        this.calculate_objects = [];
-        this.answer = null;
+      init() {
+        document.querySelector(this.el_btnWrap) && document.querySelector(this.el_btnWrap).addEventListener("click", this.count.bind(this));
       }
-    }
-  }, {
-    key: "delete_last_in_ary",
-    value: function delete_last_in_ary(ary) {
-      var result = _toConsumableArray(ary);
 
-      result.pop();
-      return result;
-    }
-  }, {
-    key: "return_answer_string",
-    value: function return_answer_string() {
-      var target = _toConsumableArray(this.calculate_objects);
+      get formula() {
+        return 0 === this.calculate_objects.length ? "" : this.calculate_objects.map(e => `${e.number.join("")} ${this.format_marks(e.act)} `).join("");
+      }
 
-      var num = function num(string) {
-        return Number(string);
-      };
+      get current_nums() {
+        return this.current_Numbers_array.join("");
+      }
 
-      return target.reduce(function (accum, currentValue, currentIndex, array) {
-        if (currentIndex > 0) {
-          switch (array[currentIndex - 1].act) {
-            case 'division':
-              return num(accum) / num(currentValue.number.join(''));
+      get get_answer() {
+        return this.answer;
+      }
 
-            case 'times':
-              return num(accum) * num(currentValue.number.join(''));
+      update_elements() {
+        this.update_formula_element(), this.update_answer_element();
+      }
 
-            case 'plus':
-              return num(accum) + num(currentValue.number.join(''));
+      update_formula_element() {
+        document.getElementById("current_formula").textContent = this.formula;
+      }
 
-            case 'minus':
-              return num(accum) - num(currentValue.number.join(''));
+      update_answer_element() {
+        const e = document.getElementById("current_answer");
+        "" === this.current_nums && null === this.get_answer ? e.textContent = "" : e.textContent = "" === this.current_nums ? this.get_answer : this.current_nums;
+      }
+
+      format_marks(e) {
+        return {
+          division: "÷",
+          times: "×",
+          plus: "+",
+          minus: "-",
+          equal: "="
+        }[e];
+      }
+
+      get_number(e = "") {
+        const t = [...this.current_Numbers_array];
+
+        switch (e) {
+          case "0":
+          case "d-0":
+            return 0 === t.length || "0" === t[0] || "0" === e ? ["0"] : [...t, "0", "0"];
+
+          default:
+            return 1 === t.length && "0" === t[0] ? [e] : [...t, e];
+        }
+      }
+
+      get_point(e = []) {
+        return 0 === e.length ? ["0", "."] : void 0 === e.find(e => "." === e) ? [...e, "."] : [...e];
+      }
+
+      get_new_calculate_objects(e = "") {
+        const t = this.current_Numbers_array;
+        return {
+          act: e,
+          number: "." === t[t.length - 1] ? this.delete_last_in_ary(t) : t
+        };
+      }
+
+      before_adding_number_to_current_num() {
+        this.detect_equal_and_delete(), this.is_done_calculating = !1;
+      }
+
+      set_formula_and_clear_current_num(e = "") {
+        const t = this;
+        0 !== t.get_new_calculate_objects(e).number.length && (t.calculate_objects = [...t.calculate_objects, t.get_new_calculate_objects(e)]), t.current_Numbers_array = [];
+      }
+
+      detect_equal_and_delete() {
+        this.is_done_calculating && (this.current_Numbers_array = [], this.calculate_objects = [], this.answer = null);
+      }
+
+      delete_last_in_ary(e) {
+        const t = [...e];
+        return t.pop(), t;
+      }
+
+      return_answer_string() {
+        const e = [...this.calculate_objects],
+              t = e => Number(e);
+
+        return e.reduce((e, r, n, a) => {
+          if (!(n > 0)) return t(r.number.join(""));
+
+          switch (a[n - 1].act) {
+            case "division":
+              return t(e) / t(r.number.join(""));
+
+            case "times":
+              return t(e) * t(r.number.join(""));
+
+            case "plus":
+              return t(e) + t(r.number.join(""));
+
+            case "minus":
+              return t(e) - t(r.number.join(""));
 
             default:
-              throw '抓不到正確的運算符號 (+, -, *, /,)';
+              throw "抓不到正確的運算符號 (+, -, *, /,)";
           }
-        } else return num(currentValue.number.join(''));
-      }, 0);
-    }
-  }, {
-    key: "count",
-    value: function count(e) {
-      if (e.target.dataset.action === undefined) return;
-      var vm = this;
-      var action = e.target.dataset.action;
-
-      switch (action) {
-        case '0':
-        case '1':
-        case '2':
-        case '3':
-        case '4':
-        case '5':
-        case '6':
-        case '7':
-        case '8':
-        case '9':
-        case 'd-0':
-          vm.before_adding_number_to_current_num();
-          vm.current_Numbers_array = vm.get_number(action);
-          break;
-
-        case 'point':
-          vm.before_adding_number_to_current_num();
-          vm.current_Numbers_array = vm.get_point(vm.current_Numbers_array);
-          break;
-
-        case 'division':
-        case 'times':
-        case 'plus':
-        case 'minus':
-          vm.set_formula_and_clear_current_num(action);
-          break;
-
-        case 'ac':
-          vm.calculate_objects = [];
-          vm.current_Numbers_array = [];
-          vm.answer = null;
-          break;
-
-        case 'delete':
-          vm.current_Numbers_array = vm.delete_last_in_ary(vm.current_Numbers_array);
-          break;
-
-        case 'equal':
-          vm.set_formula_and_clear_current_num(action);
-          vm.answer = vm.return_answer_string();
-          vm.is_done_calculating = true;
-          break;
+        }, 0);
       }
 
-      this.update_elements();
-    }
-  }]);
+      count(e) {
+        if (void 0 === e.target.dataset.action) return;
+        const t = this,
+              r = e.target.dataset.action;
 
-  return Calculate;
-}();
+        switch (r) {
+          case "0":
+          case "1":
+          case "2":
+          case "3":
+          case "4":
+          case "5":
+          case "6":
+          case "7":
+          case "8":
+          case "9":
+          case "d-0":
+            t.before_adding_number_to_current_num(), t.current_Numbers_array = t.get_number(r);
+            break;
 
-var cal = new Calculate('.btnsWrap').init();
-//# sourceMappingURL=js003.js.map
+          case "point":
+            t.before_adding_number_to_current_num(), t.current_Numbers_array = t.get_point(t.current_Numbers_array);
+            break;
+
+          case "division":
+          case "times":
+          case "plus":
+          case "minus":
+            t.set_formula_and_clear_current_num(r);
+            break;
+
+          case "ac":
+            t.calculate_objects = [], t.current_Numbers_array = [], t.answer = null;
+            break;
+
+          case "delete":
+            t.current_Numbers_array = t.delete_last_in_ary(t.current_Numbers_array);
+            break;
+
+          case "equal":
+            t.set_formula_and_clear_current_num(r), t.answer = t.return_answer_string(), t.is_done_calculating = !0;
+        }
+
+        this.update_elements();
+      }
+
+    }(".btnsWrap").init();
+  }
+});

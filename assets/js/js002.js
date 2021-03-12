@@ -1,32 +1,66 @@
-"use strict";
+!function (e) {
+  var t = {};
 
-window.setInterval('getTime();', 500);
-
-function getTime() {
-  var time = new Date();
-  var hour = time.getHours();
-  var mins = time.getMinutes();
-  var secs = time.getSeconds();
-  handSet(hour, mins, secs);
-}
-
-function handSet(hour, mins, secs) {
-  // console.log(hour, mins, secs);
-  var secHand = document.getElementById('secHand');
-  var minHand = document.getElementById('minHand');
-  var hourHand = document.getElementById('hourHand'); //秒針
-
-  var secVal = secs * 6;
-  secHand.style.transform = "rotate( ".concat(secVal, "deg)"); //分針
-
-  var minVal = mins * 6 + secs / 10;
-  minHand.style.transform = "rotate( ".concat(minVal, "deg)"); //時針
-
-  if (hour > 12) {
-    hour = hour - 12;
+  function n(r) {
+    if (t[r]) return t[r].exports;
+    var o = t[r] = {
+      i: r,
+      l: !1,
+      exports: {}
+    };
+    return e[r].call(o.exports, o, o.exports, n), o.l = !0, o.exports;
   }
 
-  var hourVal = hour * 30 + mins * 0.5;
-  hourHand.style.transform = "rotate( ".concat(hourVal, "deg)");
-}
-//# sourceMappingURL=js002.js.map
+  n.m = e, n.c = t, n.d = function (e, t, r) {
+    n.o(e, t) || Object.defineProperty(e, t, {
+      enumerable: !0,
+      get: r
+    });
+  }, n.r = function (e) {
+    "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+      value: "Module"
+    }), Object.defineProperty(e, "__esModule", {
+      value: !0
+    });
+  }, n.t = function (e, t) {
+    if (1 & t && (e = n(e)), 8 & t) return e;
+    if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+    var r = Object.create(null);
+    if (n.r(r), Object.defineProperty(r, "default", {
+      enumerable: !0,
+      value: e
+    }), 2 & t && "string" != typeof e) for (var o in e) n.d(r, o, function (t) {
+      return e[t];
+    }.bind(null, o));
+    return r;
+  }, n.n = function (e) {
+    var t = e && e.__esModule ? function () {
+      return e.default;
+    } : function () {
+      return e;
+    };
+    return n.d(t, "a", t), t;
+  }, n.o = function (e, t) {
+    return Object.prototype.hasOwnProperty.call(e, t);
+  }, n.p = "", n(n.s = 2);
+}({
+  2: function (e, t) {
+    window.setInterval(function () {
+      let e = new Date(),
+          t = e.getHours(),
+          n = e.getMinutes(),
+          r = e.getSeconds();
+      !function (e, t, n) {
+        let r = document.getElementById("secHand"),
+            o = document.getElementById("minHand"),
+            u = document.getElementById("hourHand"),
+            l = 6 * n;
+        r.style.transform = `rotate( ${l}deg)`;
+        let f = 6 * t + n / 10;
+        o.style.transform = `rotate( ${f}deg)`, e > 12 && (e -= 12);
+        let i = 30 * e + .5 * t;
+        u.style.transform = `rotate( ${i}deg)`;
+      }(t, n, r);
+    }, 500);
+  }
+});

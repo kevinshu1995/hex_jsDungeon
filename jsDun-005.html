@@ -16,7 +16,7 @@
             <div class="flex flex-nowrap items-center text-primary-500 mr-3 space-x-2"><a class="p-1 font-bold btn btn-text-primary-light" href="https://github.com/kevinshu1995"><i class="fab fa-github"></i></a><a class="p-1 font-bold btn btn-text-primary-light" href="mailto:kevinshu1995@gmail.com"><i class="fas fa-paper-plane"></i></a></div>
             <button class="dropdown relative font-bold btn btn-primary border-l-2 border-warmGray-800"><span>
                  查看目錄<i class="fas fa-angle-down ml-1"></i></span>
-              <ul class="dropdown-list text-left max-h-40 overflow-y-auto">
+              <ul class="dropdown-list text-left max-h-60 overflow-y-auto">
                 <li><a class="btn btn-sm btn-primary btn-full" href="jsDun-001.html">001-九九乘法表</a></li>
                 <li><a class="btn btn-sm btn-primary btn-full" href="jsDun-002.html">002-時鐘</a></li>
                 <li><a class="btn btn-sm btn-primary btn-full" href="jsDun-003.html">003-計算機</a></li>
@@ -28,40 +28,110 @@
       </div>
     </nav>
     <div class="pb-12"></div>
-    <div class="container">
-      <div class="wrap margin-bottom-4 margin-top-4">
-        <h2 class="font-weight-bold">空氣品質指標 (AQI)</h2>
-        <select id="county" name="county"> </select>
+    <section class="jsDun-005">
+      <div class="container py-10">
+        <div class="row">
+          <div class="col w-full">
+            <div class="row"> 
+              <div class="col w-full md:w-1/3 mb-4 md:mb-0">
+                <div class="h-full flex flex-col justify-between">
+                  <h2 class="mb-2">空氣品質指標 (AQI)</h2>
+                  <select class="border-2 px-2 py-2 font-bold w-full" id="county" name="county"> 
+                    <option selected="selected" disabled="disabled">請選擇地區</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col w-full md:w-2/3">
+                <div class="overflow-auto">
+                  <table class="text-center w-full">
+                    <thead> 
+                      <tr>
+                        <th class="border-2 px-4 py-2 bg-level-1">0~50</th>
+                        <th class="border-2 px-4 py-2 bg-level-2">51~100</th>
+                        <th class="border-2 px-4 py-2 bg-level-3">101~150</th>
+                        <th class="border-2 px-4 py-2 bg-level-4">151~200</th>
+                        <th class="border-2 px-4 py-2 bg-level-5">201~300</th>
+                        <th class="border-2 px-4 py-2 bg-level-6">301~400</th>
+                      </tr>
+                    </thead>
+                    <tbody> 
+                      <tr>
+                        <td class="border-2 bg-white">良好</td>
+                        <td class="border-2 bg-white">普通</td>
+                        <td class="border-2 bg-white">
+                           對敏感族群<br/>不健康</td>
+                        <td class="border-2 bg-white">對所有族群<br/>不健康</td>
+                        <td class="border-2 bg-white">非常不健康</td>
+                        <td class="border-2 bg-white">危害</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col w-full py-8 hidden" id="errorText">
+            <h2 class="font-bold text-center text-xl text-danger-500" id="errorText"><span>獲取資料失敗，請稍後重新整理。</span></h2>
+          </div>
+          <div class="col w-full py-8 opacity-0" id="selectedCounty">
+            <div class="flex items-center">
+              <h3 id="current_county">高雄市</h3>
+              <div class="border-b-2 flex-grow mx-4 relative top-1 transform -translate-y-1/2"></div>
+              <p> <span id="updateTime">2020-01-01 00:00 </span><span>更新</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mb-4 w-full lg:w-1/3">
+            <div class="targetCounty opacity-0" id="selectedCountySite">
+              <div class="countyWrap">
+                <h4 class="countyWrap__county">前金</h4>
+                <p class="countyWrap__value">156</p>
+              </div>
+              <div class="flex-grow">
+                <ul class="detailsWrap">
+                  <li class="detail">
+                    <h5 class="detail__title"><span class="detail__title-zh">臭氧</span><span class="detail__title-en">O3 (ppb)</span></h5>
+                    <p class="detail__value" id="value_O3">82</p>
+                  </li>
+                  <li class="detail">
+                    <h5 class="detail__title"><span class="detail__title-zh">懸浮微粒</span><span class="detail__title-en">PM10 (μg/m³)</span></h5>
+                    <p class="detail__value" id="value_PM10">82</p>
+                  </li>
+                  <li class="detail">
+                    <h5 class="detail__title"><span class="detail__title-zh">細懸浮微粒</span><span class="detail__title-en">PM2.5 (μg/m³)</span></h5>
+                    <p class="detail__value" id="value_PM25">82</p>
+                  </li>
+                  <li class="detail">
+                    <h5 class="detail__title"><span class="detail__title-zh">一氧化碳</span><span class="detail__title-en">CO (ppm)</span></h5>
+                    <p class="detail__value" id="value_CO">82</p>
+                  </li>
+                  <li class="detail">
+                    <h5 class="detail__title"><span class="detail__title-zh">二氧化硫</span><span class="detail__title-en">SO2 (ppb)</span></h5>
+                    <p class="detail__value" id="value_SO2">82</p>
+                  </li>
+                  <li class="detail">
+                    <h5 class="detail__title"><span class="detail__title-zh">二氧化氮</span><span class="detail__title-en">NO2 (ppb)</span></h5>
+                    <p class="detail__value" id="value_NO2">82</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col mb-4 overflow-y-auto w-full lg:w-2/3" style="max-height:410px">
+            <div class="row custom-group-hover-opacity" id="selectedCountySiteList">
+              <!-- * template-->
+              <div class="col mb-4 hidden w-full sm:w-1/2">
+                <div class="countyWrap border-2">
+                  <h4 class="countyWrap__county">前金</h4>
+                  <p class="countyWrap__value">156</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="wrap margin-bottom-4 margin-top-4">
-        <table>
-          <thead> 
-            <tr>
-              <th>0~50</th>
-              <th>51~100</th>
-              <th>101~150</th>
-              <th>151~200</th>
-              <th>201~300</th>
-              <th>301~400</th>
-            </tr>
-          </thead>
-          <tbody> 
-            <tr>
-              <td>良好</td>
-              <td>普通</td>
-              <td>對敏感族群不健康</td>
-              <td>對所有族群不健康</td>
-              <td>非常不健康</td>
-              <td>危害</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="title">
-        <h3>高雄市</h3>
-        <p class="time">2020-01-01 00:00 更新</p>
-      </div>
-    </div>
+    </section>
     <div class="pb-28 bg-black"></div>
     <footer class="absolute text-white left-0 bottom-0 w-full py-8 text-center bg-black">
       <h6 class="text-sm mb-2">&copy; 2020-2021, Kevin Hsu - 許文修</h6>
