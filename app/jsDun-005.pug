@@ -16,7 +16,7 @@ block content
 							.h-full.flex.flex-col.justify-between
 								h2.mb-2 空氣品質指標 (AQI)
 								select#county.border-2.px-2.py-2.font-bold.w-full(name="county") 
-									option 請選擇地區
+									option(selected disabled) 請選擇地區
 						.col(class="w-full md:w-2/3")
 							.overflow-auto
 								table.text-center.w-full
@@ -42,16 +42,19 @@ block content
 												| 不健康
 											td.border-2.bg-white 非常不健康
 											td.border-2.bg-white 危害
-				.col.w-full.py-8
+				#errorText.col.w-full.py-8.hidden
+					h2#errorText.font-bold.text-center.text-xl.text-danger-500
+						span 獲取資料失敗，請稍後重新整理。
+				#selectedCounty.col.w-full.py-8.opacity-0
 					.flex.items-center
-						h3#county 高雄市
+						h3#current_county 高雄市
 						.border-b-2.flex-grow.mx-4.relative.top-1.transform(class="-translate-y-1/2")
-						p.time 
+						p 
 							span#updateTime 2020-01-01 00:00 
 							span 更新
 			.row
 				.col.mb-4(class="w-full lg:w-1/3")
-					#selectedCounty.targetCounty
+					#selectedCountySite.targetCounty.opacity-0
 						.countyWrap
 							h4.countyWrap__county 前金
 							p.countyWrap__value 156
@@ -88,12 +91,9 @@ block content
 										span.detail__title-en NO2 (ppb)
 									p#value_NO2.detail__value 82
 				.col.mb-4.overflow-y-auto(class="w-full lg:w-2/3" style="max-height:410px")
-					.row
-						.col.mb-4(class="w-full sm:w-1/2")
-							.countyWrap.border-2
-								h4.countyWrap__county 前金
-								p.countyWrap__value 156
-						.col.mb-4(class="w-full sm:w-1/2")
+					#selectedCountySiteList.row.custom-group-hover-opacity
+						// * template
+						.col.mb-4.hidden(class="w-full sm:w-1/2")
 							.countyWrap.border-2
 								h4.countyWrap__county 前金
 								p.countyWrap__value 156

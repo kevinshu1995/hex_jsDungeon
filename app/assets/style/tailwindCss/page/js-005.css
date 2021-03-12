@@ -52,5 +52,16 @@
                 @apply py-5 w-1/2 text-xl font-bold;
             }
         }
+        .custom-group-hover-opacity {
+            @apply transition-all;
+            &:hover {
+                & > div {
+                    @apply cursor-pointer opacity-30 transition-all duration-300;
+                }
+                & > div:hover {
+                    @apply opacity-100;
+                }
+            }
+        }
     }
 }

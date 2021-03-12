@@ -14,6 +14,7 @@ module.exports = {
             white: colors.white,
             black: colors.black,
             primary: colors.amber,
+            danger: colors.red,
         },
         fontFamily: {
             sans: ['sans-serif'],
