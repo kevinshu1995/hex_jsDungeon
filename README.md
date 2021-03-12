@@ -15,29 +15,29 @@
 
 ## Multiplication-Chart 九九乘法表 - 001 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-001.html" target="_blank">Demo 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover001.jpg)
+![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/001-MultiplicationChart.jpg)
 
 ## Clock 時鐘 - 002 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-002.html" target="_blank">Demo | 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover002.jpg)
+![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/002-clock.jpg)
 
-## Clock 計算機 - 003 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-003.html" target="_blank">Demo | 網頁連結</a>
+## Calculator 計算機 - 003 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-003.html" target="_blank">Demo | 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover003.jpg)
+![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/003-calculator.jpg)
 
 ## World Clock 世界時鐘 - 004 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-004.html" target="_blank">Demo | 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover004.jpg)
+![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/004-worldClock.png)
 
 ## AQI 全台空氣指標儀表板 - 005 - <a href="https://kevinshu1995.github.io/hex_jsDungeon/jsDun-005.html" target="_blank">Demo | 網頁連結</a>
 
-![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/cover005.jpg)
+![demo](https://raw.githubusercontent.com/kevinshu1995/hex_jsDungeon/gh-pages/assets/images/dungeon/005-aqi.jpg)
 
 ## 部落格 Blog
 
 每一個頁面都有寫一篇文章簡單解釋我的思考方向與實作方式，歡迎來看看
 
-![部落格 - Blog](https://kevinshu1995.github.io/blog)
+<a href="https://kevinshu1995.github.io/blog" target="_blank">部落格 - Blog</a>
 
 ###### gulp-gh-pages 可能會有的問題
 
