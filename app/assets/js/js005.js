@@ -9,6 +9,7 @@ function CountyAQI() {
             console.log('response data', result)
             DATA = vm.get_filteredCounties(result.records)
             vm.setDom_fillSelectOptions()
+            vm.fetchErrorHandler('success')
         })
         document
             .getElementById('county')
@@ -23,15 +24,12 @@ function CountyAQI() {
     }
 
     this.getData = async function () {
-        // * 資料來源 (後面是避開快取)
-        const url =
-            'https://data.epa.gov.tw/api/v1/aqx_p_432?api_key=efdc6239-d8be-4415-9515-fbbf072aadf4'
-        const api = `${url}${/\?/.test(url) ? '&' : '?'}${new Date().getTime()}`
-        return await fetch(api)
+        const url = 'https://fast-retreat-58038.herokuapp.com/air'
+        return await fetch(url)
             .then((res) => res.json())
             .catch((err) => {
                 console.error(err)
-                vm.fetchErrorHandler()
+                vm.fetchErrorHandler('error')
             })
     }
 
@@ -56,9 +54,43 @@ function CountyAQI() {
         }
     }
 
-    this.fetchErrorHandler = () => {
-        const error = document.getElementById('errorText')
-        error.classList.remove('hidden')
+    this.fetchErrorHandler = (status) => {
+        const elements = {
+            error: {
+                el: document.getElementById('errorText'),
+            },
+            success: {
+                el: document.getElementById('successText'),
+            },
+            requesting: {
+                el: document.getElementById('requestingText'),
+            },
+            backDrop: {
+                el: document.getElementById('messageBackdrop'),
+            },
+        }
+        const allEvents = Object.keys(elements)
+        if (status === 'clear') {
+            allEvents.forEach((event) => {
+                const targetClass = elements[event].el.classList
+                if (!targetClass.contains('hidden')) targetClass.add('hidden')
+            })
+            elements.backDrop.el.style.display = 'none'
+        } else {
+            allEvents.forEach((event) => {
+                const targetClass = elements[event].el.classList
+                if (event === status) {
+                    targetClass.remove('hidden')
+                } else if (!targetClass.contains('hidden')) {
+                    targetClass.add('hidden')
+                }
+            })
+        }
+        if (status === 'success') {
+            setTimeout(() => {
+                vm.fetchErrorHandler('clear')
+            }, 3000)
+        }
     }
 
     this.get_filteredCounties = (allData = {}) => {

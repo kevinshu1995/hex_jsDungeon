@@ -14,6 +14,7 @@ module.exports = {
             white: colors.white,
             black: colors.black,
             primary: colors.amber,
+            success: colors.emerald,
             danger: colors.red,
         },
         fontFamily: {

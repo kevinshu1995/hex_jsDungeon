@@ -1,0 +1,9 @@
+@tailwind components;
+@layer components {
+    .backdrop {
+        @apply fixed left-0 top-0 w-full h-full flex justify-center items-center bg-warmGray-900 bg-opacity-60;
+        &__card {
+            @apply py-4 px-8 border-warmGray-300 shadow rounded-md bg-white;
+        }
+    }
+}

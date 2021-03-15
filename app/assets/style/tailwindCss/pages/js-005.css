@@ -2,6 +2,7 @@
 
 @layer components {
     .jsDun-005 {
+        @apply relative;
         background-color: #f0f0f0;
         .bg-level-1 {
             background-color: #95f084;
