@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/style/pageStyle/style005.css"/>
   </head>
   <body class="relative font-body">
-    <nav class="fixed z-1000 w-full block shadow-sm bg-warmGray-900">
+    <nav class="nav fixed w-full block shadow-sm bg-warmGray-900">
       <div class="desktop">
         <div class="flex flex-nowrap justify-between"><a class="font-bold btn btn-text-primary" href="index.html">JS Dungeon</a>
           <div class="right flex flex-nowrap flex-end">
@@ -29,6 +29,24 @@
       </div>
     </nav>
     <div class="pb-12"></div>
+    <section class="floatingActionBtns group transform transition translate-x-3/4 hover:translate-x-1/4">
+      <ul class="floatingActionBtns__wrap">
+        <li class="tooltip-right">
+          <div class="floatingActionBtns__link notLink"><i class="fas fa-info"></i></div>
+        </li>
+        <li class="tooltip-right" data-tooltip="趕工中QQ"><a class="floatingActionBtns__link disabled" href="javascript:;"><i class="fas fa-blog"></i></a></li>
+        <li class="tooltip-right" data-tooltip="趕工中QQ"><a class="floatingActionBtns__link disabled" href="javascript:;"><i class="fab fa-medium-m"></i></a></li>
+        <li><a class="floatingActionBtns__link notShowing" href="#"><i class="fas fa-sticky-note"></i></a></li>
+      </ul>
+      <p class="pl-4 text-xs text-transparent group-hover:text-black transition">看看我的文章...</p>
+    </section>
+    <div class="backdrop" id="messageBackdrop">
+      <div class="backdrop__card font-bold text-center">
+        <h2 class="text-primary-500 text-xl animate-pulse" id="requestingText"><span>取得資料中，請稍後</span></h2>
+        <h2 class="text-danger-500 text-xl hidden" id="errorText"><span>獲取資料失敗，請稍後重新整理</span></h2>
+        <h2 class="text-success-500 text-xl hidden" id="successText"><span>資料取得成功!</span></h2>
+      </div>
+    </div>
     <section class="jsDun-005">
       <div class="container py-10">
         <div class="row">
@@ -70,9 +88,6 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col w-full py-8 hidden" id="errorText">
-            <h2 class="font-bold text-center text-xl text-danger-500" id="errorText"><span>獲取資料失敗，請稍後重新整理。</span></h2>
           </div>
           <div class="col w-full py-8 opacity-0" id="selectedCounty">
             <div class="flex items-center">
@@ -133,7 +148,7 @@
         </div>
       </div>
     </section>
-    <div class="pb-28 bg-black"></div>
+    <div class="pb-28"></div>
     <footer class="absolute text-white left-0 bottom-0 w-full py-8 text-center bg-black">
       <h6 class="text-sm mb-2">&copy; 2020-2021, Kevin Hsu - 許文修</h6>
       <ul class="flex justify-center space-x-4 text-xs">

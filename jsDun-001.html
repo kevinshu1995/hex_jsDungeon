@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/style/pageStyle/style001.css"/>
   </head>
   <body class="relative font-body">
-    <nav class="fixed z-1000 w-full block shadow-sm bg-warmGray-900">
+    <nav class="nav fixed w-full block shadow-sm bg-warmGray-900">
       <div class="desktop">
         <div class="flex flex-nowrap justify-between"><a class="font-bold btn btn-text-primary" href="index.html">JS Dungeon</a>
           <div class="right flex flex-nowrap flex-end">
@@ -29,6 +29,17 @@
       </div>
     </nav>
     <div class="pb-12"></div>
+    <section class="floatingActionBtns group transform transition translate-x-3/4 hover:translate-x-1/4">
+      <ul class="floatingActionBtns__wrap">
+        <li class="tooltip-right">
+          <div class="floatingActionBtns__link notLink"><i class="fas fa-info"></i></div>
+        </li>
+        <li class="tooltip-right" data-tooltip="個人部落格"><a class="floatingActionBtns__link" href="https://kevinshu1995.github.io/blog/JSDungeons/JS-Dungeon-001/"><i class="fas fa-blog"></i></a></li>
+        <li class="tooltip-right" data-tooltip="Medium"><a class="floatingActionBtns__link" href="https://wenshiuhsu.medium.com/%E7%94%A8-javascript-%E5%88%87%E5%87%BA%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8-js%E5%9C%B0%E4%B8%8B%E5%9F%8E-001-a50c29781ead"><i class="fab fa-medium-m"></i></a></li>
+        <li><a class="floatingActionBtns__link notShowing" href="#"><i class="fas fa-sticky-note"></i></a></li>
+      </ul>
+      <p class="pl-4 text-xs text-transparent group-hover:text-black transition">看看我的文章...</p>
+    </section>
     <ul class="wrap" id="mainList">
       <li class="l-card-title">
         <h1>九九乘法表</h1>
@@ -49,7 +60,7 @@
         </ul>
       </li>
     </ul>
-    <div class="pb-28 bg-black"></div>
+    <div class="pb-28"></div>
     <footer class="absolute text-white left-0 bottom-0 w-full py-8 text-center bg-black">
       <h6 class="text-sm mb-2">&copy; 2020-2021, Kevin Hsu - 許文修</h6>
       <ul class="flex justify-center space-x-4 text-xs">

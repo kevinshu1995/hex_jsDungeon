@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/style/pageStyle/style003.css"/>
   </head>
   <body class="relative font-body">
-    <nav class="fixed z-1000 w-full block shadow-sm bg-warmGray-900">
+    <nav class="nav fixed w-full block shadow-sm bg-warmGray-900">
       <div class="desktop">
         <div class="flex flex-nowrap justify-between"><a class="font-bold btn btn-text-primary" href="index.html">JS Dungeon</a>
           <div class="right flex flex-nowrap flex-end">
@@ -29,6 +29,17 @@
       </div>
     </nav>
     <div class="pb-12"></div>
+    <section class="floatingActionBtns group transform transition translate-x-3/4 hover:translate-x-1/4">
+      <ul class="floatingActionBtns__wrap">
+        <li class="tooltip-right">
+          <div class="floatingActionBtns__link notLink"><i class="fas fa-info"></i></div>
+        </li>
+        <li class="tooltip-right" data-tooltip="個人部落格"><a class="floatingActionBtns__link" href="https://kevinshu1995.github.io/blog/JSDungeons/JS-Dungeon-003/"><i class="fas fa-blog"></i></a></li>
+        <li class="tooltip-right" data-tooltip="Medium"><a class="floatingActionBtns__link" href="https://wenshiuhsu.medium.com/%E4%B8%8D%E8%B2%A0%E8%B2%AC%E4%BB%BB%E7%9A%84-javascript-%E8%A8%88%E7%AE%97%E6%A9%9F-js%E5%9C%B0%E4%B8%8B%E5%9F%8E-003-17a9402af98a"><i class="fab fa-medium-m"></i></a></li>
+        <li><a class="floatingActionBtns__link notShowing" href="#"><i class="fas fa-sticky-note"></i></a></li>
+      </ul>
+      <p class="pl-4 text-xs text-transparent group-hover:text-black transition">看看我的文章...</p>
+    </section>
     <div class="fix-height" style="min-height: 100vh"></div>
     <div class="wrap">
       <div class="title clearfix">
@@ -57,7 +68,7 @@
         <li class="btn_ l-btn--w2" data-action="equal">=</li>
       </ul>
     </div>
-    <div class="pb-28 bg-black"></div>
+    <div class="pb-28"></div>
     <footer class="absolute text-white left-0 bottom-0 w-full py-8 text-center bg-black">
       <h6 class="text-sm mb-2">&copy; 2020-2021, Kevin Hsu - 許文修</h6>
       <ul class="flex justify-center space-x-4 text-xs">
