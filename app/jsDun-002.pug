@@ -1,11 +1,14 @@
 extend ./modules/layout.pug
+include mixins/socialLinksNav
 
 block append head
 	- var needreset = true
+	- var id = '002' // /page.config.json
 	title JSDungeon | JS地下城 | 002 | 時鐘 | Clock
 	link(rel="stylesheet" href="assets/style/pageStyle/style002.css")
 
 block content
+	+socialLinksNav(id)
 	.clock-bg
 		.clock__body
 			.clock__body__deco

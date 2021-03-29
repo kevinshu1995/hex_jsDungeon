@@ -1,12 +1,14 @@
 extend ./modules/layout.pug
+include mixins/socialLinksNav
 
 block append head
-	- var needreset = true
-	- var nav_darkbg = true
+	- var needreset = false
+	- var id = '005' // /page.config.json
 	title JSDungeon | JS地下城 | 005 | 空氣品質指標 | AQI
 	link(rel="stylesheet" href="assets/style/pageStyle/style005.css")
 
 block content
+	+socialLinksNav(id)
 	section.jsDun-005
 		.container.py-10
 			#messageBackdrop.backdrop

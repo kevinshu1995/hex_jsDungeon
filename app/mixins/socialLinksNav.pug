@@ -1,0 +1,28 @@
+mixin socialLinksNav(target_id)
+    - var _details = pages.jsDungeon.details
+    - function getDetails(targetArray, target_id){ 
+    - 	if(!targetArray) return [{"title_zh": "", "link": ""}]
+    - 	for(var i = 0; i< targetArray.length ; i++){ 
+    -		if(targetArray[i].id == target_id) return targetArray[i].articles 
+    -	}
+    - }
+    - var articles = getDetails(_details, id)
+    section.floatingActionBtns.group(class="transform transition translate-x-3/4 hover:translate-x-1/4")
+        ul.floatingActionBtns__wrap
+            li.tooltip-right
+                .floatingActionBtns__link.notLink
+                    i.fas.fa-info
+            each article in articles
+                - var linkClass = !article.link ? 'disabled' : ''
+                - var linkHref = !article.link ? 'javascript:;' : article.link
+                - var linkTooltip = !article.link ? '趕工中QQ' : article.title_zh
+                li.tooltip-right(data-tooltip=linkTooltip)
+                    a.floatingActionBtns__link(href=linkHref class=linkClass)
+                        if article.title_en === 'Blog'
+                            i.fas.fa-blog
+                        else if article.title_en === 'Medium'
+                            i.fab.fa-medium-m
+            li
+                a.floatingActionBtns__link.notShowing(href="#")
+                    i.fas.fa-sticky-note
+        p.pl-4.text-xs(class="text-transparent group-hover:text-black transition") 看看我的文章...

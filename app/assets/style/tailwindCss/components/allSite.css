@@ -5,7 +5,11 @@
     }
     [data-tooltip]:hover:before {
         content: attr(data-tooltip);
-        @apply absolute left-0 bottom-full py-1 px-3 whitespace-nowrap rounded border border-warmGray-800 bg-warmGray-900 text-primary-400 animate-bounce shadow;
+        @apply absolute left-0 bottom-full mb-2 py-1 px-3 whitespace-nowrap rounded border border-warmGray-800 bg-warmGray-900 text-primary-400 text-sm shadow;
+    }
+    .tooltip-right[data-tooltip]:hover:before {
+        content: attr(data-tooltip);
+        @apply right-0 left-auto;
     }
 
     .row {
@@ -44,24 +48,21 @@
     }
 
     .card {
-        @apply flex flex-col h-full bg-transparent transition-all;
+        @apply flex flex-col bg-transparent transition-all;
         &__img {
-            @apply flex items-end flex-grow relative overflow-hidden;
+            @apply flex items-end relative overflow-hidden;
             img {
                 @apply filter-img;
             }
         }
         &__wrap {
-            @apply py-4 text-warmGray-500 transition-all;
+            @apply space-y-2 py-4 text-warmGray-500 transition-all;
         }
         &__title {
             @apply truncate transition-all text-white font-normal;
         }
         &__content {
             @apply truncate text-xs font-normal;
-        }
-        h5.card__content {
-            @apply truncate text-xs font-normal mb-2 pb-2 border-b border-warmGray-700;
         }
     }
 }

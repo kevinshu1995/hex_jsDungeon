@@ -1,12 +1,14 @@
 extend ./modules/layout.pug
+include mixins/socialLinksNav
 
 block append head
 	- var needreset = true
-	- var nav_darkbg = true
+	- var id = '004' // /page.config.json
 	title JSDungeon | JS地下城 | 004 | 時區 | world-clock
 	link(rel="stylesheet" href="assets/style/pageStyle/style004.css")
 
 block content
+	+socialLinksNav(id)
 	.wrap.my-10.mx-auto
 		h2.font-bold.text-center.page-title.mb-3 WORLD CLOCK
 		ul.card_.font-bold.ml-0.mb-0

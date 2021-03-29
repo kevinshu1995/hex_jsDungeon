@@ -1,12 +1,14 @@
 extend ./modules/layout.pug
+include mixins/socialLinksNav
 
 block append head
 	- var needreset = true
-	- var nav_darkbg = true
+	- var id = '001' // /page.config.json
 	title JSDungeon | JS地下城 | 001 | 九九乘法表 | MULTIPLICATION CHART
 	link(rel="stylesheet" href="assets/style/pageStyle/style001.css")
 
 block content
+	+socialLinksNav(id)
 	ul#mainList.wrap
 		li.l-card-title
 			h1 九九乘法表

@@ -1,7 +1,6 @@
 extend ./modules/layout.pug
 
 block append head
-	- var nav_darkbg = true
 	title JSDungeon | JS地下城 | Home Page
 
 block content
@@ -61,7 +60,7 @@ block content
 							- var pageData = pages.jsDungeon
 							each page in pageData.details
 								- var imgSrc = `${pageData.shareParam.imagePrefix}${page.image}`
-								.swiper-slide
+								.swiper-slide.flex.flex-col
 									a.group.card(href=page.href)
 										.card__img
 											img(class="swiper-lazy group-hover:filter-none" data-src=imgSrc )
@@ -71,6 +70,17 @@ block content
 												| #{page.id} | #{page.title_zh}
 											h5.card__content #{page.title_en}
 											p.card__content #{page.describe}
+									.flex-grow
+										.mt-2.flex.space-x-4.font-light.text-warmGray-700(style="font-size:12px")
+											.flex-grow.border-b
+										ul.flex.divide-x.divide-warmGray-700.text-center.text-sm
+											each article in page.articles
+												if article.link
+													li.flex-grow
+														a.py-2.inline-block.w-full.h-full.text-warmGray-700(class="hover:bg-warmGray-900" style="font-size:12px" href=article.link) 
+															span #{article.title_zh}
+												else
+													li.flex-grow.py-2.text-warmGray-700 趕工中...
 					.py-4.relative 
 						.swiper-pagination(class="left-1/2 transform -translate-x-1/2")
 block footer
