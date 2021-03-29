@@ -1,3 +1,6 @@
+import MESSAGE_MODEL from './componentsHandler/messageModel'
+const messageModel = new MESSAGE_MODEL()
+
 const countyAQI = new CountyAQI()
 countyAQI.init()
 function CountyAQI() {
@@ -9,7 +12,7 @@ function CountyAQI() {
             console.log('response data', result)
             DATA = vm.get_filteredCounties(result.records)
             vm.setDom_fillSelectOptions()
-            vm.fetchErrorHandler('success')
+            messageModel.statusHandler({ STATUS: 'success'})
         })
         document
             .getElementById('county')
@@ -29,7 +32,7 @@ function CountyAQI() {
             .then((res) => res.json())
             .catch((err) => {
                 console.error(err)
-                vm.fetchErrorHandler('error')
+                messageModel.statusHandler({ STATUS: 'error'})
             })
     }
 
@@ -54,44 +57,44 @@ function CountyAQI() {
         }
     }
 
-    this.fetchErrorHandler = (status) => {
-        const elements = {
-            error: {
-                el: document.getElementById('errorText'),
-            },
-            success: {
-                el: document.getElementById('successText'),
-            },
-            requesting: {
-                el: document.getElementById('requestingText'),
-            },
-            backDrop: {
-                el: document.getElementById('messageBackdrop'),
-            },
-        }
-        const allEvents = Object.keys(elements)
-        if (status === 'clear') {
-            allEvents.forEach((event) => {
-                const targetClass = elements[event].el.classList
-                if (!targetClass.contains('hidden')) targetClass.add('hidden')
-            })
-            elements.backDrop.el.style.display = 'none'
-        } else {
-            allEvents.forEach((event) => {
-                const targetClass = elements[event].el.classList
-                if (event === status) {
-                    targetClass.remove('hidden')
-                } else if (!targetClass.contains('hidden')) {
-                    targetClass.add('hidden')
-                }
-            })
-        }
-        if (status === 'success') {
-            setTimeout(() => {
-                vm.fetchErrorHandler('clear')
-            }, 3000)
-        }
-    }
+    // this.fetchErrorHandler = (status) => {
+    //     const elements = {
+    //         error: {
+    //             el: document.getElementById('errorText'),
+    //         },
+    //         success: {
+    //             el: document.getElementById('successText'),
+    //         },
+    //         requesting: {
+    //             el: document.getElementById('requestingText'),
+    //         },
+    //         backDrop: {
+    //             el: document.getElementById('messageBackdrop'),
+    //         },
+    //     }
+    //     const allEvents = Object.keys(elements)
+    //     if (status === 'clear') {
+    //         allEvents.forEach((event) => {
+    //             const targetClass = elements[event].el.classList
+    //             if (!targetClass.contains('hidden')) targetClass.add('hidden')
+    //         })
+    //         elements.backDrop.el.style.display = 'none'
+    //     } else {
+    //         allEvents.forEach((event) => {
+    //             const targetClass = elements[event].el.classList
+    //             if (event === status) {
+    //                 targetClass.remove('hidden')
+    //             } else if (!targetClass.contains('hidden')) {
+    //                 targetClass.add('hidden')
+    //             }
+    //         })
+    //     }
+    //     if (status === 'success') {
+    //         setTimeout(() => {
+    //             vm.fetchErrorHandler('clear')
+    //         }, 3000)
+    //     }
+    // }
 
     this.get_filteredCounties = (allData = {}) => {
         return allData.reduce((accumulator, current) => {

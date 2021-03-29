@@ -1,5 +1,6 @@
 extend ./modules/layout.pug
 include mixins/socialLinksNav
+include mixins/messageModel
 
 block append head
 	- var needreset = false
@@ -9,16 +10,9 @@ block append head
 
 block content
 	+socialLinksNav(id)
+	+messageModel
 	section.jsDun-005
 		.container.py-10
-			#messageBackdrop.backdrop
-				.backdrop__card.font-bold.text-center
-					h2#requestingText.text-primary-500.text-xl.animate-pulse
-						span 取得資料中，請稍後
-					h2#errorText.text-danger-500.text-xl.hidden
-						span 獲取資料失敗，請稍後重新整理
-					h2#successText.text-success-500.text-xl.hidden
-						span 資料取得成功!
 			.row
 				.col.w-full
 					.row 
